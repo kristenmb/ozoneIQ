@@ -24,6 +24,10 @@
   font-size: large;
 }
 
+.location-icon {
+  height: 5vh;
+}
+
 .temp-container {
   display: flex;
 }
@@ -47,10 +51,17 @@
 .additional-info-container {
   display: grid;
   grid-template-columns: 50vw 50vw;
+  grid-row-gap: 4vh;
+  justify-items: center;
 }
 
 .additional-info {
   display: flex;
+}
+
+.icon {
+  height: 5vh;
+  margin-right: 1vw;
 }
 
 .GOOD {

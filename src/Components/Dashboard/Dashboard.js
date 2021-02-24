@@ -1,5 +1,12 @@
 import React from 'react';
 import './Dashboard.css';
+import locationIcon from '../../assets/location.svg';
+import pollutionIcon from '../../assets/pollution.png';
+import humidityIcon from '../../assets/humidity.png';
+import pressureIcon from '../../assets/pressure.png';
+import windIcon from '../../assets/wind.png';
+import emptyFavIcon from '../../assets/star-empty.png';
+
 
 function Dashboard(props) {
 
@@ -50,10 +57,9 @@ function Dashboard(props) {
         <div className='location-name-temp-container'>
           <div className='location-and-fav-container'>
             <div className='location-container'>
-              <img className='location-icon' src='' alt='Map pin'/>
+              <img className='location-icon' src={locationIcon} alt='Map pin'/>
               <h2 className='location-name'>Denver, Colorado</h2>
             </div>
-            <img className='fav-icon' src='' alt='Empty Star'/>
           </div>
           <div className='temp-container'>
             <img className='weather-icon' src='' alt='Weather'/>
@@ -67,20 +73,20 @@ function Dashboard(props) {
         </div>
         <div className='additional-info-container'>
           <div className='additional-info'>
-            <img className='pollutant-icon' src='' alt='Outline of smoke stack'/>
+            <img className='pollutant-icon icon' src={pollutionIcon} alt='Outline of smoke stack'/>
             <p className='pollutant'>o3</p>
           </div>
           <div className='additional-info'>
-            <img className='humidity-icon' src='' alt='Outline of rain drop'/>
+            <img className='humidity-icon icon' src={humidityIcon} alt='Outline of rain drop'/>
             <p className='humidity'>20%</p>
           </div>
           <div className='additional-info'>
-            <img className='pressure-icon' src='' alt='Outline of a pressure guage'/>
+            <img className='pressure-icon icon' src={pressureIcon} alt='Outline of a pressure guage'/>
             <p className='pressure'>30 hPa</p>
           </div>
           <div className='additional-info'>
-            <img className='wind-icon' src='' alt='Outline of wind blowing'/>
-            <p className='pressure'>10 mph NE</p>
+            <img className='wind-icon icon' src={windIcon} alt='Outline of wind blowing'/>
+            <p className='wind'>10 mph NE</p>
           </div>
         </div>
       </section>
