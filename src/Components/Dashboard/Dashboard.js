@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Dashboard(props) {
-  const displayAirQualityMessage = (aqi) => {
+  const airQualityMessages = (aqi) => {
     if (aqi <= 50) {
       return [
         'GOOD',
@@ -26,7 +26,7 @@ function Dashboard(props) {
         'Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.'
       ];
     }
-    else if (aqi > 200 && <= 300) {
+    else if (aqi > 200 && aqi <= 300) {
       return [
         'VERY UNHEALTHY',
         'Health alert: The risk of health effects is increased for everyone.'
@@ -44,12 +44,17 @@ function Dashboard(props) {
       <section className='main-dashboard'>
         <div className='selected-city-name-temp'>
           <img className='location-icon' src='' alt='Map pin'/>
-          <h2 className='city-name'>props.city</h2>
+          <h2 className='city-name'>Denver, Colorado</h2>
           <img className='fav-icon' src='' alt='Empty Star'/>
           <div className='temp-container'>
             <img className='weather-icon' src='' alt='Weather'/>
-            <p className='temperature'>props.forecasts.tp</p>
+            <p className='temperature'>32 F</p>
           </div>
+        </div>
+        <div className='aqi-container'>
+          <h1 className='aqi-level'>{airQualityMessages(20)[0]}</h1>
+          <div className='aqi-number'>20</div>
+          <p className='aqi-description'>{airQualityMessages(20)[1]}</p>
         </div>
       </section>
     </>
