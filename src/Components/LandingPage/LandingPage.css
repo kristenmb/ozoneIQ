@@ -43,6 +43,11 @@
     height: 2em;
   }
 
+  .locationIcon {
+    height: 1em;
+    width: 1em;
+  }
+
   .chooseLocal {
     display: flex;
     flex-direction: row;
@@ -56,6 +61,7 @@
     border-radius: 2em;
     border: none;
     height: 2em;
+    text-align: center;
   }
 
   .searchButton {

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './LandingPage.css'
 import searchIcon from '../../assets/search.png'
 import sun from '../../assets/sun.svg'
+import locationIcon from '../../assets/location.svg'
 
 function LandingPage() {
   const [currentLocation, setCurrentLocation] = useState('')
@@ -14,7 +15,11 @@ function LandingPage() {
         <img className='sun' src={sun} />
       </div>
       <form>
-        <button className='currentLocal'>Get Current Location</button>
+        <button 
+          className='currentLocal'>
+          <img className='locationIcon' src={locationIcon}/>
+          Current Location
+        </button>
         <section className='chooseLocal'>
           <input 
             type='text'
