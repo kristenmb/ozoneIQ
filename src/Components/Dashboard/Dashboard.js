@@ -42,7 +42,7 @@ function Dashboard(props) {
   return (
     <>
       <section className='main-dashboard'>
-        <div className='selected-city-name-temp'>
+        <div className='selected-city-name-temp-container'>
           <img className='location-icon' src='' alt='Map pin'/>
           <h2 className='city-name'>Denver, Colorado</h2>
           <img className='fav-icon' src='' alt='Empty Star'/>
@@ -55,6 +55,24 @@ function Dashboard(props) {
           <h1 className='aqi-level'>{airQualityMessages(20)[0]}</h1>
           <div className='aqi-number'>20</div>
           <p className='aqi-description'>{airQualityMessages(20)[1]}</p>
+        </div>
+        <div className='additional-info-container'>
+          <div className='additional-info'>
+            <img className='pollutant-icon' src='' alt='Outline of smoke stack'/>
+            <p className='pollutant'>o3</p>
+          </div>
+          <div className='additional-info'>
+            <img className='humidity-icon' src='' alt='Outline of rain drop'/>
+            <p className='humidity'>20%</p>
+          </div>
+          <div className='additional-info'>
+            <img className='pressure-icon' src='' alt='Outline of a pressure guage'/>
+            <p className='pressure'>30 hPa</p>
+          </div>
+          <div className='additional-info'>
+            <img className='wind-icon' src='' alt='Outline of wind blowing'/>
+            <p className='pressure'>10 mph NE</p>
+          </div>
         </div>
       </section>
     </>
