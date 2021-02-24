@@ -1,4 +1,5 @@
 import React from 'react';
+import './Dashboard.css';
 
 function Dashboard(props) {
   const airQualityMessages = (aqi) => {
@@ -16,7 +17,7 @@ function Dashboard(props) {
     }
     else if (aqi > 100 && aqi <= 150) {
       return [
-        'Unhealthy for Sensitive Groups',
+        'UNHEALTHY FOR SENSITIVE GROUPS',
         'Members of sensitive groups may experience health effects. The general public is less likely to be affected.'
       ];
     }
@@ -40,8 +41,8 @@ function Dashboard(props) {
   }
 
   return (
-    <>
-      <section className='main-dashboard'>
+    <main>
+      <section className={`main-dashboard ${airQualityMessages(20)[0]}`}>
         <div className='selected-city-name-temp-container'>
           <img className='location-icon' src='' alt='Map pin'/>
           <h2 className='city-name'>Denver, Colorado</h2>
@@ -75,7 +76,7 @@ function Dashboard(props) {
           </div>
         </div>
       </section>
-    </>
+    </main>
   )
 }
 
