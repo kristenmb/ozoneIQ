@@ -1,4 +1,66 @@
-.searchButton {
-  height: 1em;
-  width: 1em;
+@media screen and (max-width: 500px) {
+  
+  .title {
+    font-size: 5em;
+    margin: 0;
+    justify-content: start;
+  }
+  
+  .landingPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .sunWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30%;
+  }
+
+  .sun {
+    width: 15em;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 40%;
+    width: 80%;
+  }
+
+  .currentLocal {
+    margin-top: 4em;
+    width: 60%;
+    margin: 2em; 
+    border-radius: 2em;
+    height: 2em;
+  }
+
+  .chooseLocal {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 2em;
+  }
+
+  input {
+    width: 89%;
+    border-radius: 2em;
+    border: none;
+    height: 2em;
+  }
+
+  .searchButton {
+    align-self: center;
+    height: 1em;
+    width: 1em;
+  }
 }
