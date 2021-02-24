@@ -5,10 +5,23 @@
   align-items: center;
 }
 
-.selected-city-name-temp-container {
+.location-name-temp-container {
   display: flex;
   width: 100vw;
   justify-content: space-around;
+}
+
+.location-and-fav-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-container {
+  display: flex;
+}
+
+.location-name {
+  font-size: large;
 }
 
 .temp-container {

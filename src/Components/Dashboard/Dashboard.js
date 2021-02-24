@@ -2,6 +2,10 @@ import React from 'react';
 import './Dashboard.css';
 
 function Dashboard(props) {
+
+//CREATE METHOD THAT HANDLES FAV ICON CLICK (SAVE TO FAV LOCATIONS/LOCAL STORAGE)
+//CREATE METHOD THAT HANDLES AQI NUMBER CLICK TO BRING YOU TO INFORMATION PAGE
+
   const airQualityMessages = (aqi) => {
     if (aqi <= 50) {
       return [
@@ -43,10 +47,14 @@ function Dashboard(props) {
   return (
     <main>
       <section className={`main-dashboard ${airQualityMessages(20)[0]}`}>
-        <div className='selected-city-name-temp-container'>
-          <img className='location-icon' src='' alt='Map pin'/>
-          <h2 className='city-name'>Denver, Colorado</h2>
-          <img className='fav-icon' src='' alt='Empty Star'/>
+        <div className='location-name-temp-container'>
+          <div className='location-and-fav-container'>
+            <div className='location-container'>
+              <img className='location-icon' src='' alt='Map pin'/>
+              <h2 className='location-name'>Denver, Colorado</h2>
+            </div>
+            <img className='fav-icon' src='' alt='Empty Star'/>
+          </div>
           <div className='temp-container'>
             <img className='weather-icon' src='' alt='Weather'/>
             <p className='temperature'>32 F</p>
