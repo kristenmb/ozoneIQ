@@ -38,5 +38,9 @@ export const convertWindToCardnialDirection = (windDegree) => {
   else if (windDegree > 293 && windDegree < 337) {
     return 'NW'
   }
+}
 
+export const convertMsToMph = (windSpeed) => {
+  const mph = windSpeed * 2.237;
+  return Math.round(windSpeed);
 }
