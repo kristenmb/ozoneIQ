@@ -5,10 +5,14 @@ import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
 
 function LandingPage({grabUserLocationData, grabInputLocationData}) {
-  const [input, setInput] = useState('')
+  const [inputLocation, setInputLocation] = useState('')
 
-  const parseInput = () => {
-
+  const parseInput = (inputLocation, event) => {
+    const locationQueries = inputLocation.split(', ');
+    const city = locationQueries[0];
+    const state = locationQueries[1];
+    const country = locationQueries[2];
+    grabInputLocationData(city, state, country, event);
   }
 
   return (
@@ -29,10 +33,12 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
             type='text'
             placeholder='City, State'
             name='chooseLocation'
-            value={input}
-            onChange={event => setInput(event.target.value)}
+            value={inputLocation}
+            onChange={event => setInputLocation(event.target.value)}
           />
-          <img className='searchButton' src={searchIcon} />
+          <img className='searchButton'
+           src={searchIcon}
+           onClick={event => parseInput(inputLocation, event)}/>
         </section>
       </form>
     </section>
