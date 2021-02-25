@@ -7,15 +7,14 @@ import {fetchUserLocation, fetchInputLocation} from '../../utilities'
 
 
 function App() {
-  const [currentLocation, setCurrentLocation] = useState({});
-  const [inputLocation, setInputLocation] = useState({});
+  const [location, setLocation] = useState({});
   const [dashboardView, setDashboardView] = useState(false);
 
   const grabUserLocationData = (event) => {
     event.preventDefault();
     fetchUserLocation()
       .then(response => {
-        setCurrentLocation(response.data);
+        setLocation(response.data);
         setDashboardView(true);
       })
   }
@@ -24,7 +23,7 @@ function App() {
     event.preventDefault();
     fetchInputLocation(city, state, country)
       .then(response => {
-        setInputLocation(response.data);
+        setLocation(response.data);
         setDashboardView(true);
       })
   }
@@ -32,7 +31,7 @@ function App() {
   return (
     <div className="App">
       {!dashboardView && < LandingPage grabUserLocationData={grabUserLocationData} grabInputLocationData={grabInputLocationData}/>}
-      {dashboardView && < Dashboard location={currentLocation} />}
+      {dashboardView && < Dashboard location={location} />}
     </div>
   );
 }
