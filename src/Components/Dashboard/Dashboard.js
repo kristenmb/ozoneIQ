@@ -67,8 +67,10 @@ function Dashboard(props) {
           </div>
         </div>
         <div className='aqi-container'>
-          <h1 className='aqi-level'>{airQualityMessages(20)[0]}</h1>
-          <div className='aqi-number'>20</div>
+          <div className='aqi-number'>
+            <h1 className='aqi-level'>{airQualityMessages(20)[0]}</h1>
+            <p className='aqi-num'>20</p>
+          </div>
           <p className='aqi-description'>{airQualityMessages(20)[1]}</p>
         </div>
         <div className='additional-info-container'>

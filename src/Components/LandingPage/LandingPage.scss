@@ -20,17 +20,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-  
   }
 
   .sun {
     width: 13em;
     padding: 10%;
-    border-radius: 47px;
+    // border-radius: 47px;
+    // background: #97E8F7;
+    // box-shadow: 5px 5px 10px #8cd8e6,
+    // -5px -5px 10px #a2f8ff;
+    border-radius: 18px;
     background: #97E8F7;
-    box-shadow: 5px 5px 10px #8cd8e6,
-    -5px -5px 10px #a2f8ff;
+    box-shadow: inset -8px -8px 17px #6da7b2,
+    inset 8px 8px 17px #c1ffff;
   }
 
   form {
@@ -72,6 +74,7 @@
     background: #97E8F7;
     box-shadow: inset 5px 5px 13px #7abcc8,
     inset -5px -5px 13px #b4ffff;
+    
   }
 
   input {
@@ -86,8 +89,6 @@
     background: #97E8F7;
     box-shadow: inset 5px 5px 13px #7abcc8,
     inset -5px -5px 13px #b4ffff;
-    
-   
   }
 
   .searchButton {

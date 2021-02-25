@@ -1,0 +1,6 @@
+@mixin aqiNumberStyle($color) {
+  border-radius: 50%;
+  background: linear-gradient(145deg, #73e667, #89ff7a);
+  box-shadow: 6px 6px 33px #51a148,
+  -6px -6px 33px #afff9c;
+}
