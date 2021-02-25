@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  height: 85vh;
 }
 
 .location-name-temp-container {
@@ -46,6 +47,10 @@
   line-height: 50vw;
   width: 50vw;
   height: 50vw;
+border-radius: 50%;
+background: linear-gradient(145deg, #73e667, #89ff7a);
+box-shadow: 6px 6px 33px #51a148,
+-6px -6px 33px #afff9c;
 }
 
 .additional-info-container {
@@ -66,6 +71,7 @@
 
 .GOOD {
   background-color: #80FF72;
+
 }
 
 .MODERATE {

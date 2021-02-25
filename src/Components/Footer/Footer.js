@@ -1,5 +1,5 @@
 import React from 'react'
-import './Footer.css'
+import './Footer.scss'
 import home from '../../assets/homebtn.png'
 import locations from '../../assets/locations.png'
 import questionmark from '../../assets/questionmark.png'

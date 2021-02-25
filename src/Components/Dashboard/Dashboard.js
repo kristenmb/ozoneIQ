@@ -1,5 +1,5 @@
 import React from 'react';
-import './Dashboard.css';
+import './Dashboard.scss';
 import locationIcon from '../../assets/location.svg';
 import pollutionIcon from '../../assets/pollution.png';
 import humidityIcon from '../../assets/humidity.png';
