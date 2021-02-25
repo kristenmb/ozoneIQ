@@ -30,7 +30,7 @@ const AqiInfo = () => {
           <p className="aqi-rating-word">GOOD</p>
           <Expand
             open={isOpen1}
-            duration={800}
+            duration={600}
           >
             <p>Air quality is satisfactory, and air pollution poses little or no risk.</p>
           </Expand>
@@ -40,7 +40,7 @@ const AqiInfo = () => {
           <p className="aqi-rating-word">MODERATE</p>
             <Expand
             open={isOpen2}
-            duration={800}
+            duration={600}
           >
             <p>Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.</p>
           </Expand>
@@ -50,7 +50,7 @@ const AqiInfo = () => {
           <p className="aqi-rating-word">UNHEALTHY FOR SENSITIVE GROUPS</p>
             <Expand
             open={isOpen3}
-            duration={800}
+            duration={600}
           >
             <p>Members of sensitive groups may experience health effects. The general public is less likely to be affected.</p>
           </Expand>
@@ -60,7 +60,7 @@ const AqiInfo = () => {
           <p className="aqi-rating-word">UNHEALTHY</p>
             <Expand
             open={isOpen4}
-            duration={800}
+            duration={600}
           >
             <p>Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.</p>
           </Expand>
@@ -70,7 +70,7 @@ const AqiInfo = () => {
           <p className="aqi-rating-word">VERY UNHEALTHY</p>
           <Expand
             open={isOpen5}
-            duration={800}
+            duration={600}
           >
             <p>Health alert: The risk of health effects is increased for everyone.</p>
           </Expand>
@@ -81,7 +81,7 @@ const AqiInfo = () => {
           <Expand
           id={6}
           open={isOpen6}
-          duration={800}
+          duration={600}
           >
               <p>Health warning of emergency conditions: everyone is more likely to be affected.</p>
           </Expand>
