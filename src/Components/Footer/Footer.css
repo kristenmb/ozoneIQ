@@ -13,9 +13,3 @@ footer {
   height: 2.4em;
   width: 2.4em;
 }
-
-p {
-  font-size: 3em;
-  justify-self: flex-start;
-  margin-bottom: 1.5em;
-}

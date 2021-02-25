@@ -1,11 +1,12 @@
 import React from 'react';
-import './Dashboard.css';
+import './Dashboard.scss';
 import locationIcon from '../../assets/location.svg';
 import pollutionIcon from '../../assets/pollution.png';
 import humidityIcon from '../../assets/humidity.png';
 import pressureIcon from '../../assets/pressure.png';
 import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
+import cloudIcon from '../../assets/cloud-computing.png';
 import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} from '../../utilities.js';
 
 
@@ -57,22 +58,22 @@ const windMph = convertMsToMph(location.current.weather.ws);
 
   return (
     <main>
-      <section className={`main-dashboard ${airQualityMessages(locationAqi)[0]}`}>
+      <section className='main-dashboard'>
         <div className='location-name-temp-container'>
           <div className='location-and-fav-container'>
             <div className='location-container'>
-              <img className='location-icon' src={locationIcon} alt='Map pin'/>
+              <img className='location-icon icon' src={locationIcon} alt='Map pin'/>
               <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
             </div>
           </div>
           <div className='temp-container'>
-            <img className='weather-icon' src='' alt='Weather'/>
+            <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>
             <p className='temperature'>{`${tempInFahrenheit} F`}</p>
           </div>
         </div>
         <div className='aqi-container'>
           <h1 className='aqi-level'>{airQualityMessages(locationAqi)[0]}</h1>
-          <div className='aqi-number'>{locationAqi}</div>
+          <div className={`aqi-number ${airQualityMessages(locationAqi)[0]}`}>{locationAqi}</div>
           <p className='aqi-description'>{airQualityMessages(locationAqi)[1]}</p>
         </div>
         <div className='additional-info-container'>

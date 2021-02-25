@@ -1,14 +1,23 @@
+p {
+  margin: 0;
+  font-size: large;
+  margin-top: 1vh;
+}
+
 .main-dashboard {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background: #97E7F7;
 }
 
 .location-name-temp-container {
   display: flex;
   width: 100vw;
   justify-content: space-around;
+  height: 7vh;
+  margin-top: 2vh;
 }
 
 .location-and-fav-container {
@@ -37,15 +46,21 @@
   flex-direction: column;
   width: 90vw;
   align-items: center;
+  margin-bottom: 5vh;
+  border-radius: 38px;
+  background: #97E8F7;
+  box-shadow: inset 1px 3px 13px #1c2c2f57, inset -1px -6px 13px #ffffff8a;
+  padding: 1vh;
+  padding-bottom: 2vh;
 }
 
 .aqi-number {
   font-size: 9vh;
-  border-style: solid;
   border-radius: 50%;
   line-height: 50vw;
   width: 50vw;
   height: 50vw;
+  box-shadow: inset -5px -5px 10px #4044402e, inset 5px 5px 10px #ffffff5e;
 }
 
 .additional-info-container {
@@ -53,6 +68,13 @@
   grid-template-columns: 50vw 50vw;
   grid-row-gap: 4vh;
   justify-items: center;
+  margin-bottom: 1vh;
+  border-radius: 30px;
+  background: #97E8F7;
+  box-shadow: inset 1px 3px 13px #1c2c2f45, inset -5px -6px 13px #e1faff73;
+  height: 20vh;
+  width: 95vw;
+  padding-top: 2vh;
 }
 
 .additional-info {
