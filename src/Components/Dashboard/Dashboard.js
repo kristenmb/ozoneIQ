@@ -6,12 +6,13 @@ import humidityIcon from '../../assets/humidity.png';
 import pressureIcon from '../../assets/pressure.png';
 import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
-import {convertToFahrenheit} from '../../utilities.js';
+import {convertToFahrenheit, convertWindToCardnialDirection} from '../../utilities.js';
 
 
 function Dashboard({location}) {
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
+const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
 //CREATE METHOD THAT HANDLES FAV ICON CLICK (SAVE TO FAV LOCATIONS/LOCAL STORAGE)
 //CREATE METHOD THAT HANDLES AQI NUMBER CLICK TO BRING YOU TO INFORMATION PAGE
 
@@ -88,7 +89,7 @@ const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
           </div>
           <div className='additional-info'>
             <img className='wind-icon icon' src={windIcon} alt='Outline of wind blowing'/>
-            <p className='wind'>{`${location.current.weather.ws} m/s ${location.current.weather.wd}`}</p>
+            <p className='wind'>{`${location.current.weather.ws} m/s ${windDirection}`}</p>
           </div>
         </div>
       </section>
