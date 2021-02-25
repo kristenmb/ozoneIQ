@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Route } from 'react-router'
 import Dashboard from '../Dashboard/Dashboard.js';
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage'
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div className="App">
+      
       {!dashboardView && < LandingPage grabUserLocationData={grabUserLocationData} grabInputLocationData={grabInputLocationData}/>}
       {dashboardView && < Dashboard location={location} />}
       <Footer />
