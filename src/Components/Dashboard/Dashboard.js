@@ -6,10 +6,12 @@ import humidityIcon from '../../assets/humidity.png';
 import pressureIcon from '../../assets/pressure.png';
 import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
+import {convertToFahrenheit} from '../../utilities.js';
 
 
 function Dashboard({location}) {
 const locationAqi = location.current.pollution.aqius;
+const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
 //CREATE METHOD THAT HANDLES FAV ICON CLICK (SAVE TO FAV LOCATIONS/LOCAL STORAGE)
 //CREATE METHOD THAT HANDLES AQI NUMBER CLICK TO BRING YOU TO INFORMATION PAGE
 
@@ -58,12 +60,12 @@ const locationAqi = location.current.pollution.aqius;
           <div className='location-and-fav-container'>
             <div className='location-container'>
               <img className='location-icon' src={locationIcon} alt='Map pin'/>
-              <h2 className='location-name'>{location.city, location.state}</h2>
+              <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
             </div>
           </div>
           <div className='temp-container'>
             <img className='weather-icon' src='' alt='Weather'/>
-            <p className='temperature'>{`${location.current.weather.tp} C`}</p>
+            <p className='temperature'>{`${tempInFahrenheit} F`}</p>
           </div>
         </div>
         <div className='aqi-container'>
