@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       {/* <h1>APP</h1> */}
       <LandingPage />
+      <Footer />
     </div>
   );
 }
