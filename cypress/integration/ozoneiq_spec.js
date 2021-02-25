@@ -15,6 +15,7 @@ describe('OzoneIQ Landing Page', () => {
 
 describe('OzoneIQ Dashboard Page - Current Location', () => {
   before(() => {
+    cy.visit('http://localhost:3000')
       cy.fixture('aqiData.json')
       .then((data) => {
         cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
@@ -22,12 +23,16 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
           body: data.currentLocation
         })
       })
-    cy.visit('http://localhost:3000')
 })
 
   it ('Should be able to click Current Location and navigate to dashboard with air quality information pertaining to that location', () => {
       cy.get('.currentLocal').click()
       cy.get('.main-dashboard').should('be.visible')
+  })
+
+  it ('Should display the current city and temperature', () => {
+    cy.get('.location-name-temp-container').find('.location-name').should('contain', 'Centennial, Colorado')
+    cy.get('.temp-container').find('.temperature').should('contain', '30 F')
   })
 
   it ('Should have a footer with four possible icons to click', () => {
