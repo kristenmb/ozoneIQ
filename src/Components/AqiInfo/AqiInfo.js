@@ -26,8 +26,7 @@ const AqiInfo = () => {
       <h2>What's your AQI IQ?</h2>
       <article>
         <button name="isOpen1" onClick={toggle} className="aqi-color-blocks green">
-          <p className="aqi-rating">0 - 50</p>
-          <p className="aqi-rating-word">GOOD</p>
+          0 - 50 <br/> GOOD
           <Expand
             open={isOpen1}
             duration={600}
@@ -36,8 +35,7 @@ const AqiInfo = () => {
           </Expand>
         </button>
         <button name="isOpen2" onClick={toggle} className="aqi-color-blocks yellow">
-          <p className="aqi-rating">51 - 100</p>
-          <p className="aqi-rating-word">MODERATE</p>
+          51 - 100 <br/> MODERATE
             <Expand
             open={isOpen2}
             duration={600}
@@ -46,8 +44,7 @@ const AqiInfo = () => {
           </Expand>
         </button>
         <button name="isOpen3" onClick={toggle} className="aqi-color-blocks orange">
-          <p className="aqi-rating">101 - 150</p>
-          <p className="aqi-rating-word">UNHEALTHY FOR SENSITIVE GROUPS</p>
+          101 - 150<br/> UNHEALTHY FOR SENSITIVE GROUPS
             <Expand
             open={isOpen3}
             duration={600}
@@ -56,8 +53,7 @@ const AqiInfo = () => {
           </Expand>
         </button>
         <button name="isOpen4" onClick={toggle} className="aqi-color-blocks red">
-          <p className="aqi-rating">151 - 200</p>
-          <p className="aqi-rating-word">UNHEALTHY</p>
+          151 - 200<br/>UNHEALTHY
             <Expand
             open={isOpen4}
             duration={600}
@@ -66,8 +62,7 @@ const AqiInfo = () => {
           </Expand>
         </button>
         <button  name="isOpen5" onClick={toggle}  className="aqi-color-blocks maroon">
-          <p className="aqi-rating">201 - 300</p>
-          <p className="aqi-rating-word">VERY UNHEALTHY</p>
+          201 - 300 <br/> VERY UNHEALTHY
           <Expand
             open={isOpen5}
             duration={600}
@@ -76,8 +71,7 @@ const AqiInfo = () => {
           </Expand>
         </button>
         <button  name="isOpen6" onClick={toggle} className="aqi-color-blocks purple">
-          <p className="aqi-rating">301+</p>
-          <p className="aqi-rating-word">HAZARDOUS</p>
+          301+<br/>HAZARDOUS
           <Expand
           id={6}
           open={isOpen6}
