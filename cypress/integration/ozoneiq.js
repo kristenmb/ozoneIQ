@@ -1,10 +1,10 @@
-describe('Movie Reelz', () => {
+describe('OzoneIQ', () => {
   beforeEach(() => {
     cy.fixture('movieData.json')
-      .then((movies) => {
-        cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      .then((data) => {
+        cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
           statusCode: 201,
-          body: movies
+          body: data
         })
       })
     cy.visit('http://localhost:3000')

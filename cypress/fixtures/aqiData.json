@@ -1,0 +1,36 @@
+{
+    "currentLocation": 
+  {
+    "status": "success",
+    "data": {
+      "city": "Centennial",
+      "state": "Colorado",
+      "country": "USA",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+        -104.9572,
+        39.5689
+        ]
+      },
+        "current": {
+          "weather": {
+          "ts": "2021-02-25T19:00:00.000Z",
+          "tp": -1,
+          "pr": 1020,
+          "hu": 69,
+          "ws": 6.69,
+          "wd": 360,
+          "ic": "03d"
+        },
+        "pollution": {
+          "ts": "2021-02-25T19:00:00.000Z",
+          "aqius": 27,
+          "mainus": "o3",
+          "aqicn": 21,
+          "maincn": "o3"
+        }
+      }
+    }
+  }
+}
