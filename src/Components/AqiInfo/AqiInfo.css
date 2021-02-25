@@ -1,0 +1,37 @@
+.aqi-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #97E7F7;
+}
+
+.aqi-color-blocks {
+  border: 2pt solid black;
+  border-radius: 3%;
+  width: 75vw
+}
+
+.green {
+  background-color: #80FF72;
+}
+
+.yello {
+  background-color: #FFF07C;
+}
+
+.orange {
+  background-color: #FFB347;
+}
+
+.red {
+  background-color: #E58C8A;
+}
+
+.maroon {
+  background-color: #A24857;
+}
+
+.purple {
+  background-color: #966FD6;
+}
