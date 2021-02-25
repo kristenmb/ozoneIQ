@@ -3,16 +3,9 @@ import './LandingPage.css'
 import searchIcon from '../../assets/search.png'
 import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
-import {fetchUserLocation} from '../../utilities'
 
-function LandingPage() {
-  const [currentLocation, setCurrentLocation] = useState('')
+function LandingPage({grabLocationData}) {
   const [chooseLocation, setChooseLocation] = useState('')
-
-  useEffect(() => {
-    fetchUserLocation()
-      .then(response => console.log(response))
-  }, [])
 
   return (
     <section className='landingPage'>
@@ -22,7 +15,8 @@ function LandingPage() {
       </div>
       <form>
         <button
-          className='currentLocal'>
+          className='currentLocal'
+          onClick={grabLocationData}>
           <img className='locationIcon' src={locationIcon}/>
           Current Location
         </button>
