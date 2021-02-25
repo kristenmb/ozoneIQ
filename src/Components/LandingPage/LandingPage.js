@@ -18,8 +18,8 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
 
   return (
     <section className='landingPage'>
-      <div className='sunWrapper'>
-        <img className='sun' src={logo} />
+      <div className='logoWrapper'>
+        <img className='logo' src={logo} />
       </div>
       {/* <h1 className='title'>OzoneIQ</h1> */}
       <form>

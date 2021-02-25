@@ -15,7 +15,7 @@
     background-color: #97E7F7;
   }
 
-  .sunWrapper {
+  .logoWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,7 @@
     margin-top: 3em;
   }
 
-  .sun {
+  .logo {
     width: 15em;
   }
 
