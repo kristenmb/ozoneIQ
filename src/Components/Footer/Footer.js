@@ -12,7 +12,7 @@ function Footer() {
       <img className='footerIcon' src={home} alt='home button'/>
       <img className='footerIcon' src={locations} alt='saved locations'/>
       <img className='footerIcon' src={questionmark} alt='more info'/>
-      <p>...</p>
+      <p className='footerIcon'>...</p>
     </footer>
   )
 }

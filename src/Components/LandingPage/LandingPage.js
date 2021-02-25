@@ -3,7 +3,7 @@ import './LandingPage.css'
 import searchIcon from '../../assets/search.png'
 import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
-import logo from '../../assets/logo4.png'
+import logo from '../../assets/ozoneiq-color.png'
 
 function LandingPage() {
   const [currentLocation, setCurrentLocation] = useState('')

@@ -10,12 +10,21 @@ footer {
 }
 
 .footerIcon {
-  height: 2.4em;
-  width: 2.4em;
+  height: 3em;
+  width: 3em;
+  padding: 2%;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #a2f7ff, #88d0de);
+  box-shadow: 7px 7px 14px #83c9d7,
+  -7px -7px 14px #abffff;
 }
 
-p {
+/* p {
   font-size: 3em;
   justify-self: flex-start;
   margin-bottom: 1.5em;
-}
+  border-radius: 35px;
+  background: linear-gradient(145deg, #a2f7ff, #88d0de);
+  box-shadow: 12px 12px 28px #7cbdcb,
+  -12px -12px 28px #b2ffff;
+} */
