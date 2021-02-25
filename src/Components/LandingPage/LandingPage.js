@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './LandingPage.css'
+import './LandingPage.scss'
 import searchIcon from '../../assets/search.png'
 import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
