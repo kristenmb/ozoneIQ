@@ -28,11 +28,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-sw": "http-server ./build"
+    "start-sw": "http-server ./build",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
-  
       "react-app/jest"
     ]
   },
@@ -47,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^6.5.0"
   }
 }
