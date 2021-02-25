@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './LandingPage.css'
 import searchIcon from '../../assets/search.png'
 import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
+import {fetchUserLocation} from '../../utilities'
 
 function LandingPage() {
   const [currentLocation, setCurrentLocation] = useState('')
   const [chooseLocation, setChooseLocation] = useState('')
+
+  useEffect(() => {
+    fetchUserLocation()
+      .then(response => console.log(response))
+  }, [])
 
   return (
     <section className='landingPage'>
@@ -15,13 +21,13 @@ function LandingPage() {
         <img className='sun' src={sun} />
       </div>
       <form>
-        <button 
+        <button
           className='currentLocal'>
           <img className='locationIcon' src={locationIcon}/>
           Current Location
         </button>
         <section className='chooseLocal'>
-          <input 
+          <input
             type='text'
             placeholder='City, State'
             name='chooseLocation'
@@ -32,7 +38,7 @@ function LandingPage() {
         </section>
       </form>
     </section>
-    
+
   )
 }
 
