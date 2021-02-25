@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Expand from 'react-expand-animated'
-
+import { aqiInfoText } from '../../aqiData'
 import './AqiInfo.css'
 
 const AqiInfo = () => {
@@ -20,7 +20,13 @@ const AqiInfo = () => {
     ))
    
   }
-  
+
+  const aqiInfoDisplay = aqiInfoText.map(point => {
+    return (
+      <p className="aqi-info-text">{point}</p>
+    )
+  })
+
   return (
     <section className="aqi-section">
       <h2>What's your AQI IQ?</h2>
@@ -80,6 +86,9 @@ const AqiInfo = () => {
               <p>Health warning of emergency conditions: everyone is more likely to be affected.</p>
           </Expand>
         </button>
+      </article>
+      <article>
+        {aqiInfoDisplay}
       </article>
     </section>
   )
