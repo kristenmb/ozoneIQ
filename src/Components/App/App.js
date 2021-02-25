@@ -32,6 +32,7 @@ function App() {
     <div className="App">
       {!dashboardView && < LandingPage grabUserLocationData={grabUserLocationData} grabInputLocationData={grabInputLocationData}/>}
       {dashboardView && < Dashboard location={location} />}
+      <Footer />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import './LandingPage.css'
 import searchIcon from '../../assets/search.png'
 import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
+import logo from '../../assets/logo4.png'
 
 function LandingPage({grabUserLocationData, grabInputLocationData}) {
   const [inputLocation, setInputLocation] = useState('')
@@ -17,10 +18,10 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
 
   return (
     <section className='landingPage'>
-      <h1 className='title'>OzoneIQ</h1>
       <div className='sunWrapper'>
-        <img className='sun' src={sun} />
+        <img className='sun' src={logo} />
       </div>
+      {/* <h1 className='title'>OzoneIQ</h1> */}
       <form>
         <button
           className='currentLocal'

@@ -1,9 +1,8 @@
 @media screen and (max-width: 500px) {
   
   .title {
-    font-size: 5em;
+    font-size: 2em;
     margin: 0;
-    justify-content: start;
   }
   
   .landingPage {
@@ -11,15 +10,18 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
     width: 100vw;
+    background-color: #97E7F7;
   }
 
   .sunWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 30%;
+    margin-top: 3em;
   }
 
   .sun {
@@ -41,6 +43,7 @@
     margin: 2em; 
     border-radius: 2em;
     height: 2em;
+    background-color: #FDEF8C;
   }
 
   .locationIcon {
@@ -54,6 +57,7 @@
     width: 60%;
     border: 1px solid black;
     border-radius: 2em;
+     background-color: #FBF7D8;
   }
 
   input {
@@ -62,11 +66,17 @@
     border: none;
     height: 2em;
     text-align: center;
+    background-color: #FBF7D8;
+    
+   
   }
 
   .searchButton {
     align-self: center;
     height: 1em;
     width: 1em;
+    background-color: #FBF7D8;
+    margin: .4%;
+    margin-right: 2%;
   }
 }
