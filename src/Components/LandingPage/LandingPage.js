@@ -4,8 +4,12 @@ import searchIcon from '../../assets/search.png'
 import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
 
-function LandingPage({grabLocationData}) {
-  const [chooseLocation, setChooseLocation] = useState('')
+function LandingPage({grabUserLocationData, grabInputLocationData}) {
+  const [input, setInput] = useState('')
+
+  const parseInput = () => {
+
+  }
 
   return (
     <section className='landingPage'>
@@ -16,7 +20,7 @@ function LandingPage({grabLocationData}) {
       <form>
         <button
           className='currentLocal'
-          onClick={grabLocationData}>
+          onClick={grabUserLocationData}>
           <img className='locationIcon' src={locationIcon}/>
           Current Location
         </button>
@@ -25,8 +29,8 @@ function LandingPage({grabLocationData}) {
             type='text'
             placeholder='City, State'
             name='chooseLocation'
-            value={chooseLocation}
-            onChange={event => setChooseLocation(event.target.value)}
+            value={input}
+            onChange={event => setInput(event.target.value)}
           />
           <img className='searchButton' src={searchIcon} />
         </section>
