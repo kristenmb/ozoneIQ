@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './LandingPage.scss'
 import searchIcon from '../../assets/search.png'
-import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
 import logo from '../../assets/logo4.png'
+import { Link } from 'react-router-dom'
 
 function LandingPage({grabUserLocationData, grabInputLocationData}) {
   const [inputLocation, setInputLocation] = useState('')
@@ -21,14 +21,15 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
       <div className='sunWrapper'>
         <img className='sun' src={logo} />
       </div>
-      {/* <h1 className='title'>OzoneIQ</h1> */}
       <form>
-        <button
-          className='currentLocal'
-          onClick={grabUserLocationData}>
-          <img className='locationIcon' src={locationIcon}/>
-          Current Location
-        </button>
+        <Link to='/dashboard/current-location'>
+          <button
+            className='currentLocal'
+            onClick={grabUserLocationData}>
+            <img className='locationIcon' src={locationIcon}/>
+            Current Location
+          </button>
+        </Link>
         <section className='chooseLocal'>
           <input
             type='text'
@@ -37,13 +38,14 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
             value={inputLocation}
             onChange={event => setInputLocation(event.target.value)}
           />
-          <img className='searchButton'
-           src={searchIcon}
-           onClick={event => parseInput(inputLocation, event)}/>
+          <Link to='/dashboard/chosen-location'>
+            <img className='searchButton'
+            src={searchIcon}
+            onClick={event => parseInput(inputLocation, event)}/>
+          </Link>
         </section>
       </form>
     </section>
-
   )
 }
 
