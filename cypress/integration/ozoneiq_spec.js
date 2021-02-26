@@ -130,14 +130,46 @@ describe('OzoneIQ Dashboard Page - Chosen Location', () => {
   })
 })
 
-describe('OzoneIQ Dashboard Page - Current Location - Error Handling', () => {
+describe('OzoneIQ Dashboard Page - Chosen Location - Error Handling 404 status', () => {
   before(() => {
       cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
-        statusCode: 500
+        statusCode: 404
           })
     })
 
+  it.skip ('Should display user friend error handling about how to find a location included in api data', () => {
+
+  })
+})
+
+describe('OzoneIQ AQI Info Page', () => {
+  
+  it.skip ('Should be able to navigate to the AQI Info page', () => {
+    cy.get('footer').find('.aqi-nav-btn').click()
+    cy.get('.aqi-section').should('be.visible')
   })
 
+  it.skip ('Should display the AQI ratings with descriptions of the rating', () => {
+  //need to update classNames in aqi section
+    cy.get('//.aqi-ratings button').should('eq', 6)
+    cy.get('.aqi-ratings .isOpen1').should('contain', '0-50')
+  })
+
+  it.skip ('Should display the details of what the AQI is', () => {
+    
+  })
+})
+
+describe('OzoneIQ Resources Page', () => {
+  
+  it.skip ('Should be able to navigate to the Resources page', () => {
+   
+  })
+
+  it.skip ('Should display the resources information', () => {
+
+  })
+
+})
 
   
