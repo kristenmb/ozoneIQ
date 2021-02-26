@@ -77,4 +77,25 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
   })
 })
 
+describe('OzoneIQ Dashboard Page - Chosen Location', () => {
+  before(() => {
+    cy.visit('http://localhost:3000')
+      cy.fixture('aqiData.json')
+      .then((data) => {
+        cy.intercept('GET','http://api.airvisual.com/v2/city?city=lafayette&state=louisiana&country=usa&key=26e9573a-6960-4337-b548-ec068499ad9f', {
+          statusCode: 201,
+          body: data.chosenLocation
+        })
+      })
+})
+
+  it ('Should be able to input a Chosen Location and navigate to dashboard with air quality information pertaining to that location', () => {
+      cy.get('form input').type('lafayette, louisiana, usa')
+      cy.get('.chooseLocal .searchButton').click()
+      cy.get('.main-dashboard').should('be.visible')
+  })
+
+  
+})
+
   
