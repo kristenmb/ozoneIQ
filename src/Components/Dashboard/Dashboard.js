@@ -9,8 +9,7 @@ import emptyFavIcon from '../../assets/star-empty.png';
 import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} from '../../utilities.js';
 
 
-function Dashboard({location, dashboardView}) {
-  console.log(location)
+function Dashboard({location}) {
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
 const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
@@ -58,7 +57,6 @@ const windMph = convertMsToMph(location.current.weather.ws);
 
   return (
     <main>
-    {dashboardView &&
       <section className={`main-dashboard ${airQualityMessages(locationAqi)[0]}`}>
         <div className='location-name-temp-container'>
           <div className='location-and-fav-container'>
@@ -96,7 +94,6 @@ const windMph = convertMsToMph(location.current.weather.ws);
           </div>
         </div>
       </section>
-    }
     </main>
   )
 }
