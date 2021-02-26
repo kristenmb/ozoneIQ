@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Route, Switch, match } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import Dashboard from '../Dashboard/Dashboard.js';
 import LandingPage from '../LandingPage/LandingPage'
@@ -34,6 +34,10 @@ function App() {
       .then(response => {
         setLocation(response.data);
         setDashboardView(true);
+      })
+      .catch(error => {
+        console.log('Location Request Failed', error)
+        setErrorStatus('Sorry, We are having issues loading this page..Please try again later!')
       })
   }
 
