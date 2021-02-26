@@ -35,12 +35,33 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
     cy.get('.temp-container').find('.temperature').should('contain', '30 F')
   })
 
+  it ('Should display the current AQI', () => {
+    cy.get('.aqi-container').find('.aqi-level').should('contain', 'GOOD')
+    cy.get('.aqi-container').find('.aqi-number').should('contain', '27')
+    cy.get('.aqi-container').find('.aqi-description').should('contain', 'satisfactory')
+
+  })
+
+  it ('Should display the current main pollutant, humidity, pressure, and wind speed', () => {
+    cy.get('.additional-info-container').get('.additional-info').find('.pollutant-icon').should('have.attr', 'alt', 'Outline of smoke stack')
+    cy.get('.additional-info-container').get('.additional-info').find('.pollutant').should('contain', 'o3')
+  
+    cy.get('.additional-info-container').get('.additional-info').find('.humidity-icon').should('have.attr', 'alt', 'Outline of rain drop')
+    cy.get('.additional-info-container').get('.additional-info').find('.humidity').should('contain', 69)
+
+    cy.get('.additional-info-container').get('.additional-info').find('.pressure-icon').should('have.attr', 'alt', 'Outline of a pressure guage')
+    cy.get('.additional-info-container').get('.additional-info').find('.pressure').should('contain', '1020hPa')
+
+    cy.get('.additional-info-container').get('.additional-info').find('.wind-icon').should('have.attr', 'alt', 'Outline of wind blowing')
+    cy.get('.additional-info-container').get('.additional-info').find('.wind').should('contain', '7 mph N')
+  })
+
   it ('Should have a footer with four possible icons to click', () => {
       cy
         .get('footer')
         .children('.footerIcon').should('have.length', 3)
         .get('footer')
-        .children('p').contains('...')
+        .children('p').should('contain', '...')
   })
   
   it.skip ('Should be able to click the saved locations icon and be taken to the saved locations page', () => {
