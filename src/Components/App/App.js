@@ -15,6 +15,7 @@ import {fetchUserLocation, fetchInputLocation} from '../../utilities'
 function App() {
   const [location, setLocation] = useState({});
   const [dashboardView, setDashboardView] = useState(false);
+  const [errorStatus, setErrorStatus] = useState('')
 
   const grabUserLocationData = () => {
     fetchUserLocation()
@@ -22,8 +23,11 @@ function App() {
         setLocation(response.data);
         setDashboardView(true);
     })
+      .catch(error => {
+        console.log('Location Request Failed', error)
+        setErrorStatus('Sorry, We are having issues loading this page..Please try again later!')
+      })
   }
-
    
   const grabInputLocationData = (city, state, country,) => {
     fetchInputLocation(city, state, country)
@@ -66,9 +70,11 @@ function App() {
           component={Contact}
         />
       </Switch>
+      {errorStatus && <Error errorStatus={errorStatus}/>}
       <Footer />
     </div>
   );
 }
+
 
 export default App;
