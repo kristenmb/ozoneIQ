@@ -128,7 +128,16 @@ describe('OzoneIQ Dashboard Page - Chosen Location', () => {
         .get('footer')
         .children('p').should('contain', '...')
   })
-
 })
+
+describe('OzoneIQ Dashboard Page - Current Location - Error Handling', () => {
+  before(() => {
+      cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
+        statusCode: 500
+          })
+    })
+
+  })
+
 
   
