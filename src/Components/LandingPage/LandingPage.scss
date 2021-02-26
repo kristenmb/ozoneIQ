@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 85vh;
+    height: 90vh;
     width: 100vw;
     background-color: #97E7F7;
   }
@@ -39,7 +39,7 @@
 
   .currentLocal {
     margin-top: 4em;
-    width: 60%;
+    width: 40vw;
     margin: 2em;
     border-radius: 2em;
     height: 2em;
@@ -78,5 +78,6 @@
     background-color: #f5f3e3;
     margin: .4%;
     margin-right: 2%;
+    margin-top: .7vh;
   }
 }

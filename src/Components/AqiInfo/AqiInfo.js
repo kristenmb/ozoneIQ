@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Expand from 'react-expand-animated'
 import { aqiInfoText } from '../../aqiData'
-import './AqiInfo.css'
+import './AqiInfo.scss'
 
 const AqiInfo = () => {
   const [ {isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6}, toggleIsOpen ] = useState({
