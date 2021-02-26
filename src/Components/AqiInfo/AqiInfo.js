@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 import Expand from 'react-expand-animated'
 import { aqiInfoText } from '../../aqiData'
-import './AqiInfo.css'
+import './AqiInfo.scss'
 
 const AqiInfo = () => {
   const [ {isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6}, toggleIsOpen ] = useState({
-    isOpen1: false, 
+    isOpen1: false,
     isOpen2: false,
     isOpen3: false,
     isOpen4: false,
     isOpen5: false,
     isOpen6: false
   })
-  
+
   const toggle = (event) => {
     const { name } = event.target
-    
+
       toggleIsOpen(prevState => ({ ...prevState, [name]: !prevState[name] }
     ))
-   
+
   }
 
   const aqiInfoDisplay = aqiInfoText.map(point => {
@@ -87,7 +87,7 @@ const AqiInfo = () => {
           </Expand>
         </button>
       </article>
-      <article>
+      <article className='info'>
         {aqiInfoDisplay}
       </article>
     </section>

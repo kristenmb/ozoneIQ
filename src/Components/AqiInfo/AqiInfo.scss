@@ -6,17 +6,28 @@
   background-color: #97E7F7;
 }
 
+.info {
+  box-shadow: inset 1px 3px 13px #1c2c2f91, inset -1px -6px 13px #ffffff59;
+  width: 95vw;
+  margin-top: 2vh;
+  border-radius: 5px;
+  margin-bottom: 15vh;
+  padding: 1vh;
+}
+
 .aqi-color-blocks {
-  border: 2pt solid black;
-  border-radius: 3%;
-  width: 75vw
+  width: 75vw;
+  border-radius: 10px;
+  border: none;
+  box-shadow: inset -5px -5px 10px #40444082, inset 5px 5px 10px #ffffff5e;
+  padding: 1vh;
 }
 
 .green {
   background-color: #80FF72;
 }
 
-.yello {
+.yellow {
   background-color: #FFF07C;
 }
 

@@ -1,16 +1,16 @@
 @media screen and (max-width: 500px) {
-  
+
   .title {
     font-size: 2em;
     margin: 0;
   }
-  
+
   .landingPage {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 85vh;
+    height: 90vh;
     width: 100vw;
     background-color: #97E7F7;
   }
@@ -39,11 +39,13 @@
 
   .currentLocal {
     margin-top: 4em;
-    width: 60%;
-    margin: 2em; 
+    width: 40vw;
+    margin: 2em;
     border-radius: 2em;
     height: 2em;
-    background-color: #FDEF8C;
+    background: linear-gradient(145deg, #94e5ec, #88d0de);
+    box-shadow: 7px 7px 14px #5ea1af, -7px -7px 14px #abf7f7;
+    border: none;
   }
 
   .locationIcon {
@@ -55,9 +57,8 @@
     display: flex;
     flex-direction: row;
     width: 60%;
-    border: 1px solid black;
     border-radius: 2em;
-     background-color: #FBF7D8;
+    background-color: #FBF7D8;
   }
 
   input {
@@ -66,17 +67,17 @@
     border: none;
     height: 2em;
     text-align: center;
-    background-color: #FBF7D8;
-    
-   
+    background-color: #f5f3e3;
+    box-shadow: inset 1px 2px 4px #0202024a, inset -1px -3px 1px #eaeae3;
   }
 
   .searchButton {
     align-self: center;
     height: 1em;
     width: 1em;
-    background-color: #FBF7D8;
+    background-color: #f5f3e3;
     margin: .4%;
     margin-right: 2%;
+    margin-top: .7vh;
   }
 }
