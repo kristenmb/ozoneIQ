@@ -42,7 +42,7 @@
     width: 40vw;
     margin: 2em;
     border-radius: 2em;
-    height: 2em;
+    height: 2.5em;
     background: linear-gradient(145deg, #94e5ec, #88d0de);
     box-shadow: 7px 7px 14px #5ea1af, -7px -7px 14px #abf7f7;
     border: none;
@@ -65,18 +65,21 @@
     width: 89%;
     border-radius: 2em;
     border: none;
-    height: 2em;
+    height: 2.3em;
     text-align: center;
     background-color: #f5f3e3;
     box-shadow: inset 1px 2px 4px #0202024a, inset -1px -3px 1px #eaeae3;
   }
 
   .searchButton {
+    display: flex;
+    
     align-self: center;
+    justify-self: center;
     height: 1em;
     width: 1em;
     background-color: #f5f3e3;
-    margin: .4%;
+    margin: 1%;
     margin-right: 2%;
     margin-top: .7vh;
   }

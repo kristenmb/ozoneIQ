@@ -10,6 +10,7 @@ import Resources from '../Resources/Resources'
 import SavedLocations from '../SavedLocations/SavedLocations'
 import Footer from '../Footer/Footer'
 import {fetchUserLocation, fetchInputLocation} from '../../utilities'
+// import '../../service-worker.js'
 
 
 function App() {
@@ -23,7 +24,6 @@ function App() {
         setDashboardView(true);
     })
   }
-
    
   const grabInputLocationData = (city, state, country,) => {
     fetchInputLocation(city, state, country)
