@@ -32,5 +32,39 @@
         }
       }
     }
+  },
+    "chosenLocation": 
+  {
+    "status": "success",
+    "data": {
+      "city": "Lafayette",
+      "state": "Louisiana",
+      "country": "USA",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+        -92.042801,
+        30.2258
+        ]
+      },
+      "current": {
+        "weather": {
+          "ts": "2021-02-25T22:00:00.000Z",
+          "tp": 23,
+          "pr": 1019,
+          "hu": 64,
+          "ws": 4.12,
+          "wd": 170,
+          "ic": "04d"
+        },
+        "pollution": {
+          "ts": "2021-02-25T21:00:00.000Z",
+          "aqius": 4,
+          "mainus": "p2",
+          "aqicn": 1,
+          "maincn": "p2"
+        }
+      }
+    }
   }
 }
