@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Switch, match } from 'react-router-dom'
 import Dashboard from '../Dashboard/Dashboard.js';
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage'
@@ -11,17 +11,17 @@ function App() {
   const [location, setLocation] = useState({});
   const [dashboardView, setDashboardView] = useState(false);
 
-  const grabUserLocationData = (event) => {
-    event.preventDefault();
+  const grabUserLocationData = () => {
     fetchUserLocation()
       .then(response => {
         setLocation(response.data);
         setDashboardView(true);
       })
+ 
   }
 
+   
   const grabInputLocationData = (city, state, country, event) => {
-    event.preventDefault();
     fetchInputLocation(city, state, country)
       .then(response => {
         setLocation(response.data);
@@ -31,16 +31,22 @@ function App() {
 
   return (
     <div className="App">
-      < Route 
-        exact
-        path='/'
-        render={() => 
-          <LandingPage 
-            grabUserLocationData={grabUserLocationData}
-            grabInputLocationData={grabInputLocationData}/>}
-      />
-      {/* {!dashboardView && < LandingPage grabUserLocationData={grabUserLocationData} grabInputLocationData={grabInputLocationData}/>} */}
-      {dashboardView && < Dashboard location={location} />}
+      <Switch>
+        < Route 
+          exact
+          path='/'
+          render={() => 
+            <LandingPage 
+              grabUserLocationData={grabUserLocationData}
+              grabInputLocationData={grabInputLocationData}/>}
+        />
+        < Route 
+          path='/dashboard'
+          render={() => {
+           return dashboardView && 
+            (< Dashboard dashboardView={dashboardView} location={location} />)}}
+        />
+      </Switch>
       <Footer />
     </div>
   );
