@@ -10,6 +10,7 @@ import Resources from '../Resources/Resources'
 import SavedLocations from '../SavedLocations/SavedLocations'
 import Footer from '../Footer/Footer'
 import {fetchUserLocation, fetchInputLocation} from '../../utilities'
+import SavedLocalCards from '../SavedLocalCards/SavedLocalCards';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         < Route
           exact
           path='/saved-locations'
+          // render={() => <SavedLocations />}
           component={SavedLocations}
         />
         < Route
