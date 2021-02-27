@@ -90,6 +90,7 @@ const AqiInfo = () => {
       <article className='info'>
         {aqiInfoDisplay}
       </article>
+      <button className="more-btn">More --></button>
     </section>
   )
 }
