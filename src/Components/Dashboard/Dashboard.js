@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../Footer/Footer.js';
+import { Link } from 'react-router-dom';
 import './Dashboard.scss';
 import locationIcon from '../../assets/location.svg';
 import pollutionIcon from '../../assets/pollution.png';
@@ -67,6 +67,7 @@ const windMph = convertMsToMph(location.current.weather.ws);
                 <img className='location-icon icon' src={locationIcon} alt='Map pin'/>
                 <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
               </div>
+              <Link to='/' className='choose-diff-location'>Choose a different location</Link>
             </div>
             <div className='temp-container'>
               <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>

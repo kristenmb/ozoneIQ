@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Expand from 'react-expand-animated'
-import Footer from '../Footer/Footer.js'
 import { aqiInfoText } from '../../aqiData'
 import './AqiInfo.scss'
 
@@ -93,7 +92,6 @@ const AqiInfo = () => {
           {aqiInfoDisplay}
         </article>
       </section>
-      < Footer />
     </>
   )
 }
