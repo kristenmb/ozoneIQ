@@ -88,7 +88,7 @@ const windMph = convertMsToMph(location.current.weather.ws);
         </div>
         <div className='additional-info'>
           <img className='pressure-icon icon' src={pressureIcon} alt='Outline of a pressure guage'/>
-          <p className='pressure'>{`${location.current.weather.pr}hPa`}</p>
+          <p className='pressure'>{`${location.current.weather.pr} hPa`}</p>
         </div>
         <div className='additional-info'>
           <img className='wind-icon icon' src={windIcon} alt='Outline of wind blowing'/>
