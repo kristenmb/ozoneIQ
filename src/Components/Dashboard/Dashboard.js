@@ -11,12 +11,16 @@ import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} fro
 
 
 function Dashboard({location}) {
+const [isStarred, setIsStarred] = useState(false)
+
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
 const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
 const windMph = convertMsToMph(location.current.weather.ws);
 //CREATE METHOD THAT HANDLES FAV ICON CLICK (SAVE TO FAV LOCATIONS/LOCAL STORAGE)
 //CREATE METHOD THAT HANDLES AQI NUMBER CLICK TO BRING YOU TO INFORMATION PAGE
+
+
 
   const airQualityMessages = (aqi) => {
     if (aqi <= 50) {
@@ -55,6 +59,12 @@ const windMph = convertMsToMph(location.current.weather.ws);
       ]
     }
   }
+  //create state for isStarred or isFavorited
+  //create a method onclick that toggles that state back and forth
+  // when the onclick happens the svg will be replaces with a filled star
+  // It will also be saved to local storage
+  // once it is showing up in local storage, figure out a way to have it displayed in savedlocations component
+
 
   return (
     <main>
