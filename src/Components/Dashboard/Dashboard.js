@@ -11,10 +11,10 @@ import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} fro
 
 
 function Dashboard({location}) {
-const locationAqi = location.current.pollution.aqius;
-const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
-const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
-const windMph = convertMsToMph(location.current.weather.ws);
+  const locationAqi = location.current.pollution.aqius;
+  const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
+  const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
+  const windMph = convertMsToMph(location.current.weather.ws);
 //CREATE METHOD THAT HANDLES FAV ICON CLICK (SAVE TO FAV LOCATIONS/LOCAL STORAGE)
 //CREATE METHOD THAT HANDLES AQI NUMBER CLICK TO BRING YOU TO INFORMATION PAGE
 

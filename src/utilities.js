@@ -5,6 +5,12 @@ export const fetchUserLocation = () => {
 
 export const fetchInputLocation = (city, state, country) => {
   return fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=26e9573a-6960-4337-b548-ec068499ad9f`)
+    .then(response => {
+      if (response.status >= 400) {
+        throw new Error ("We can't grab info for this location. Choose 'Current Location' OR ensure you are using CITY, STATE, COUNTRY format. (e.g. 'Denver, Colorado, USA')")
+      }
+      return response;
+    })
     .then(response => response.json())
 }
 
