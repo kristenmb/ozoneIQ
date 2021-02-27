@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Expand from 'react-expand-animated'
 import { aqiInfoText } from '../../aqiData'
 import './AqiInfo.scss'

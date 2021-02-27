@@ -57,6 +57,11 @@ function App() {
         />
         < Route
           exact
+          path='/resources2'
+          component={Resources}
+        />
+        < Route
+          exact
           path='/saved-locations'
           component={SavedLocations}
         />
