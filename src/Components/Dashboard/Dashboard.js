@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Footer/Footer.js';
 import './Dashboard.scss';
 import locationIcon from '../../assets/location.svg';
 import pollutionIcon from '../../assets/pollution.png';
@@ -57,45 +58,47 @@ const windMph = convertMsToMph(location.current.weather.ws);
   }
 
   return (
-    <main>
-      <section className='main-dashboard'>
-        <div className='location-name-temp-container'>
-          <div className='location-and-fav-container'>
-            <div className='location-container'>
-              <img className='location-icon icon' src={locationIcon} alt='Map pin'/>
-              <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
+    <>
+      <main>
+        <section className='main-dashboard'>
+          <div className='location-name-temp-container'>
+            <div className='location-and-fav-container'>
+              <div className='location-container'>
+                <img className='location-icon icon' src={locationIcon} alt='Map pin'/>
+                <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
+              </div>
+            </div>
+            <div className='temp-container'>
+              <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>
+              <p className='temperature'>{`${tempInFahrenheit} F`}</p>
             </div>
           </div>
-          <div className='temp-container'>
-            <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>
-            <p className='temperature'>{`${tempInFahrenheit} F`}</p>
+          <div className='aqi-container'>
+            <h1 className='aqi-level'>{airQualityMessages(locationAqi)[0]}</h1>
+            <div className={`aqi-number ${airQualityMessages(locationAqi)[0]}`}>{locationAqi}</div>
+            <p className='aqi-description'>{airQualityMessages(locationAqi)[1]}</p>
           </div>
-        </div>
-        <div className='aqi-container'>
-          <h1 className='aqi-level'>{airQualityMessages(locationAqi)[0]}</h1>
-          <div className={`aqi-number ${airQualityMessages(locationAqi)[0]}`}>{locationAqi}</div>
-          <p className='aqi-description'>{airQualityMessages(locationAqi)[1]}</p>
-        </div>
-        <div className='additional-info-container'>
-          <div className='additional-info'>
-            <img className='pollutant-icon icon' src={pollutionIcon} alt='Outline of smoke stack'/>
-            <p className='pollutant'>{location.current.pollution.mainus}</p>
+          <div className='additional-info-container'>
+            <div className='additional-info'>
+              <img className='pollutant-icon icon' src={pollutionIcon} alt='Outline of smoke stack'/>
+              <p className='pollutant'>{location.current.pollution.mainus}</p>
+            </div>
+            <div className='additional-info'>
+              <img className='humidity-icon icon' src={humidityIcon} alt='Outline of rain drop'/>
+              <p className='humidity'>{`${location.current.weather.hu}`}</p>
+            </div>
+            <div className='additional-info'>
+              <img className='pressure-icon icon' src={pressureIcon} alt='Outline of a pressure guage'/>
+              <p className='pressure'>{`${location.current.weather.pr}hPa`}</p>
+            </div>
+            <div className='additional-info'>
+              <img className='wind-icon icon' src={windIcon} alt='Outline of wind blowing'/>
+              <p className='wind'>{`${windMph} mph ${windDirection}`}</p>
+            </div>
           </div>
-          <div className='additional-info'>
-            <img className='humidity-icon icon' src={humidityIcon} alt='Outline of rain drop'/>
-            <p className='humidity'>{`${location.current.weather.hu}`}</p>
-          </div>
-          <div className='additional-info'>
-            <img className='pressure-icon icon' src={pressureIcon} alt='Outline of a pressure guage'/>
-            <p className='pressure'>{`${location.current.weather.pr}hPa`}</p>
-          </div>
-          <div className='additional-info'>
-            <img className='wind-icon icon' src={windIcon} alt='Outline of wind blowing'/>
-            <p className='wind'>{`${windMph} mph ${windDirection}`}</p>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   )
 }
 

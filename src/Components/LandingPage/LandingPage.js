@@ -22,7 +22,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
         <img className='sun' src={logo} />
       </div>
       <form>
-        <Link to='/dashboard/current-location'>
+        <Link to='/dashboard'>
           <button
             className='currentLocal'
             onClick={grabUserLocationData}>
@@ -38,7 +38,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
             value={inputLocation}
             onChange={event => setInputLocation(event.target.value)}
           />
-          <Link to='/dashboard/chosen-location'>
+          <Link to='/dashboard'>
             <img className='searchButton'
             src={searchIcon}
             onClick={event => parseInput(inputLocation, event)}/>

@@ -24,7 +24,7 @@ function App() {
     })
   }
 
-   
+
   const grabInputLocationData = (city, state, country,) => {
     fetchInputLocation(city, state, country)
       .then(response => {
@@ -36,19 +36,20 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        < Route 
+        < Route
           exact
           path='/'
-          render={() => 
-            <LandingPage 
+          render={() =>
+            <LandingPage
               grabUserLocationData={grabUserLocationData}
               grabInputLocationData={grabInputLocationData}/>}
         />
-        < Route 
+        < Route
           path='/dashboard'
           render={() => {
-           return dashboardView && 
-            (< Dashboard dashboardView={dashboardView} location={location} />)}}
+           return dashboardView &&
+            ( < Dashboard dashboardView={dashboardView} location={location} />
+            )}}
         />
         < Route
           exact
@@ -66,7 +67,7 @@ function App() {
           component={Contact}
         />
       </Switch>
-      <Footer />
+      {dashboardView && < Footer />}
     </div>
   );
 }
