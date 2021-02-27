@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './Dashboard.scss';
 import locationIcon from '../../assets/location.svg';
 import pollutionIcon from '../../assets/pollution.png';
@@ -6,20 +6,53 @@ import humidityIcon from '../../assets/humidity.png';
 import pressureIcon from '../../assets/pressure.png';
 import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
+import filledFavIcon from '../../assets/Five_Pointed_Star_Solid.svg'
 import cloudIcon from '../../assets/cloud-computing.png';
 import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} from '../../utilities.js';
+import useLocalStorageState from 'use-local-storage-state'
 
 
 function Dashboard({location}) {
+const [savedLocations, setSavedLocations] = useLocalStorageState(`${location.city}`, [])
 const [isStarred, setIsStarred] = useState(false)
+// const savedItems = JSON.parse(localStorage.getItem('locations'))
+// const [locations, setLocations] = useState([])
+
 
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
 const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
 const windMph = convertMsToMph(location.current.weather.ws);
-//CREATE METHOD THAT HANDLES FAV ICON CLICK (SAVE TO FAV LOCATIONS/LOCAL STORAGE)
-//CREATE METHOD THAT HANDLES AQI NUMBER CLICK TO BRING YOU TO INFORMATION PAGE
 
+
+  const toggleStar = () => {
+    setIsStarred(isStarred => !isStarred)
+    if(!savedLocations.includes(location)) {
+      setSavedLocations([...savedLocations, location])
+    }
+    if (isStarred) {
+     removeLocation()
+  }
+  } 
+
+  const removeLocation = () => {
+    localStorage.removeItem(`${location.city}`)
+  }
+  
+
+  // useEffect(() => {
+
+  // },[])
+
+  // useEffect(() => {
+  //   if ( savedItems) {
+  //     setLocations(savedItems)
+  //   }
+  // }, [])
+
+  // useEffect(() => {
+  //   localStorage.setItem('locations', JSON.stringify(locations))
+  // },[locations])
 
 
   const airQualityMessages = (aqi) => {
@@ -59,8 +92,8 @@ const windMph = convertMsToMph(location.current.weather.ws);
       ]
     }
   }
-  //create state for isStarred or isFavorited
-  //create a method onclick that toggles that state back and forth
+  //create state for isStarred or isFavorited - done
+  //create a method onclick that toggles that state back and forth - done
   // when the onclick happens the svg will be replaces with a filled star
   // It will also be saved to local storage
   // once it is showing up in local storage, figure out a way to have it displayed in savedlocations component
@@ -72,7 +105,11 @@ const windMph = convertMsToMph(location.current.weather.ws);
         <div className='location-name-temp-container'>
           <div className='location-and-fav-container'>
             <div className='location-container'>
-              <img className='location-icon icon' src={emptyFavIcon} alt='unfilled star'/>
+              <img 
+                className='location-icon icon' 
+                onClick={toggleStar} 
+                src={!isStarred ? emptyFavIcon : filledFavIcon} 
+                alt='unfilled star'/>
               <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
             </div>
           </div>
