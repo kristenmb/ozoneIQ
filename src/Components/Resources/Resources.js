@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { staySafeText, howToHelpText } from '../../aqiData'
+import leftArrow from '../../assets/left-arrow.png'
 import './Resources.scss'
 
 const Resources = () => {
@@ -29,7 +30,9 @@ const Resources = () => {
         {helpHowTos}
       </ul>
       <Link to='/resources'>
-        <button className='back-btn'>Back</button>
+        <button className='back-btn'>
+          <img src={leftArrow} alt='Thin arrow pointing left'/>
+          Back</button>
       </Link>
     </section>
   )

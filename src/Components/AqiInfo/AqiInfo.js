@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Expand from 'react-expand-animated'
 import { aqiInfoText } from '../../aqiData'
+import rightArrow from '../../assets/right-arrow.png'
 import './AqiInfo.scss'
 
 const AqiInfo = () => {
@@ -92,7 +93,9 @@ const AqiInfo = () => {
         {aqiInfoDisplay}
       </article>
       <Link to='/resources2'>
-        <button className='more-btn'>More --></button>
+        <button className='more-btn'>More 
+          <img src={rightArrow} alt='Thin arrow pointing right'/>
+        </button>
       </Link>
     </section>
   )
