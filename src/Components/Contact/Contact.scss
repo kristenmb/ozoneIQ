@@ -1,0 +1,42 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #97E7F7;
+  height: auto;
+}
+
+.contact-article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  margin: .4rem;
+  
+    .prof-pic {
+    width: 35vw;
+    height: auto;
+    border-radius: 20%;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.about-app {
+  box-shadow: inset 1px 3px 13px #1c2c2f91, inset -1px -6px 13px #ffffff59;
+  width: 90vw;
+  margin-top: 2vh;
+  border-radius: 5px;
+  margin-bottom: 15vh;
+  padding: 1vh;
+}
