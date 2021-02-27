@@ -62,7 +62,7 @@ const windMph = convertMsToMph(location.current.weather.ws);
         <div className='location-name-temp-container'>
           <div className='location-and-fav-container'>
             <div className='location-container'>
-              <img className='location-icon icon' src={locationIcon} alt='Map pin'/>
+              <img className='location-icon icon' src={emptyFavIcon} alt='unfilled star'/>
               <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
             </div>
           </div>
