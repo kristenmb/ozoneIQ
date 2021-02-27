@@ -11,7 +11,7 @@ import cloudIcon from '../../assets/cloud-computing.png';
 import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} from '../../utilities.js';
 
 
-function Dashboard({location}) {
+function Dashboard({location, backToLandingPage}) {
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
 const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
@@ -67,7 +67,7 @@ const windMph = convertMsToMph(location.current.weather.ws);
                 <img className='location-icon icon' src={locationIcon} alt='Map pin'/>
                 <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
               </div>
-              <Link to='/' className='choose-diff-location'>Choose a different location</Link>
+              <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
             </div>
             <div className='temp-container'>
               <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>

@@ -33,6 +33,10 @@ function App() {
       })
   }
 
+  const backToLandingPage = () => {
+    setDashboardView(false);
+  }
+
   return (
     <div className="App">
       <Switch>
@@ -48,7 +52,7 @@ function App() {
           path='/dashboard'
           render={() => {
            return dashboardView &&
-            ( < Dashboard dashboardView={dashboardView} location={location} />
+            ( < Dashboard dashboardView={dashboardView} location={location} backToLandingPage={backToLandingPage}/>
             )}}
         />
         < Route
