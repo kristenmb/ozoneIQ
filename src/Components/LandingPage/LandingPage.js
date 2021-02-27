@@ -33,7 +33,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
         <section className='chooseLocal'>
           <input
             type='text'
-            placeholder='City, State'
+            placeholder='Taos, New Mexico, USA'
             name='chooseLocation'
             value={inputLocation}
             onChange={event => setInputLocation(event.target.value)}
