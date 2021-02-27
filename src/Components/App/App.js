@@ -22,9 +22,11 @@ function App() {
       .then(response => {
         setLocation(response.data);
         setDashboardView(true);
-    })
+      })
+      .catch(error => {
+        setError(error);
+      })
   }
-
 
   const grabInputLocationData = (city, state, country) => {
     fetchInputLocation(city, state, country)
