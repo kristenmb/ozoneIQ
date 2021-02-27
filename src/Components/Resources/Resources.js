@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { staySafeText, howToHelpText } from '../../aqiData'
-import './Resources.css'
+import './Resources.scss'
 
 const Resources = () => {
   const safetyHowTos = staySafeText.map(tip => {
@@ -19,14 +20,17 @@ const Resources = () => {
     <section className="resources-section">
       <article>
       <h2>How can I stay safe?</h2>
-      <ul>
+      <ul className="text-area">
         {safetyHowTos}
       </ul>
       </article>
       <h2>How can I limit my carbon footprint?</h2>
-      <ul>
+      <ul className="text-area">
         {helpHowTos}
       </ul>
+      <Link to='/resources'>
+        <button className='back-btn'>Back</button>
+      </Link>
     </section>
   )
 }
