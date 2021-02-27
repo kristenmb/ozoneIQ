@@ -1,17 +1,24 @@
 export const fetchUserLocation = () => {
   return fetch('http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f')
+    .then(response => handleFetchErrors(response))
     .then(response => response.json())
 }
 
 export const fetchInputLocation = (city, state, country) => {
   return fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=26e9573a-6960-4337-b548-ec068499ad9f`)
-    .then(response => {
-      if (response.status >= 400) {
-        throw new Error ("We can't grab info for this location. Choose 'Current Location' OR ensure you are using CITY, STATE, COUNTRY format. (e.g. 'Denver, Colorado, USA')")
-      }
-      return response;
-    })
+    .then(response => handleFetchErrors(response))
     .then(response => response.json())
+}
+
+const handleFetchErrors = (response) => {
+  if (response.status >= 400 && response.status < 500) {
+    throw new Error ("We can't grab info for this location. Choose 'Current Location' OR ensure you are using CITY, STATE, COUNTRY format. (e.g. 'Denver, Colorado, USA')")
+  }
+  else if(response.status >= 500) {
+    console.log(response)
+    throw new Error ("Our server seems to be having difficulties at this time. Please try refreshing the page.")
+  }
+  return response;
 }
 
 export const convertToFahrenheit = (temp) => {
