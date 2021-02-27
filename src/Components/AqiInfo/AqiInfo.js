@@ -24,15 +24,15 @@ const AqiInfo = () => {
 
   const aqiInfoDisplay = aqiInfoText.map(point => {
     return (
-      <p className="aqi-info-text">{point}</p>
+      <p className='aqi-info-text'>{point}</p>
     )
   })
 
   return (
-    <section className="aqi-section">
+    <section className='aqi-section'>
       <h2>What's your AQI IQ?</h2>
       <article>
-        <button name="isOpen1" onClick={toggle} className="aqi-color-blocks green">
+        <button name='isOpen1' onClick={toggle} className='aqi-color-blocks green'>
           0 - 50 <br/> GOOD
           <Expand
             open={isOpen1}
@@ -41,7 +41,7 @@ const AqiInfo = () => {
             <p>Air quality is satisfactory, and air pollution poses little or no risk.</p>
           </Expand>
         </button>
-        <button name="isOpen2" onClick={toggle} className="aqi-color-blocks yellow">
+        <button name='isOpen2' onClick={toggle} className='aqi-color-blocks yellow'>
           51 - 100 <br/> MODERATE
             <Expand
             open={isOpen2}
@@ -50,7 +50,7 @@ const AqiInfo = () => {
             <p>Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.</p>
           </Expand>
         </button>
-        <button name="isOpen3" onClick={toggle} className="aqi-color-blocks orange">
+        <button name='isOpen3' onClick={toggle} className='aqi-color-blocks orange'>
           101 - 150<br/> UNHEALTHY FOR SENSITIVE GROUPS
             <Expand
             open={isOpen3}
@@ -59,7 +59,7 @@ const AqiInfo = () => {
             <p>Members of sensitive groups may experience health effects. The general public is less likely to be affected.</p>
           </Expand>
         </button>
-        <button name="isOpen4" onClick={toggle} className="aqi-color-blocks red">
+        <button name='isOpen4' onClick={toggle} className='aqi-color-blocks red'>
           151 - 200<br/>UNHEALTHY
             <Expand
             open={isOpen4}
@@ -68,7 +68,7 @@ const AqiInfo = () => {
             <p>Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.</p>
           </Expand>
         </button>
-        <button  name="isOpen5" onClick={toggle}  className="aqi-color-blocks maroon">
+        <button  name='isOpen5' onClick={toggle}  className='aqi-color-blocks maroon'>
           201 - 300 <br/> VERY UNHEALTHY
           <Expand
             open={isOpen5}
@@ -77,7 +77,7 @@ const AqiInfo = () => {
             <p>Health alert: The risk of health effects is increased for everyone.</p>
           </Expand>
         </button>
-        <button  name="isOpen6" onClick={toggle} className="aqi-color-blocks purple">
+        <button  name='isOpen6' onClick={toggle} className='aqi-color-blocks purple'>
           301+<br/>HAZARDOUS
           <Expand
           id={6}
@@ -91,7 +91,9 @@ const AqiInfo = () => {
       <article className='info'>
         {aqiInfoDisplay}
       </article>
-      <button className="more-btn">More --></button>
+      <Link to='/resources2'>
+        <button className='more-btn'>More --></button>
+      </Link>
     </section>
   )
 }
