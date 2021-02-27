@@ -1,0 +1,37 @@
+.resources-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #97E7F7;
+}
+
+h2 {
+  margin-bottom: .4rem;
+}
+
+.text-area {
+  box-shadow: inset 1px 3px 13px #1c2c2f91, inset -1px -6px 13px #ffffff59;
+  width: 90vw;
+  margin: 0;
+  border-radius: 5px;
+  padding: 1vh;
+  list-style: inside ;
+
+  li {
+    padding-bottom: .5rem;
+  }
+}
+
+.back-btn {
+  background-color: transparent;
+  margin-bottom: 15vh;
+  margin-top: 4em;
+  width: 40vw;
+  border-radius: 2em;
+  height: 2em;
+  background: linear-gradient(145deg, #94e5ec, #88d0de);
+  box-shadow: 7px 7px 14px #5ea1af,
+    -7px -7px 14px #abf7f7;
+  border: none;
+}
