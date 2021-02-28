@@ -1,24 +1,15 @@
-
-
 .savedCard {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-self: center;
-
-  // border: 1px black solid;
   width: 90%;
   margin: .5%;
   height: 12%;
   border-radius: 15px;
   background-color: #ce7e7c;
-  // background: linear-gradient(225deg, #f59694, #ce7e7c);
   box-shadow: inset 1px 3px 13px #1c2c2f91,
   inset -1px -6px 13px #ffffff59;
-  // box-shadow: -18px 18px 73px #9e615f,
-  // 18px -18px 73px #ffb7b5;
-
-
 
     .location {
       font-size: 1em;
