@@ -6,14 +6,6 @@ import './SavedLocations.scss'
 const SavedLocations = () => {
 const [savedLocations, setSavedLocations] = useState([])
 
-// const getLocalStorage = () => {
-//   const localItems = Object.keys(localStorage)
-//     localItems.forEach((item,  i) => {
-//       setSavedLocations(prevState => ([...prevState, JSON.parse(localStorage.getItem(item))])
-//     )
-//   })
-// }
-
 const getLocalStorage = () => {
   const localItems = Object.keys(localStorage)
     localItems.forEach((item,  i) => {

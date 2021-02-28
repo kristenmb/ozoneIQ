@@ -16,9 +16,6 @@ function Dashboard({location}) {
 const [savedLocations, setSavedLocations] = useLocalStorageState(`${location.city}`, [])
 // const [isStarred, setIsStarred] = useLocalStorageState('isStarred', false)
 const [isStarred, setIsStarred] = useState(false)
-// const savedItems = JSON.parse(localStorage.getItem('locations'))
-// const [locations, setLocations] = useState([])
-
 
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
@@ -28,15 +25,12 @@ const windMph = convertMsToMph(location.current.weather.ws);
 
   const toggleStar = () => {
     setIsStarred(isStarred => !isStarred)
-    if(!savedLocations.includes(location)) {
-      // setIsStarred(true)
-      setSavedLocations([...savedLocations, location])
-      console.log(savedLocations)
+      if(!savedLocations.includes(location)) {
+        setSavedLocations([...savedLocations, location])
+      }
+      if (isStarred) {
+        localStorage.removeItem(`${location.city}`)
     }
-    if (isStarred) {
-  
-      localStorage.removeItem(`${location.city}`)
-  }
   } 
 
   // const removeLocation = () => {
@@ -46,20 +40,6 @@ const windMph = convertMsToMph(location.current.weather.ws);
     
   //   // }
   // }
-  
-
-  // useEffect(() => {
-
-  // },[])
-
-  // useEffect(() => {
-  //   toggleStar()
-  // }, [savedLocations])
-
-  // useEffect(() => {
-  //   localStorage.setItem('locations', JSON.stringify(locations))
-  // },[locations])
-
 
   const airQualityMessages = (aqi) => {
     if (aqi <= 50) {
@@ -98,12 +78,6 @@ const windMph = convertMsToMph(location.current.weather.ws);
       ]
     }
   }
-  //create state for isStarred or isFavorited - done
-  //create a method onclick that toggles that state back and forth - done
-  // when the onclick happens the svg will be replaces with a filled star
-  // It will also be saved to local storage
-  // once it is showing up in local storage, figure out a way to have it displayed in savedlocations component
-
 
   return (
     <main>
