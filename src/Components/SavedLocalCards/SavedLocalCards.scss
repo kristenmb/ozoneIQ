@@ -1,0 +1,9 @@
+.savedCards {
+  display: flex;
+  flex-direction: column;
+
+    .city {
+      font-size: 1em;
+      color: black;
+    }
+}
