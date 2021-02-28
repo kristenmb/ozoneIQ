@@ -93,10 +93,11 @@ const AqiInfo = () => {
         {aqiInfoDisplay}
       </article>
       <Link to='/resources2'>
-        <button className='more-btn'>More 
+        <button className='more-btn'>More
           <img src={rightArrow} alt='Thin arrow pointing right'/>
         </button>
       </Link>
+      <Link to='/' className='link-to-landing-page'>Choose a Location</Link>
     </section>
   )
 }
