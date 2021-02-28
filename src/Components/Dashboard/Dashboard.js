@@ -14,6 +14,7 @@ import useLocalStorageState from 'use-local-storage-state'
 
 function Dashboard({location}) {
 const [savedLocations, setSavedLocations] = useLocalStorageState(`${location.city}`, [])
+// const [isStarred, setIsStarred] = useLocalStorageState('isStarred', false)
 const [isStarred, setIsStarred] = useState(false)
 // const savedItems = JSON.parse(localStorage.getItem('locations'))
 // const [locations, setLocations] = useState([])
@@ -28,16 +29,23 @@ const windMph = convertMsToMph(location.current.weather.ws);
   const toggleStar = () => {
     setIsStarred(isStarred => !isStarred)
     if(!savedLocations.includes(location)) {
+      // setIsStarred(true)
       setSavedLocations([...savedLocations, location])
+      console.log(savedLocations)
     }
     if (isStarred) {
-     removeLocation()
+  
+      localStorage.removeItem(`${location.city}`)
   }
   } 
 
-  const removeLocation = () => {
-    localStorage.removeItem(`${location.city}`)
-  }
+  // const removeLocation = () => {
+  //   // if (isStarred) {
+  //     // setIsStarred(false)
+  //     //  setSavedLocations([...savedLocations, location])
+    
+  //   // }
+  // }
   
 
   // useEffect(() => {
@@ -45,10 +53,8 @@ const windMph = convertMsToMph(location.current.weather.ws);
   // },[])
 
   // useEffect(() => {
-  //   if ( savedItems) {
-  //     setLocations(savedItems)
-  //   }
-  // }, [])
+  //   toggleStar()
+  // }, [savedLocations])
 
   // useEffect(() => {
   //   localStorage.setItem('locations', JSON.stringify(locations))
@@ -108,7 +114,7 @@ const windMph = convertMsToMph(location.current.weather.ws);
               <img 
                 className='location-icon icon' 
                 onClick={toggleStar} 
-                src={!isStarred ? emptyFavIcon : filledFavIcon} 
+                src={isStarred ? filledFavIcon : emptyFavIcon} 
                 alt='unfilled star'/>
               <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
             </div>

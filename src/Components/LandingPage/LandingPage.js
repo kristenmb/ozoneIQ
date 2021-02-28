@@ -14,6 +14,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
     const state = locationQueries[1];
     const country = locationQueries[2];
     grabInputLocationData(city, state, country, event);
+    setInputLocation(city)
   }
 
   return (
