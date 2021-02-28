@@ -10,7 +10,7 @@ import emptyFavIcon from '../../assets/star-empty.png';
 import cloudIcon from '../../assets/cloud-computing.png';
 import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} from '../../utilities.js';
 
-function Dashboard({location}) {
+function Dashboard({location, backToLandingPage}) {
   const locationAqi = location.current.pollution.aqius;
   const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
   const windDirection = convertWindToCardnialDirection(location.current.weather.wd);

@@ -6,9 +6,9 @@ describe('OzoneIQ Landing Page', () => {
   it ('Should be able to visit the landing page with logo, an option to select current location or choose a location', () => {
       cy
         .get('.logoWrapper').find('img').should('have.attr','src').should('include', '/static/media/logo4.1ade1652.png')
-        .get('form').children('.currentLocal').should('be.visible')
-        .get('form').children('.chooseLocal').should('be.visible')
-      // cy.url().should('include', '/')
+        .get('form').find('.currentLocal').should('be.visible')
+        .get('form').find('.chooseLocal').should('be.visible')
+      // cy.url().should('include', 'dashboard')
   })
 
 })
@@ -27,41 +27,40 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
 
   it ('Should be able to click Current Location and navigate to dashboard with air quality information pertaining to that location', () => {
       cy.get('.currentLocal').click()
-      cy.get('.main-dashboard').should('be.visible')
+        .get('.main-dashboard').should('be.visible')
   })
 
   it ('Should display the current city and temperature', () => {
     cy.get('.location-name-temp-container').find('.location-name').should('contain', 'Centennial, Colorado')
-    cy.get('.temp-container').find('.temperature').should('contain', '30 F')
+      .get('.temp-container').find('.temperature').should('contain', '30 F')
   })
 
   it ('Should display the current AQI', () => {
     cy.get('.aqi-container').find('.aqi-level').should('contain', 'GOOD')
-    cy.get('.aqi-container').find('.aqi-number').should('contain', '27')
-    cy.get('.aqi-container').find('.aqi-description').should('contain', 'satisfactory')
+      .get('.aqi-container').find('.aqi-number').should('contain', '27')
+      .get('.aqi-container').find('.aqi-description').should('contain', 'satisfactory')
 
   })
 
   it ('Should display the current main pollutant, humidity, pressure, and wind speed', () => {
     cy.get('.additional-info-container').get('.additional-info').find('.pollutant-icon').should('have.attr', 'alt', 'Outline of smoke stack')
-    cy.get('.additional-info-container').get('.additional-info').find('.pollutant').should('contain', 'o3')
+      .get('.additional-info-container').get('.additional-info').find('.pollutant').should('contain', 'o3')
   
-    cy.get('.additional-info-container').get('.additional-info').find('.humidity-icon').should('have.attr', 'alt', 'Outline of rain drop')
-    cy.get('.additional-info-container').get('.additional-info').find('.humidity').should('contain', 69)
+      .get('.additional-info-container').get('.additional-info').find('.humidity-icon').should('have.attr', 'alt', 'Outline of rain drop')
+      .get('.additional-info-container').get('.additional-info').find('.humidity').should('contain', 69)
 
-    cy.get('.additional-info-container').get('.additional-info').find('.pressure-icon').should('have.attr', 'alt', 'Outline of a pressure guage')
-    cy.get('.additional-info-container').get('.additional-info').find('.pressure').should('contain', '1020hPa')
+      .get('.additional-info-container').get('.additional-info').find('.pressure-icon').should('have.attr', 'alt', 'Outline of a pressure guage')
+      .get('.additional-info-container').get('.additional-info').find('.pressure').should('contain', '1020')
 
-    cy.get('.additional-info-container').get('.additional-info').find('.wind-icon').should('have.attr', 'alt', 'Outline of wind blowing')
-    cy.get('.additional-info-container').get('.additional-info').find('.wind').should('contain', '7 mph N')
+      .get('.additional-info-container').get('.additional-info').find('.wind-icon').should('have.attr', 'alt', 'Outline of wind blowing')
+      .get('.additional-info-container').get('.additional-info').find('.wind').should('contain', '7 mph N')
   })
 
   it ('Should have a footer with four possible icons to click', () => {
       cy
         .get('footer')
-        .children('.footerIcon').should('have.length', 3)
+        .find('.Nav-btn').should('have.length', 4)
         .get('footer')
-        .children('p').should('contain', '...')
   })
   
   it.skip ('Should be able to click the saved locations icon and be taken to the saved locations page', () => {
@@ -91,19 +90,19 @@ describe('OzoneIQ Dashboard Page - Chosen Location', () => {
 
   it ('Should be able to input a Chosen Location and navigate to dashboard with air quality information pertaining to that location', () => {
       cy.get('form input').type('lafayette, louisiana, usa')
-      cy.get('.chooseLocal .searchButton').click()
-      cy.get('.main-dashboard').should('be.visible')
+        .get('.chooseLocal .searchButton').click()
+        .get('.main-dashboard').should('be.visible')
   })
 
    it ('Should display the current city and temperature', () => {
-    cy.get('.location-name-temp-container').find('.location-name').should('contain', 'Lafayette, Louisiana')
-    cy.get('.temp-container').find('.temperature').should('contain', '73 F')
+      cy.get('.location-name-temp-container').find('.location-name').should('contain', 'Lafayette, Louisiana')
+        .get('.temp-container').find('.temperature').should('contain', '73 F')
   })
 
    it ('Should display the current AQI', () => {
     cy.get('.aqi-container').find('.aqi-level').should('contain', 'GOOD')
-    cy.get('.aqi-container').find('.aqi-number').should('contain', '4')
-    cy.get('.aqi-container').find('.aqi-description').should('contain', 'satisfactory')
+      .get('.aqi-container').find('.aqi-number').should('contain', '4')
+      .get('.aqi-container').find('.aqi-description').should('contain', 'satisfactory')
 
   })
 
@@ -115,18 +114,17 @@ describe('OzoneIQ Dashboard Page - Chosen Location', () => {
     cy.get('.additional-info-container').get('.additional-info').find('.humidity').should('contain', 64)
 
     cy.get('.additional-info-container').get('.additional-info').find('.pressure-icon').should('have.attr', 'alt', 'Outline of a pressure guage')
-    cy.get('.additional-info-container').get('.additional-info').find('.pressure').should('contain', '1019hPa')
+    cy.get('.additional-info-container').get('.additional-info').find('.pressure').should('contain', '1019')
 
     cy.get('.additional-info-container').get('.additional-info').find('.wind-icon').should('have.attr', 'alt', 'Outline of wind blowing')
     cy.get('.additional-info-container').get('.additional-info').find('.wind').should('contain', '4 mph S')
   })
 
   it ('Should have a footer with four possible icons to click', () => {
-      cy
-        .get('footer')
-        .children('.footerIcon').should('have.length', 3)
-        .get('footer')
-        .children('p').should('contain', '...')
+     cy
+      .get('footer')
+      .find('.Nav-btn').should('have.length', 4)
+      .get('footer')
   })
 })
 
