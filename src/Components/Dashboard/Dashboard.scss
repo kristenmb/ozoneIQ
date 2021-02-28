@@ -34,6 +34,10 @@ p {
   font-size: large;
 }
 
+.choose-diff-location {
+  text-decoration: underline;
+}
+
 .location-icon {
   height: 5vh;
 }
@@ -47,12 +51,12 @@ p {
   flex-direction: column;
   width: 90vw;
   align-items: center;
-  margin-bottom: 5vh;
   border-radius: 38px;
   background: #97E8F7;
   box-shadow: inset 1px 3px 13px #1c2c2f57, inset -1px -6px 13px #ffffff8a;
   padding: 1vh;
   padding-bottom: 2vh;
+  margin-top: 2vh;
 }
 
 .aqi-number {
