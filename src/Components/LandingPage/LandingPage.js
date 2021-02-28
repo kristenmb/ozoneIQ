@@ -5,7 +5,7 @@ import locationIcon from '../../assets/location.svg'
 import logo from '../../assets/logo4.png'
 import { Link } from 'react-router-dom'
 
-function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
+function LandingPage({grabUserLocationData, grabInputLocationData, error, backToLandingPage, clearErrorOnLandingPage}) {
   const [inputLocation, setInputLocation] = useState('');
 
   const parseInput = (inputLocation, event) => {
@@ -15,6 +15,10 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
     const country = locationQueries[2];
     grabInputLocationData(city, state, country, event);
   }
+
+  useEffect(() => {
+    backToLandingPage();
+  }, [])
 
   return (
     <section className='landingPage'>
@@ -36,7 +40,10 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
             placeholder='City, State, Country'
             name='chooseLocation'
             value={inputLocation}
-            onChange={event => setInputLocation(event.target.value)}
+            onChange={event => {
+              setInputLocation(event.target.value);
+              clearErrorOnLandingPage(event);
+            }}
           />
           <Link to='/dashboard'>
             <img className='searchButton'
@@ -44,7 +51,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
             onClick={event => parseInput(inputLocation, event)}/>
           </Link>
         </section>
-        {error != '' && <p>{error.message}</p>}
+        {error != '' && <p>{error}</p>}
       </form>
       <nav className='landing-page-nav'>
         <Link to='/saved-locations' className='landing-page-link'>Your Saved Locations</Link>

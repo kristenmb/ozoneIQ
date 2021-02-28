@@ -22,6 +22,7 @@ function App() {
       .then(response => {
         setLocation(response.data);
         setDashboardView(true);
+        setError('');
       })
       .catch(error => {
         setError(error);
@@ -34,14 +35,19 @@ function App() {
       .then(response => {
         setLocation(response.data);
         setDashboardView(true);
+        setError('');
       })
       .catch(error => {
-        setError(error);
+        setError(error.message);
       })
   }
 
   const backToLandingPage = () => {
     setDashboardView(false);
+  }
+
+  const clearErrorOnLandingPage = (event) => {
+    setError('');
   }
 
   return (
@@ -55,6 +61,8 @@ function App() {
             <LandingPage
               grabUserLocationData={grabUserLocationData}
               grabInputLocationData={grabInputLocationData}
+              backToLandingPage={backToLandingPage}
+              clearErrorOnLandingPage={clearErrorOnLandingPage}
               error={error}/>}
         />
         {dashboardView &&
