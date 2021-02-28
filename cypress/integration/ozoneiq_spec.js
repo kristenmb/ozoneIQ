@@ -28,6 +28,7 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
   it ('Should be able to click Current Location and navigate to dashboard with air quality information pertaining to that location', () => {
       cy.get('.currentLocal').click()
         .get('.main-dashboard').should('be.visible')
+      cy.url().should('include', 'dashboard')
   })
 
   it ('Should display the current city and temperature', () => {
@@ -63,16 +64,26 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
         .get('footer')
   })
   
-  it.skip ('Should be able to click the saved locations icon and be taken to the saved locations page', () => {
+  it ('Should be able to click the saved locations icon and be taken to the saved locations page', () => {
+      cy
+        .get('footer')
+        .find('.saved-local-nav-btn').click()
+      cy.url().should('include', 'saved-locations')
+  })
+  //come back and test the saved locations page, information and mroe pages
 
+  it ('Should be able to click the question mark icon and be taken to the AQI information page', () => {
+      cy
+        .get('footer')
+        .find('.aqi-nav-btn').click()
+      cy.url().should('include', 'resources')
   })
 
-  it.skip ('Should be able to click the question mark icon and be taken to the AQI information page', () => {
-    
-  })
-
-  it.skip ('Should be able to click the \'more\' icon and be taken to the about/contact page', () => {
-    
+  it ('Should be able to click the \'more\' icon and be taken to the about/contact page', () => {
+      cy
+        .get('footer')
+        .find('.more-nav-btn').click()
+      cy.url().should('include', 'about-us')
   })
 })
 
