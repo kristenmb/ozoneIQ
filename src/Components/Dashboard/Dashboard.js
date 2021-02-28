@@ -8,7 +8,7 @@ import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
 import filledFavIcon from '../../assets/Five_Pointed_Star_Solid.svg'
 import cloudIcon from '../../assets/cloud-computing.png';
-import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} from '../../utilities.js';
+import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph} from '../../utilities.js';
 import useLocalStorageState from 'use-local-storage-state'
 
 
@@ -21,7 +21,7 @@ const [isStarred, setIsStarred] = useState(false)
 
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
-const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
+const windDirection = convertWindToCardinalDirection(location.current.weather.wd);
 const windMph = convertMsToMph(location.current.weather.ws);
 
 

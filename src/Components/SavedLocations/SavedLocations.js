@@ -4,7 +4,7 @@ import SavedLocalCards from '../SavedLocalCards/SavedLocalCards'
 import './SavedLocations.scss'
 
 const SavedLocations = () => {
-  const [savedLocations, setSavedLocations] = useState([])
+const [savedLocations, setSavedLocations] = useState([])
 
 const getLocalStorage = () => {
   const localItems = Object.keys(localStorage)
@@ -16,28 +16,26 @@ const getLocalStorage = () => {
 
 const createSavedCards = () => {
   return savedLocations.map((location, index) => {
-    console.log(typeof location)
     return (
-      <>
-      {(console.log(location))}
       <SavedLocalCards
         location={location[0]}
         key={index}
       />
-      </>
     )
   })
 }
 
 useEffect(() => {
   getLocalStorage()
-
 },[])
 
-  return (
+return (
+  <section className='cards'>
+
     <section className='allSaved'>
       {createSavedCards()}
     </section>
+  </section>
   )
 }
 

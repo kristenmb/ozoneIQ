@@ -13,7 +13,7 @@ export const convertToFahrenheit = (temp) => {
   return Math.round(fahrenheit);
 }
 
-export const convertWindToCardnialDirection = (windDegree) => {
+export const convertWindToCardinalDirection = (windDegree) => {
   if (windDegree > 337 || windDegree < 22 ) {
     return 'N'
   }

@@ -1,9 +1,25 @@
-.savedCards {
-  display: flex;
-  flex-direction: column;
 
-    .city {
+
+.savedCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  border: 1px black solid;
+  width: 90%;
+  margin: 1%;
+
+    .location {
       font-size: 1em;
       color: black;
+      justify-content: start;
+      align-self: start;
+      width: 100%;
+      text-align: start;
+    }
+
+    .aqi {
+      font-size: 1em;
+      margin-right: 5%;
     }
 }

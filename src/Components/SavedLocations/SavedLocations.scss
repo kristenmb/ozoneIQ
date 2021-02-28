@@ -1,7 +1,14 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  background: #97E7F7;
+}
+
 .allSaved {
-  height: 85vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid black;
+  background: #97E7F7;
 }
