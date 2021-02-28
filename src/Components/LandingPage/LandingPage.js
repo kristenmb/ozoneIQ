@@ -46,6 +46,11 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
         </section>
         {error != '' && <p>{error.message}</p>}
       </form>
+      <nav className='landing-page-nav'>
+        <Link to='/saved-locations' className='landing-page-link'>Your Saved Locations</Link>
+        <Link to='/about-us' className='landing-page-link'>About Us</Link>
+        <Link to='/resources' className='landing-page-link'>What is AQI?</Link>
+      </nav>
     </section>
   )
 }

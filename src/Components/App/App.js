@@ -61,7 +61,7 @@ function App() {
           < Route
             path='/dashboard'
             render={() => {
-              return < Dashboard dashboardView={dashboardView} location={location} />}}
+              return < Dashboard dashboardView={dashboardView} location={location} backToLandingPage={backToLandingPage}/>}}
           />
         }
         < Route
