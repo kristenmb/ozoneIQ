@@ -7,14 +7,23 @@ import humidityIcon from '../../assets/humidity.png';
 import pressureIcon from '../../assets/pressure.png';
 import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
-import cloudIcon from '../../assets/cloud-computing.png';
-import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} from '../../utilities.js';
+import clearSkyDayIcon from '../../assets/clear-sky-day.png';
+import clearSkyNightIcon from '../../assets/clear-sky-night.png';
+import fewCloudsDayIcon from '../../assets/few-clouds-day.png';
+import fewCloudsNightIcon from '../../assets/few-clouds-night.png';
+import scatteredCloudsIcon from '../../assets/scattered-clouds.png';
+import brokenCloudsIcon from '../../assets/broken-clouds.png';
+import showerRainIcon from '../../assets/shower-rain.png';
+import rainDayIcon from '../../assets/rain-day.png';
+import rainNightIcon from '../../assets/rain-night.png';
+import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph, displayCorrectWeatherIcon} from '../../utilities.js';
 
 function Dashboard({location, backToLandingPage}) {
   const locationAqi = location.current.pollution.aqius;
   const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
   const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
   const windMph = convertMsToMph(location.current.weather.ws);
+  const weatherIconWithAltText = displayCorrectWeatherIcon(location.current.weather.ic);
 
 //CREATE METHOD THAT HANDLES FAV ICON CLICK (SAVE TO FAV LOCATIONS/LOCAL STORAGE)
 //CREATE METHOD THAT HANDLES AQI NUMBER CLICK TO BRING YOU TO INFORMATION PAGE
@@ -68,7 +77,7 @@ function Dashboard({location, backToLandingPage}) {
           <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
         </div>
         <div className='temp-container'>
-          <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>
+          <img className='weather-icon icon' src={weatherIconWithAltText[0]} alt={weatherIconWithAltText[1]}/>
           <p className='temperature'>{`${tempInFahrenheit} F`}</p>
         </div>
       </div>
