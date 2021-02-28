@@ -1,0 +1,31 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 10vh;
+  align-items: center;
+  background-color: #97E7F7;
+  border-top: .1em solid black;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+
+.footerIcon {
+  height: 2.4em;
+  width: 2.4em;
+  padding-top: 1vh;
+}
+
+.Nav-btn {
+  background: #97E7F7;
+  height: 8vh;
+  width: 20vw;
+  border: none;
+  box-shadow: 7px 7px 14px #0a0a0a78, -7px -7px 14px #8b94943d;
+  border-radius: 10px;
+}
+
+.true {
+  box-shadow: inset 1px 3px 13px #00000066, inset -1px -6px 13px #ffffff26;
+}

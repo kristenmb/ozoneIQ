@@ -1,0 +1,65 @@
+.aqi-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #97E7F7;
+}
+
+.info {
+  box-shadow: inset 1px 3px 13px #1c2c2f91, inset -1px -6px 13px #ffffff59;
+  width: 95vw;
+  margin-top: 2vh;
+  border-radius: 5px;
+  padding: 1vh;
+}
+
+.aqi-color-blocks {
+  width: 75vw;
+  border-radius: 10px;
+  border: none;
+  box-shadow: inset -5px -5px 10px #40444082, inset 5px 5px 10px #ffffff5e;
+  padding: 1vh;
+}
+
+.green {
+  background-color: #80FF72;
+}
+
+.yellow {
+  background-color: #FFF07C;
+}
+
+.orange {
+  background-color: #FFB347;
+}
+
+.red {
+  background-color: #E58C8A;
+}
+
+.maroon {
+  background-color: #A24857;
+}
+
+.purple {
+  background-color: #966FD6;
+}
+
+.more-btn {
+  background-color: transparent;
+  margin-bottom: 15vh;
+  margin-top: 4em;
+  width: 40vw;
+  border-radius: 2em;
+  height: 2em;
+  background: linear-gradient(145deg, #94e5ec, #88d0de);
+  box-shadow: 7px 7px 14px #5ea1af,
+  -7px -7px 14px #abf7f7;
+  border: none;
+
+    img {
+      width: 6vw;
+      margin-left: .4rem;
+    }
+}

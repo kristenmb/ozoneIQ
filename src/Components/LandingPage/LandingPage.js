@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import './LandingPage.css'
+import './LandingPage.scss'
 import searchIcon from '../../assets/search.png'
-import sun from '../../assets/sun.svg'
 import locationIcon from '../../assets/location.svg'
 import logo from '../../assets/logo4.png'
+import { Link } from 'react-router-dom'
 
-function LandingPage({grabUserLocationData, grabInputLocationData}) {
-  const [inputLocation, setInputLocation] = useState('')
+function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
+  const [inputLocation, setInputLocation] = useState('');
 
   const parseInput = (inputLocation, event) => {
     const locationQueries = inputLocation.split(', ');
@@ -21,29 +21,32 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
       <div className='logoWrapper'>
         <img className='logo' src={logo} />
       </div>
-      {/* <h1 className='title'>OzoneIQ</h1> */}
       <form>
-        <button
-          className='currentLocal'
-          onClick={grabUserLocationData}>
-          <img className='locationIcon' src={locationIcon}/>
-          Current Location
-        </button>
+        <Link to='/dashboard'>
+          <button
+            className='currentLocal'
+            onClick={grabUserLocationData}>
+            <img className='locationIcon' src={locationIcon}/>
+            Current Location
+          </button>
+        </Link>
         <section className='chooseLocal'>
           <input
             type='text'
-            placeholder='City, State'
+            placeholder='City, State, Country'
             name='chooseLocation'
             value={inputLocation}
             onChange={event => setInputLocation(event.target.value)}
           />
-          <img className='searchButton'
-           src={searchIcon}
-           onClick={event => parseInput(inputLocation, event)}/>
+          <Link to='/dashboard'>
+            <img className='searchButton'
+            src={searchIcon}
+            onClick={event => parseInput(inputLocation, event)}/>
+          </Link>
         </section>
+        {error != '' && <p>{error.message}</p>}
       </form>
     </section>
-
   )
 }
 
