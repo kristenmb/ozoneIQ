@@ -5,8 +5,8 @@ import locationIcon from '../../assets/location.svg'
 import logo from '../../assets/logo4.png'
 import { Link } from 'react-router-dom'
 
-function LandingPage({grabUserLocationData, grabInputLocationData}) {
-  const [inputLocation, setInputLocation] = useState('')
+function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
+  const [inputLocation, setInputLocation] = useState('');
 
   const parseInput = (inputLocation, event) => {
     const locationQueries = inputLocation.split(', ');
@@ -33,7 +33,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
         <section className='chooseLocal'>
           <input
             type='text'
-            placeholder='City, State'
+            placeholder='City, State, Country'
             name='chooseLocation'
             value={inputLocation}
             onChange={event => setInputLocation(event.target.value)}
@@ -44,6 +44,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
             onClick={event => parseInput(inputLocation, event)}/>
           </Link>
         </section>
+        {error != '' && <p>{error.message}</p>}
       </form>
     </section>
   )
