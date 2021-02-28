@@ -5,7 +5,7 @@ import { aqiInfoText } from '../../aqiData'
 import rightArrow from '../../assets/right-arrow.png'
 import './AqiInfo.scss'
 
-const AqiInfo = () => {
+const AqiInfo = ({backToLandingPage}) => {
   const [ {isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6}, toggleIsOpen ] = useState({
     isOpen1: false,
     isOpen2: false,
@@ -97,7 +97,7 @@ const AqiInfo = () => {
           <img src={rightArrow} alt='Thin arrow pointing right'/>
         </button>
       </Link>
-      <Link to='/' className='link-to-landing-page'>Choose a Location</Link>
+      <Link to='/' className='link-to-landing-page' onClick={backToLandingPage}>Choose a Location</Link>
     </section>
   )
 }

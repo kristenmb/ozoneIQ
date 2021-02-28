@@ -67,7 +67,8 @@ function App() {
         < Route
           exact
           path='/resources'
-          component={AqiInfo}
+          render={() => {
+            return < AqiInfo backToLandingPage={backToLandingPage} />}}
         />
         < Route
           exact
@@ -77,12 +78,14 @@ function App() {
         < Route
           exact
           path='/saved-locations'
-          component={SavedLocations}
+          render={() => {
+            return < SavedLocations backToLandingPage={backToLandingPage} />}}
         />
         < Route
           exact
           path='/about-us'
-          component={Contact}
+          render={() => {
+            return < Contact backToLandingPage={backToLandingPage} />}}
         />
       </Switch>
       {dashboardView && < Footer />}
