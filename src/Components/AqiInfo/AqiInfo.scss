@@ -8,7 +8,7 @@
   padding-top: 1rem;
 }
 
-h2 {
+.aqi-iq {
   width: 100vw;
 }
 
@@ -79,6 +79,8 @@ h2 {
 }
 
 @media screen and (max-width: 700px) {
+  
+  
   .aqi-section {
     display: flex;
     flex-direction: row;
