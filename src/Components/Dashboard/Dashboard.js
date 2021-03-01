@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './Dashboard.scss';
 import locationIcon from '../../assets/location.svg';
@@ -14,6 +14,7 @@ import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph} fro
 
 function Dashboard({location, backToLandingPage}) {
 const [isStarred, setIsStarred] = useState(false)
+// const [savedLocations, setSavedLocations] = useState([])
 
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
@@ -25,6 +26,7 @@ const toggleStar = () => {
   const jsonLocation = JSON.stringify(location)
     if(localStorage.getItem(`${location.city}`) === null) {
       localStorage.setItem(`${location.city}`, jsonLocation)
+      // setSavedLocations([location])
     }
     if(isStarred) {
       localStorage.removeItem(`${location.city}`)
@@ -32,19 +34,12 @@ const toggleStar = () => {
 }
 
 useEffect(() => {
+  setIsStarred(false)
   const localStorageKeys = Object.keys(localStorage)
     if (localStorageKeys.includes(location.city)) {
       setIsStarred(true)
-    }
-}, [])
-
-  // const removeLocation = () => {
-  //   // if (isStarred) {
-  //     // setIsStarred(false)
-  //     //  setSavedLocations([...savedLocations, location])
-    
-  //   // }
-  // }
+    } 
+}, [location])
 
   const airQualityMessages = (aqi) => {
     if (aqi <= 50) {
@@ -94,7 +89,7 @@ useEffect(() => {
                 className='location-icon icon' 
                 onClick={toggleStar} 
                 src={isStarred ? filledFavIcon : emptyFavIcon} 
-                alt='unfilled star'/>
+                alt='favorited star'/>
               <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
               <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
             </div>

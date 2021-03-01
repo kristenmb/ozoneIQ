@@ -77,8 +77,8 @@ function App() {
         < Route
           exact
           path='/saved-locations'
-          // render={() => <SavedLocations />}
-          component={SavedLocations}
+          render={() => <SavedLocations grabInputLocationData={grabInputLocationData} />}
+          // component={SavedLocations}
         />
         < Route
           exact
