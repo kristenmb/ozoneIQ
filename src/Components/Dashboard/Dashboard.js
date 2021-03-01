@@ -59,19 +59,19 @@ function Dashboard({location, backToLandingPage}) {
 
   return (
     <section className='main-dashboard'>
-      <div className='location-name-temp-container'>
+      <article className='location-name-temp-container'>
         <div className='location-and-fav-container'>
-          <div className='location-container'>
+          <article className="location-details">
             <img className='location-icon icon' src={locationIcon} alt='Map pin'/>
             <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
-          </div>
+          </article>
           <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
         </div>
         <div className='temp-container'>
           <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>
           <p className='temperature'>{`${tempInFahrenheit} F`}</p>
         </div>
-      </div>
+      </article>
       <article className='aqi-container'>
         <h1 className='aqi-level'>{airQualityMessages(locationAqi)[0]}</h1>
         <div className={`aqi-number ${airQualityMessages(locationAqi)[0]}`}>{locationAqi}</div>
