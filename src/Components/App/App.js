@@ -10,6 +10,7 @@ import Resources from '../Resources/Resources'
 import SavedLocations from '../SavedLocations/SavedLocations'
 import Footer from '../Footer/Footer'
 import {fetchUserLocation, fetchInputLocation} from '../../utilities'
+import SavedLocalCards from '../SavedLocalCards/SavedLocalCards';
 
 
 function App() {
@@ -25,13 +26,15 @@ function App() {
         setError('');
       })
       .catch(error => {
-        setError(error);
+  
+        setError(error.message);
       })
   }
 
   const grabInputLocationData = (city, state, country) => {
     fetchInputLocation(city, state, country)
       .then(response => {
+        setDashboardView(false)
         setLocation(response.data);
         setDashboardView(true);
         setError('');
@@ -86,7 +89,7 @@ function App() {
           exact
           path='/saved-locations'
           render={() => {
-            return < SavedLocations backToLandingPage={backToLandingPage} />}}
+            return < SavedLocations grabInputLocationData={grabInputLocationData}  backToLandingPage={backToLandingPage} />}}
         />
         < Route
           exact

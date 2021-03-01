@@ -1,0 +1,47 @@
+.savedCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  margin: .5%;
+  height: 15%;
+  border-radius: 15px;
+  background-color: #ce7e7c;
+  box-shadow: inset 1px 3px 13px #1c2c2f91,
+  inset -1px -6px 13px #ffffff59;
+
+    .location {
+      font-size: 1em;
+      color: black;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      text-align: start;
+      margin-left: 2%;
+    }
+
+    .aqi {
+      font-size: 1em;
+      margin-right: 5%;
+      align-self: center;
+    }
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.x {
+  justify-self: center;
+  align-self: center;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.linkIconWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
