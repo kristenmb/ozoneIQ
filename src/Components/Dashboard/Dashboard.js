@@ -74,7 +74,7 @@ function Dashboard({location, backToLandingPage}) {
             <img className='location-icon icon' src={locationIcon} alt='Map pin'/>
             <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
           </div>
-          <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
+          <Link to='/' className='link-to-landing-page' onClick={backToLandingPage}>Choose a different location</Link>
         </div>
         <div className='temp-container'>
           <img className='weather-icon icon' src={weatherIconWithAltText[0]} alt={weatherIconWithAltText[1]}/>
