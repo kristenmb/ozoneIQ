@@ -6,16 +6,21 @@ const SavedLocalCards = ({location, removeFromFavorites, id, grabInputLocationDa
 
   return (
     <article className='savedCard'>
-      <img 
-        className='location-icon icon' 
-        onClick={removeFromFavorites} 
-        src={x} 
-        id={id}
-        alt='favorited star'/>
-      <Link onClick={(event)=>grabInputLocationData(location.city, location.state, location.country, event)} to='/dashboard'>
-        <h1 className='location'>{location.city}, {location.state}, {location.country}</h1>
-        <p className='aqi'>{location.current.pollution.aqius}</p>
-      </Link>
+      <div className='linkIconWrapper'>
+        <div className='iconWrapper'>
+          <img 
+            className='location-icon icon x' 
+            onClick={removeFromFavorites} 
+            src={x} 
+            id={id}
+            alt='favorited star'/>
+        </div>
+        <Link className='linkWrapper' 
+          onClick={(event)=> grabInputLocationData(location.city, location.state, location.country, event)} 
+          to='/dashboard'>
+          <h1 className='location'>{location.city}, {location.state}, {location.country}</h1>
+        </Link>
+      </div>
     </article>
   )
 }

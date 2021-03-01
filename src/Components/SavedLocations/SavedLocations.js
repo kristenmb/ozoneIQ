@@ -41,19 +41,19 @@ const createSavedCards = () => {
 }
 
 return (
-  <>
-    <h2>Saved Locations</h2>
+  <section className='main'>
+    <h2 className='text'>Saved Locations</h2>
       <p>To view current conditions, tap a location</p>
       <section className='cards'>
         {savedLocations.length <= 0 &&
-          <p>No locations are currently saved, tap the star on your dashboard to save one.</p>
+          <p className='error-text'>No locations are currently saved, tap the star on your dashboard to save one.</p>
         }
         <section className='allSaved'>
           {createSavedCards()}
         </section>
           <Link to='/' className='link-to-landing-page' onClick={backToLandingPage}>Choose a Location</Link>
       </section>
-  </>
+  </section>
   )
 }
 

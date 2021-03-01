@@ -1,14 +1,32 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: #97E7F7;
+}
+
+.text {
+  margin-bottom: 1.5rem;
+  background: #97E7F7;
+}
+
 .cards {
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 90vh;
   background: #97E7F7;
+  align-self: center;
+  width: 70%;
 }
 
 .allSaved {
   height: 90vh;
   display: flex;
   flex-direction: column;
+  align-content: center;
   justify-content: center;
   background: #97E7F7;
+}
+
+.error-text {
+  margin-top: 50%;
 }
