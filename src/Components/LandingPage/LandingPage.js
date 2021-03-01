@@ -18,8 +18,8 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
 
   return (
     <section className='landingPage'>
-      <div className='sunWrapper'>
-        <img className='sun' src={logo} />
+      <div className='logoWrapper'>
+        <img className='logo' src={logo} />
       </div>
       <form>
         <Link to='/dashboard'>
