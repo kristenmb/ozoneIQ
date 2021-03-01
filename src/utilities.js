@@ -9,6 +9,7 @@ import rainDayIcon from './assets/rain-day.png';
 import rainNightIcon from './assets/rain-night.png';
 import snowIcon from './assets/snowy.png';
 import windyIcon from './assets/windy.png';
+import tempIcon from './assets/tempicon.png';
 
 
 export const fetchUserLocation = () => {
@@ -27,13 +28,11 @@ export const fetchInputLocation = (city, state, country) => {
   })
 }
 
-
-const handleFetchErrors = (response) => {
+ const handleFetchErrors = (response) => {
   if (response.status >= 400 && response.status < 500) {
     throw new Error ("We can't grab info for this location. Choose 'Current Location' OR ensure you are using CITY, STATE, COUNTRY format. (e.g. 'Denver, Colorado, USA')")
   }
   else if(response.status >= 500) {
-    console.log(response)
     throw new Error ("Our server seems to be having difficulties at this time. Please try refreshing the page.")
   }
   return response;
@@ -109,5 +108,45 @@ export const displayCorrectWeatherIcon = (icon) => {
   }
   else if (icon === '50d') {
     return [windyIcon, 'Wind blowing']
+  } else {
+    return [tempIcon, 'Temperature Gauge']
   }
 }
+
+export const airQualityMessages = (aqi) => {
+    if (aqi <= 50) {
+      return [
+        'GOOD',
+        'Air quality is satisfactory, and air pollution poses little or no risk.'
+      ];
+    }
+    else if (aqi > 50 && aqi <= 100) {
+      return [
+        'MODERATE',
+        'Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.'
+      ];
+    }
+    else if (aqi > 100 && aqi <= 150) {
+      return [
+        'UNHEALTHY FOR SENSITIVE GROUPS',
+        'Members of sensitive groups may experience health effects. The general public is less likely to be affected.'
+      ];
+    }
+    else if (aqi > 150 && aqi <= 200) {
+      return [
+        'UNHEALTHY',
+        'Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.'
+      ];
+    }
+    else if (aqi > 200 && aqi <= 300) {
+      return [
+        'VERY UNHEALTHY',
+        'Health alert: The risk of health effects is increased for everyone.'
+      ];
+    } else {
+      return [
+        'HAZARDOUS',
+        'Health warning of emergency conditions: everyone is more likely to be affected.'
+      ]
+    }
+  }

@@ -26,7 +26,8 @@ function App() {
         setError('');
       })
       .catch(error => {
-        setError(error);
+  
+        setError(error.message);
       })
   }
 

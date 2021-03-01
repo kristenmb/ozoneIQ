@@ -7,17 +7,7 @@ import pressureIcon from '../../assets/pressure.png';
 import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
 import filledFavIcon from '../../assets/Five_Pointed_Star_Solid.svg'
-import cloudIcon from '../../assets/cloud-computing.png';
-import clearSkyDayIcon from '../../assets/clear-sky-day.png';
-import clearSkyNightIcon from '../../assets/clear-sky-night.png';
-import fewCloudsDayIcon from '../../assets/few-clouds-day.png';
-import fewCloudsNightIcon from '../../assets/few-clouds-night.png';
-import scatteredCloudsIcon from '../../assets/scattered-clouds.png';
-import brokenCloudsIcon from '../../assets/broken-clouds.png';
-import showerRainIcon from '../../assets/shower-rain.png';
-import rainDayIcon from '../../assets/rain-day.png';
-import rainNightIcon from '../../assets/rain-night.png';
-import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph, displayCorrectWeatherIcon} from '../../utilities.js';
+import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph, displayCorrectWeatherIcon, airQualityMessages} from '../../utilities.js';
 
 function Dashboard({location, backToLandingPage}) {
   const [isStarred, setIsStarred] = useState(false)
@@ -47,46 +37,45 @@ useEffect(() => {
     } 
 }, [location])
 
-  const airQualityMessages = (aqi) => {
-    if (aqi <= 50) {
-      return [
-        'GOOD',
-        'Air quality is satisfactory, and air pollution poses little or no risk.'
-      ];
-    }
-    else if (aqi > 50 && aqi <= 100) {
-      return [
-        'MODERATE',
-        'Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.'
-      ];
-    }
-    else if (aqi > 100 && aqi <= 150) {
-      return [
-        'UNHEALTHY FOR SENSITIVE GROUPS',
-        'Members of sensitive groups may experience health effects. The general public is less likely to be affected.'
-      ];
-    }
-    else if (aqi > 150 && aqi <= 200) {
-      return [
-        'UNHEALTHY',
-        'Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.'
-      ];
-    }
-    else if (aqi > 200 && aqi <= 300) {
-      return [
-        'VERY UNHEALTHY',
-        'Health alert: The risk of health effects is increased for everyone.'
-      ];
-    } else {
-      return [
-        'HAZARDOUS',
-        'Health warning of emergency conditions: everyone is more likely to be affected.'
-      ]
-    }
-  }
+  // const airQualityMessages = (aqi) => {
+  //   if (aqi <= 50) {
+  //     return [
+  //       'GOOD',
+  //       'Air quality is satisfactory, and air pollution poses little or no risk.'
+  //     ];
+  //   }
+  //   else if (aqi > 50 && aqi <= 100) {
+  //     return [
+  //       'MODERATE',
+  //       'Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.'
+  //     ];
+  //   }
+  //   else if (aqi > 100 && aqi <= 150) {
+  //     return [
+  //       'UNHEALTHY FOR SENSITIVE GROUPS',
+  //       'Members of sensitive groups may experience health effects. The general public is less likely to be affected.'
+  //     ];
+  //   }
+  //   else if (aqi > 150 && aqi <= 200) {
+  //     return [
+  //       'UNHEALTHY',
+  //       'Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.'
+  //     ];
+  //   }
+  //   else if (aqi > 200 && aqi <= 300) {
+  //     return [
+  //       'VERY UNHEALTHY',
+  //       'Health alert: The risk of health effects is increased for everyone.'
+  //     ];
+  //   } else {
+  //     return [
+  //       'HAZARDOUS',
+  //       'Health warning of emergency conditions: everyone is more likely to be affected.'
+  //     ]
+  //   }
+  // }
 
   return (
-    // <main>
       <section className='main-dashboard'>
         <div className='location-name-temp-container'>
           <div className='location-and-fav-container'>
@@ -100,13 +89,6 @@ useEffect(() => {
               <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
             </div>
           </div>
-      
-   
-
-        {/* </div> */}
-
-
-          <Link to='/' className='link-to-landing-page' onClick={backToLandingPage}>Choose a different location</Link>
         </div>
         <div className='temp-container'>
           <img className='weather-icon icon' src={weatherIconWithAltText[0]} alt={weatherIconWithAltText[1]}/>

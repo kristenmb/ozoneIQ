@@ -3,7 +3,7 @@ import SavedLocalCards from '../SavedLocalCards/SavedLocalCards'
 import './SavedLocations.scss'
 import {Link} from 'react-router-dom'
 
-const SavedLocations = ({grabInputLocationData}) => {
+const SavedLocations = ({grabInputLocationData, backToLandingPage}) => {
 const [savedLocations, setSavedLocations] = useState([])
 
 const getLocalStorage = () => {
