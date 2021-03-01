@@ -1,7 +1,7 @@
 footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   height: 10vh;
   align-items: center;
   background-color: #97E7F7;
@@ -30,7 +30,8 @@ footer {
 .Nav-btn {
   background: #97E7F7;
   height: 8vh;
-  width: 20vw;
+  width: 80px;
+  margin: 0 15px 0 15px;
   border: none;
   box-shadow: 7px 7px 14px #0a0a0a78, -7px -7px 14px #8b94943d;
   border-radius: 10px;
