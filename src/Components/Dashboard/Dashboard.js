@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './Dashboard.scss';
-import locationIcon from '../../assets/location.svg';
 import pollutionIcon from '../../assets/pollution.png';
 import humidityIcon from '../../assets/humidity.png';
 import pressureIcon from '../../assets/pressure.png';
@@ -14,7 +13,6 @@ import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph} fro
 
 function Dashboard({location, backToLandingPage}) {
 const [isStarred, setIsStarred] = useState(false)
-// const [savedLocations, setSavedLocations] = useState([])
 
 const locationAqi = location.current.pollution.aqius;
 const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
@@ -26,7 +24,6 @@ const toggleStar = () => {
   const jsonLocation = JSON.stringify(location)
     if(localStorage.getItem(`${location.city}`) === null) {
       localStorage.setItem(`${location.city}`, jsonLocation)
-      // setSavedLocations([location])
     }
     if(isStarred) {
       localStorage.removeItem(`${location.city}`)

@@ -2,12 +2,8 @@ import React, { useEffect, useState } from 'react'
 import SavedLocalCards from '../SavedLocalCards/SavedLocalCards'
 import './SavedLocations.scss'
 
-
 const SavedLocations = ({grabInputLocationData}) => {
-
 const [savedLocations, setSavedLocations] = useState([])
-console.log(savedLocations)
-
 
 const getLocalStorage = () => {
   const localItems = Object.keys(localStorage)
@@ -16,24 +12,17 @@ const getLocalStorage = () => {
   })
 }
 
-
 const removeFromFavorites = (event) => {
    const localItems = Object.keys(localStorage)
     if (localItems.includes(event.target.id)) {
       localStorage.removeItem(event.target.id)
     }
     setSavedLocations(getLocalStorage())
-  // return savedLocations.filter(location => {
-    
 }
 
-  
-
-  useEffect(() => {
+useEffect(() => {
     setSavedLocations(getLocalStorage())
-  },[])
-
-
+},[])
 
 const createSavedCards = () => {
   const savedLocationsInStorage = getLocalStorage()
@@ -49,10 +38,6 @@ const createSavedCards = () => {
     )
   })
 }
-
-// useEffect(() => {
-//   getLocalStorage()
-// },[])
 
 return (
   <section className='cards'>

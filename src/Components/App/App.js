@@ -32,6 +32,7 @@ function App() {
   const grabInputLocationData = (city, state, country) => {
     fetchInputLocation(city, state, country)
       .then(response => {
+        setDashboardView(false)
         setLocation(response.data);
         setDashboardView(true);
       })
