@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import useLocalStorageState from 'use-local-storage-state'
 import SavedLocalCards from '../SavedLocalCards/SavedLocalCards'
 import './SavedLocations.scss'
 
 const SavedLocations = () => {
-const [savedLocations, setSavedLocations] = useState([])
 
 const getLocalStorage = () => {
   const localItems = Object.keys(localStorage)
-    localItems.forEach((item,  i) => {
-      setSavedLocations(prevState => ([...prevState, JSON.parse(localStorage.getItem(item))])
-    )
+    return localItems.map(item => {
+      return JSON.parse(localStorage.getItem(item))
   })
 }
 
 const createSavedCards = () => {
+  const savedLocations = getLocalStorage()
   return savedLocations.map((location, index) => {
     return (
       <SavedLocalCards
-        location={location[0]}
+        location={location}
         key={index}
       />
     )
@@ -31,7 +29,6 @@ useEffect(() => {
 
 return (
   <section className='cards'>
-
     <section className='allSaved'>
       {createSavedCards()}
     </section>

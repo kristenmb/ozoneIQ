@@ -10,17 +10,9 @@ import emptyFavIcon from '../../assets/star-empty.png';
 import filledFavIcon from '../../assets/Five_Pointed_Star_Solid.svg'
 import cloudIcon from '../../assets/cloud-computing.png';
 import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph} from '../../utilities.js';
-import useLocalStorageState from 'use-local-storage-state'
 
-// function Dashboard({location, backToLandingPage}) {
-//   const locationAqi = location.current.pollution.aqius;
-//   const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
-//   const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
-//   const windMph = convertMsToMph(location.current.weather.ws);
 
 function Dashboard({location, backToLandingPage}) {
-const [savedLocations, setSavedLocations] = useLocalStorageState(`${location.city}`, [])
-// const [isStarred, setIsStarred] = useLocalStorageState('isStarred', false)
 const [isStarred, setIsStarred] = useState(false)
 
 const locationAqi = location.current.pollution.aqius;
@@ -28,16 +20,23 @@ const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
 const windDirection = convertWindToCardinalDirection(location.current.weather.wd);
 const windMph = convertMsToMph(location.current.weather.ws);
 
-
-  const toggleStar = () => {
-    setIsStarred(isStarred => !isStarred)
-      if(!savedLocations.includes(location)) {
-        setSavedLocations([...savedLocations, location])
-      }
-      if (isStarred) {
-        localStorage.removeItem(`${location.city}`)
+const toggleStar = () => {
+  setIsStarred(isStarred => !isStarred)
+  const jsonLocation = JSON.stringify(location)
+    if(localStorage.getItem(`${location.city}`) === null) {
+      localStorage.setItem(`${location.city}`, jsonLocation)
     }
-  } 
+    if(isStarred) {
+      localStorage.removeItem(`${location.city}`)
+    }
+}
+
+useEffect(() => {
+  const localStorageKeys = Object.keys(localStorage)
+    if (localStorageKeys.includes(location.city)) {
+      setIsStarred(true)
+    }
+}, [])
 
   // const removeLocation = () => {
   //   // if (isStarred) {
@@ -136,5 +135,4 @@ const windMph = convertMsToMph(location.current.weather.ws);
     </section>
   )
 }
-
 export default Dashboard
