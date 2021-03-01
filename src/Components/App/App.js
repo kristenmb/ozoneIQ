@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom'
-import './App.css';
+import './App.scss';
 import Dashboard from '../Dashboard/Dashboard.js';
 import LandingPage from '../LandingPage/LandingPage'
 import AqiInfo from '../AqiInfo/AqiInfo'
