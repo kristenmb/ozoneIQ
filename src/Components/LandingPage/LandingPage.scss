@@ -83,20 +83,41 @@
   .landing-page-nav {
     width: 100vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    height: 10vh;
+    align-items: center;
+    border-top: .1em solid black;
     text-decoration: none;
+    width: 100vw;
+    margin-top: 3rem;
+
   }
 
   .landing-page-link {
-    width: 30vw;
-    margin: 0;
-    border-radius: 2em;
-    background: linear-gradient(145deg, #94e5ec, #88d0de);
-    box-shadow: 7px 7px 14px #5ea1af, -7px -7px 14px #abf7f7;
+    background: #97E7F7;
+    height: 8vh;
+    width: 80px;
+    margin: 7px 15px 0 15px;
     border: none;
+    box-shadow: 7px 7px 14px #0a0a0a78, -7px -7px 14px #8b94943d;
+    border-radius: 10px;
 
     p {
-      font-size: 3.5vh;
+      font-size: 25pt;
       text-decoration: none;
+      margin: 0;
     }
   }
+
+  .footer-icon {
+    height: 2.4em;
+    width: 2.4em;
+    padding-top: 1vh;
+  }
+
+  .location-icon {
+    height: 2.6em;
+    width: 2.2em;
+  }
+
+ 
