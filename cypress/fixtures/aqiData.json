@@ -1,0 +1,70 @@
+{
+    "currentLocation": 
+  {
+    "status": "success",
+    "data": {
+      "city": "Centennial",
+      "state": "Colorado",
+      "country": "USA",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+        -104.9572,
+        39.5689
+        ]
+      },
+        "current": {
+          "weather": {
+          "ts": "2021-02-25T19:00:00.000Z",
+          "tp": -1,
+          "pr": 1020,
+          "hu": 69,
+          "ws": 6.69,
+          "wd": 360,
+          "ic": "03d"
+        },
+        "pollution": {
+          "ts": "2021-02-25T19:00:00.000Z",
+          "aqius": 27,
+          "mainus": "o3",
+          "aqicn": 21,
+          "maincn": "o3"
+        }
+      }
+    }
+  },
+    "chosenLocation": 
+  {
+    "status": "success",
+    "data": {
+      "city": "Lafayette",
+      "state": "Louisiana",
+      "country": "USA",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+        -92.042801,
+        30.2258
+        ]
+      },
+      "current": {
+        "weather": {
+          "ts": "2021-02-25T22:00:00.000Z",
+          "tp": 23,
+          "pr": 1019,
+          "hu": 64,
+          "ws": 4.12,
+          "wd": 170,
+          "ic": "04d"
+        },
+        "pollution": {
+          "ts": "2021-02-25T21:00:00.000Z",
+          "aqius": 4,
+          "mainus": "p2",
+          "aqicn": 1,
+          "maincn": "p2"
+        }
+      }
+    }
+  }
+}

@@ -26,7 +26,7 @@ function Footer() {
       onClick={event => toggleBtns(toggleDash, toggleSaved, toggleResources, toggleAbout)}
       role='button'
       >
-        <img className='footerIcon' src={home} alt='home button'/>
+        <img className='footerIcon home-nav-btn' src={home} alt='home button'/>
       </Link>
       <Link to='/saved-locations'
       className={`Nav-btn ${savedBtn}`}
@@ -34,7 +34,7 @@ function Footer() {
       onClick={event => toggleBtns(toggleSaved, toggleResources, toggleAbout, toggleDash)}
       role='button'
       >
-        <img className='footerIcon' src={locations} alt='saved locations'/>
+        <img className='footerIcon saved-local-nav-btn' src={locations} alt='saved locations'/>
       </Link>
       <Link to='/resources'
       className={`Nav-btn ${resourcesBtn}`}
@@ -42,7 +42,7 @@ function Footer() {
       onClick={event => toggleBtns(toggleResources, toggleAbout, toggleDash, toggleSaved)}
       role='button'
       >
-        <img className='footerIcon' src={questionmark} alt='more info'/>
+        <img className='footerIcon aqi-nav-btn' src={questionmark} alt='more info'/>
       </Link>
       <Link to='/about-us'
       className={`Nav-btn ${aboutBtn}`}
@@ -50,7 +50,7 @@ function Footer() {
       onClick={event => toggleBtns(toggleAbout, toggleDash, toggleSaved, toggleResources)}
       role='button'
       >
-        <p>...</p>
+        <p className='more-nav-btn'>...</p>
       </Link>
     </footer>
   )

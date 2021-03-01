@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import SavedLocalCards from '../SavedLocalCards/SavedLocalCards'
 import './SavedLocations.scss'
+import {Link} from 'react-router-dom'
 
 const SavedLocations = ({grabInputLocationData}) => {
 const [savedLocations, setSavedLocations] = useState([])
@@ -40,11 +41,15 @@ const createSavedCards = () => {
 }
 
 return (
-  <section className='cards'>
-    <section className='allSaved'>
-      {createSavedCards()}
-    </section>
-  </section>
+  <>
+    <h2>Saved Locations</h2>
+      <section className='cards'>
+        <section className='allSaved'>
+          {createSavedCards()}
+        </section>
+          <Link to='/' className='link-to-landing-page' onClick={backToLandingPage}>Choose a Location</Link>
+      </section>
+  </>
   )
 }
 

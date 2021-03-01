@@ -34,12 +34,12 @@ p {
   font-size: large;
 }
 
-.choose-diff-location {
-  text-decoration: underline;
-}
-
 .location-icon {
   height: 5vh;
+}
+
+.link-to-landing-page {
+  width: 55vw;
 }
 
 .temp-container {
@@ -56,7 +56,7 @@ p {
   box-shadow: inset 1px 3px 13px #1c2c2f57, inset -1px -6px 13px #ffffff8a;
   padding: 1vh;
   padding-bottom: 2vh;
-  margin-top: 2vh;
+  margin-top: 5vh;
 }
 
 .aqi-number {

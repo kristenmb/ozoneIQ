@@ -8,16 +8,25 @@ import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
 import filledFavIcon from '../../assets/Five_Pointed_Star_Solid.svg'
 import cloudIcon from '../../assets/cloud-computing.png';
-import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph} from '../../utilities.js';
-
+import clearSkyDayIcon from '../../assets/clear-sky-day.png';
+import clearSkyNightIcon from '../../assets/clear-sky-night.png';
+import fewCloudsDayIcon from '../../assets/few-clouds-day.png';
+import fewCloudsNightIcon from '../../assets/few-clouds-night.png';
+import scatteredCloudsIcon from '../../assets/scattered-clouds.png';
+import brokenCloudsIcon from '../../assets/broken-clouds.png';
+import showerRainIcon from '../../assets/shower-rain.png';
+import rainDayIcon from '../../assets/rain-day.png';
+import rainNightIcon from '../../assets/rain-night.png';
+import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph, displayCorrectWeatherIcon} from '../../utilities.js';
 
 function Dashboard({location, backToLandingPage}) {
-const [isStarred, setIsStarred] = useState(false)
+  const [isStarred, setIsStarred] = useState(false)
 
-const locationAqi = location.current.pollution.aqius;
-const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
-const windDirection = convertWindToCardinalDirection(location.current.weather.wd);
-const windMph = convertMsToMph(location.current.weather.ws);
+  const locationAqi = location.current.pollution.aqius;
+  const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
+  const windDirection = convertWindToCardinalDirection(location.current.weather.wd);
+  const windMph = convertMsToMph(location.current.weather.ws);
+  const weatherIconWithAltText = displayCorrectWeatherIcon(location.current.weather.ic);
 
 const toggleStar = () => {
   setIsStarred(isStarred => !isStarred)
@@ -91,16 +100,18 @@ useEffect(() => {
               <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
             </div>
           </div>
-          <div className='temp-container'>
-            <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>
-            <p className='temperature'>{`${tempInFahrenheit} F`}</p>
-          </div>
+      
+   
+
+        {/* </div> */}
+
+
+          <Link to='/' className='link-to-landing-page' onClick={backToLandingPage}>Choose a different location</Link>
         </div>
-        {/* <div className='temp-container'>
-          <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>
+        <div className='temp-container'>
+          <img className='weather-icon icon' src={weatherIconWithAltText[0]} alt={weatherIconWithAltText[1]}/>
           <p className='temperature'>{`${tempInFahrenheit} F`}</p>
-        </div> */}
-      {/* </div> */}
+        </div>
       <article className='aqi-container'>
         <h1 className='aqi-level'>{airQualityMessages(locationAqi)[0]}</h1>
         <div className={`aqi-number ${airQualityMessages(locationAqi)[0]}`}>{locationAqi}</div>
