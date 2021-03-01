@@ -6,18 +6,14 @@ import pollutionIcon from '../../assets/pollution.png';
 import humidityIcon from '../../assets/humidity.png';
 import pressureIcon from '../../assets/pressure.png';
 import windIcon from '../../assets/wind.png';
-import emptyFavIcon from '../../assets/star-empty.png';
-import cloudIcon from '../../assets/cloud-computing.png';
-import {convertToFahrenheit, convertWindToCardnialDirection, convertMsToMph} from '../../utilities.js';
+import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph, displayCorrectWeatherIcon} from '../../utilities.js';
 
 function Dashboard({location, backToLandingPage}) {
   const locationAqi = location.current.pollution.aqius;
   const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
-  const windDirection = convertWindToCardnialDirection(location.current.weather.wd);
+  const windDirection = convertWindToCardinalDirection(location.current.weather.wd);
   const windMph = convertMsToMph(location.current.weather.ws);
-
-//CREATE METHOD THAT HANDLES FAV ICON CLICK (SAVE TO FAV LOCATIONS/LOCAL STORAGE)
-//CREATE METHOD THAT HANDLES AQI NUMBER CLICK TO BRING YOU TO INFORMATION PAGE
+  const weatherIconWithAltText = displayCorrectWeatherIcon(location.current.weather.ic);
 
   const airQualityMessages = (aqi) => {
     if (aqi <= 50) {
@@ -68,7 +64,7 @@ function Dashboard({location, backToLandingPage}) {
           <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
         </div>
         <div className='temp-container'>
-          <img className='weather-icon icon' src={cloudIcon} alt='Weather'/>
+          <img className='weather-icon icon' src={weatherIconWithAltText[0]} alt={weatherIconWithAltText[1]}/>
           <p className='temperature'>{`${tempInFahrenheit} F`}</p>
         </div>
       </article>
