@@ -13,15 +13,20 @@ import windyIcon from './assets/windy.png';
 
 export const fetchUserLocation = () => {
   return fetch('http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f')
-    .then(response => handleFetchErrors(response))
-    .then(response => response.json())
+    .then(response => {
+      handleFetchErrors(response)
+      return response.json()
+  })
 }
 
 export const fetchInputLocation = (city, state, country) => {
   return fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=26e9573a-6960-4337-b548-ec068499ad9f`)
-    .then(response => handleFetchErrors(response))
-    .then(response => response.json())
+    .then(response => {
+      handleFetchErrors(response)
+      return response.json()
+  })
 }
+
 
 const handleFetchErrors = (response) => {
   if (response.status >= 400 && response.status < 500) {

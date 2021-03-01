@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './LandingPage.scss'
 import searchIcon from '../../assets/search.png'
 import locationIcon from '../../assets/location.svg'
-import logo from '../../assets/logo4.png'
+import logo from '../../assets/ozoneiq-color.png'
 import locations from '../../assets/locations.png'
 import questionmark from '../../assets/questionmark.png'
 import { Link } from 'react-router-dom'
@@ -24,8 +24,8 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error, backTo
 
   return (
     <section className='landingPage'>
-      <div className='sunWrapper'>
-        <img className='sun' src={logo} />
+      <div className='logoWrapper'>
+        <img className='logo' src={logo} />
       </div>
       <form>
         <Link to='/dashboard'>

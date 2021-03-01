@@ -60,11 +60,14 @@ p {
 }
 
 .aqi-number {
+  display: flex;
+  justify-content: center;
+  align-self: center;
   font-size: 9vh;
   border-radius: 50%;
-  line-height: 50vw;
-  width: 50vw;
-  height: 50vw;
+  line-height: 45vw;
+  width: 45vw;
+  height: 45vw;
   box-shadow: inset -5px -5px 10px #4044402e, inset 5px 5px 10px #ffffff5e;
 }
 
@@ -78,7 +81,7 @@ p {
   background: #97E8F7;
   box-shadow: inset 1px 3px 13px #1c2c2f45, inset -5px -6px 13px #e1faff73;
   height: 20vh;
-  width: 95vw;
+  width: 90vw;
   padding-top: 2vh;
 }
 

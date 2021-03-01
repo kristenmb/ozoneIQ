@@ -32,7 +32,7 @@ const AqiInfo = ({backToLandingPage}) => {
   return (
     <section className='aqi-section'>
       <h2>What's your AQI IQ?</h2>
-      <article>
+      <article className='color-blocks'>
         <button name='isOpen1' onClick={toggle} className='aqi-color-blocks green'>
           0 - 50 <br/> GOOD
           <Expand

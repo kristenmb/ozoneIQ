@@ -70,3 +70,14 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+// self.addEventListener('install', event => {
+//   event.waitUntil(
+//     caches.open('cache-v1').then(cache => {
+//       return cache.addAll([
+//         '../'
+//         '/css/main.css', '/js/main.js', '/img/logo.png'
+//       ]);
+//     })
+//   );
+// })
+
