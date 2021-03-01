@@ -272,7 +272,7 @@ describe('OzoneIQ Favorites Locations Page', () => {
       .get('.currentLocal').click()
       .get('.main-dashboard').should('be.visible')
     cy.get('.saved-local-nav-btn').click()
-
+    cy.url().should('include', 'saved-locations')
   })
 })
   
