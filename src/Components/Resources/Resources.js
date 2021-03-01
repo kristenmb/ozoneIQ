@@ -19,16 +19,18 @@ const Resources = () => {
 
   return (
     <section className="resources-section">
-      <article>
-      <h2>How can I stay safe?</h2>
-      <ul className="text-area">
-        {safetyHowTos}
-      </ul>
+      <article className="resources-info">
+        <h2>How can I stay safe?</h2>
+        <ul className="text-area">
+          {safetyHowTos}
+        </ul>
       </article>
-      <h2>How can I limit my carbon footprint?</h2>
-      <ul className="text-area">
-        {helpHowTos}
-      </ul>
+      <article className="resources-info">
+        <h2>How can I limit my carbon footprint?</h2>
+        <ul className="text-area">
+          {helpHowTos}
+        </ul>
+      </article>
       <Link to='/resources'>
         <button className='back-btn'>
           <img src={leftArrow} alt='Thin arrow pointing left'/>
