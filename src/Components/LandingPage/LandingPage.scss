@@ -87,4 +87,18 @@
     justify-content: space-around;
     text-decoration: underline;
   }
+
+  .landing-page-link {
+    width: 30vw;
+    margin: 0;
+    border-radius: 2em;
+    background: linear-gradient(145deg, #94e5ec, #88d0de);
+    box-shadow: 7px 7px 14px #5ea1af, -7px -7px 14px #abf7f7;
+    border: none;
+
+    p {
+      font-size: 3.5vh;
+      text-decoration: none;
+    }
+  }
 }

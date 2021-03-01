@@ -3,6 +3,8 @@ import './LandingPage.scss'
 import searchIcon from '../../assets/search.png'
 import locationIcon from '../../assets/location.svg'
 import logo from '../../assets/logo4.png'
+import locations from '../../assets/locations.png'
+import questionmark from '../../assets/questionmark.png'
 import { Link } from 'react-router-dom'
 
 function LandingPage({grabUserLocationData, grabInputLocationData, error, backToLandingPage, clearErrorOnLandingPage}) {
@@ -54,9 +56,21 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error, backTo
         {error != '' && <p>{error}</p>}
       </form>
       <nav className='landing-page-nav'>
-        <Link to='/saved-locations' className='landing-page-link'>Your Saved Locations</Link>
-        <Link to='/about-us' className='landing-page-link'>About Us</Link>
-        <Link to='/resources' className='landing-page-link'>What is AQI?</Link>
+        <Link to='/saved-locations'
+        className='landing-page-link'
+        role='button'>
+          <img className='footerIcon' src={locations} alt='saved locations'/>
+        </Link>
+        <Link to='/resources'
+        className='landing-page-link'
+        role='button'>
+          <img className='footerIcon' src={questionmark} alt='more info'/>
+        </Link>
+        <Link to='/about-us'
+        className='landing-page-link'
+        role='button'>
+          <p>...</p>
+        </Link>
       </nav>
     </section>
   )
