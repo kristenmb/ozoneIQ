@@ -20,13 +20,13 @@ const Resources = () => {
   return (
     <section className="resources-section">
       <article className="resources-info">
-        <h2>How can I stay safe?</h2>
+        <h2 className="resources-qs">How can I stay safe?</h2>
         <ul className="text-area">
           {safetyHowTos}
         </ul>
       </article>
       <article className="resources-info">
-        <h2>How can I limit my carbon footprint?</h2>
+        <h2 className="resources-qs">How can I limit my carbon footprint?</h2>
         <ul className="text-area">
           {helpHowTos}
         </ul>
