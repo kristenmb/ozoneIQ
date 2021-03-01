@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import './LandingPage.scss'
 import searchIcon from '../../assets/search.png'
 import locationIcon from '../../assets/location.svg'
-import logo from '../../assets/logo4.png'
+import logo from '../../assets/ozoneiq-color.png'
 import { Link } from 'react-router-dom'
 
-function LandingPage({grabUserLocationData, grabInputLocationData}) {
-  const [inputLocation, setInputLocation] = useState('')
+function LandingPage({grabUserLocationData, grabInputLocationData, error}) {
+  const [inputLocation, setInputLocation] = useState('');
 
   const parseInput = (inputLocation, event) => {
     const locationQueries = inputLocation.split(', ');
@@ -23,7 +23,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
         <img className='sun' src={logo} />
       </div>
       <form>
-        <Link to='/dashboard/current-location'>
+        <Link to='/dashboard'>
           <button
             className='currentLocal'
             onClick={grabUserLocationData}>
@@ -34,17 +34,18 @@ function LandingPage({grabUserLocationData, grabInputLocationData}) {
         <section className='chooseLocal'>
           <input
             type='text'
-            placeholder='City, State'
+            placeholder='City, State, Country'
             name='chooseLocation'
             value={inputLocation}
             onChange={event => setInputLocation(event.target.value)}
           />
-          <Link to='/dashboard/chosen-location'>
+          <Link to='/dashboard'>
             <img className='searchButton'
             src={searchIcon}
             onClick={event => parseInput(inputLocation, event)}/>
           </Link>
         </section>
+        {error != '' && <p>{error.message}</p>}
       </form>
     </section>
   )

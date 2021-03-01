@@ -4,7 +4,7 @@ export const aqiInfoText = [
   "Air pollution is strongly affected by weather, though some pollutants are worse in heat while others are worse in cold weather. During extreme heat waves, stagnant air contributes to pollution levels, and droughts can lead to higher occurrences of forest fires, which in turn adds to the carbon monoxide and particle pollution in the atmosphere. In cold weather, thermal inversion forms when a layer of warm air higher in the atmosphere traps cool air and pollution closer to the ground. Thermal inversions are more common in cities where cold, dense air gets trapped in mountain basins or valleys."]
 
 export const staySafeText = [
-  "Check your local AQI (by using OzoneIQ or local new sources!",
+  "Check your local AQI (by using OzoneIQ or local new sources!)",
   "When the AQI is high, wear an N95 mask when outside to filter out pollutants",
   "Avoid outdoor exercise and activity, limit children’s outdoor play time",
   "Don’t ignore air quality alerts! At best, exposure to poor quality air can cause irritation, at worst, it can cause serious health repercussions." 

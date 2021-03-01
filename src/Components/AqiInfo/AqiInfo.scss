@@ -8,10 +8,10 @@
 
 .info {
   box-shadow: inset 1px 3px 13px #1c2c2f91, inset -1px -6px 13px #ffffff59;
-  width: 95vw;
+  width: 85vw;
   margin-top: 2vh;
   border-radius: 5px;
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
   padding: 1vh;
 }
 
@@ -45,4 +45,22 @@
 
 .purple {
   background-color: #966FD6;
+}
+
+.more-btn {
+  background-color: transparent;
+  margin-bottom: 15vh;
+  margin-top: 4em;
+  width: 40vw;
+  border-radius: 2em;
+  height: 2em;
+  background: linear-gradient(145deg, #94e5ec, #88d0de);
+  box-shadow: 7px 7px 14px #5ea1af,
+  -7px -7px 14px #abf7f7;
+  border: none;
+
+    img {
+      width: 6vw;
+      margin-left: .4rem;
+    }
 }
