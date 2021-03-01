@@ -11,6 +11,12 @@
       "src": "ozoneiq-appicon.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "ozoneiq-appicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+
     }
   ],
   "start_url": "/",
@@ -18,4 +24,5 @@
   "theme_color": "#97E7F7",
   "background_color": "#97E7F7",
   "description": "OzoneIQ - An Air Quality App"
+
 }
