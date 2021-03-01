@@ -43,7 +43,11 @@ const createSavedCards = () => {
 return (
   <>
     <h2>Saved Locations</h2>
+      <p>To view current conditions, tap a location</p>
       <section className='cards'>
+        {savedLocations.length <= 0 &&
+          <p>No locations are currently saved, tap the star on your dashboard to save one.</p>
+        }
         <section className='allSaved'>
           {createSavedCards()}
         </section>
