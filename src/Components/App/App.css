@@ -41,3 +41,13 @@
     transform: rotate(360deg);
   }
 }
+
+.link-to-landing-page {
+  margin-bottom: 15vh;
+  width: 40vw;
+  border-radius: 2em;
+  height: 2;
+  background: linear-gradient(145deg, #94e5ec, #88d0de);
+  box-shadow: 7px 7px 14px #5ea1af, -7px -7px 14px #abf7f7;
+  border: none;
+}

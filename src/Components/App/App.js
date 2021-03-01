@@ -22,6 +22,7 @@ function App() {
       .then(response => {
         setLocation(response.data);
         setDashboardView(true);
+        setError('');
       })
       .catch(error => {
         setError(error);
@@ -33,14 +34,19 @@ function App() {
       .then(response => {
         setLocation(response.data);
         setDashboardView(true);
+        setError('');
       })
       .catch(error => {
-        setError(error);
+        setError(error.message);
       })
   }
 
   const backToLandingPage = () => {
     setDashboardView(false);
+  }
+
+  const clearErrorOnLandingPage = (event) => {
+    setError('');
   }
 
   return (
@@ -54,19 +60,22 @@ function App() {
             <LandingPage
               grabUserLocationData={grabUserLocationData}
               grabInputLocationData={grabInputLocationData}
+              backToLandingPage={backToLandingPage}
+              clearErrorOnLandingPage={clearErrorOnLandingPage}
               error={error}/>}
         />
         {dashboardView &&
           < Route
             path='/dashboard'
             render={() => {
-              return < Dashboard dashboardView={dashboardView} location={location} />}}
+              return < Dashboard dashboardView={dashboardView} location={location} backToLandingPage={backToLandingPage}/>}}
           />
         }
         < Route
           exact
           path='/resources'
-          component={AqiInfo}
+          render={() => {
+            return < AqiInfo backToLandingPage={backToLandingPage} />}}
         />
         < Route
           exact
@@ -76,12 +85,14 @@ function App() {
         < Route
           exact
           path='/saved-locations'
-          component={SavedLocations}
+          render={() => {
+            return < SavedLocations backToLandingPage={backToLandingPage} />}}
         />
         < Route
           exact
           path='/about-us'
-          component={Contact}
+          render={() => {
+            return < Contact backToLandingPage={backToLandingPage} />}}
         />
       </Switch>
       {dashboardView && < Footer />}
