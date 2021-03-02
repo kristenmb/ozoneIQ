@@ -5,7 +5,7 @@ describe.only('OzoneIQ Landing Page', () => {
 
   it('Should be able to visit the landing page with logo, an option to select current location or choose a location', () => {
       cy
-        .get('.logoWrapper').find('img').should('have.attr','src').should('include', '/static/media/logo4.1ade1652.png')
+        .get('.logoWrapper').find('img').should('have.attr','src').should('include', '/static/media/ozoneiq-color.9ec767a7.png')
         .get('form').find('.currentLocal').should('be.visible')
         .get('form').find('.chooseLocal').should('be.visible')
       cy.url().should('include', '/')
