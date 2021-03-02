@@ -96,7 +96,7 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
       .find('.saved-local-nav-btn').click()
     cy.url().should('include', 'saved-locations')
   })
-  //come back and test the saved locations page, information and mroe pages
+  
   it('Should be able to click the question mark icon and be taken to the AQI information page', () => {
     cy
       .get('footer')
@@ -192,12 +192,7 @@ describe('OzoneIQ AQI Info Page', () => {
           statusCode: 201,
           body: data.currentLocation
         })
-    })
-})
-
-  it.skip('Should be able to navigate to the AQI Info page', () => {
-    // cy.get('.landing-page-nav').find('.aqi-nav-btn').click()
-    //have to come back to this one
+      })
   })
 
   it('Should display the AQI ratings with descriptions of the rating', () => {
@@ -210,11 +205,6 @@ describe('OzoneIQ AQI Info Page', () => {
   })
 
   it('Should display the details of what each AQI range is and the risk it poses to your health', () => {
-    // cy
-    //   .get('.currentLocal').click()
-    //   .get('.main-dashboard').should('be.visible')
-    // cy.get('.aqi-nav-btn').click()
-    // cy.get('.aqi-section').should('be.visible')
     cy.get('.color-blocks').find('.green').contains('0 - 50').click().find('p').contains('Air quality is satisfactory, and air pollution poses little or no risk.')
     cy.url().should('include', 'resources')
   })
