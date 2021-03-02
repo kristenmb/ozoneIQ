@@ -51,7 +51,6 @@ const Contact = ({backToLandingPage}) => {
                     </a>
                 </div>
             </article>
-
             <p className="about-app">
                 We are three software developers who are passionate about environmental conservation, public health and safety, and providing resources to those who need them. We developed OzoneIQ with all of these passions in mind. Our goal is to create an app with accessible information about what Air Quality Indices really mean, and how to navigate daily life in an intentional, and environmentally friendly way. We hope this app can help anyone who takes the daily air quality into consideration when planning their day - due to health concerns and/or a lifestyle choice to be environmentally conscious. <br/> <br/>Don't forget to use your voice and vote for environmental reform! </p>
             <Link to='/' onClick={backToLandingPage}>
