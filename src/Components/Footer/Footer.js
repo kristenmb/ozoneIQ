@@ -4,6 +4,7 @@ import home from '../../assets/homebtn.png';
 import locations from '../../assets/locations.png';
 import questionmark from '../../assets/questionmark.png';
 import { Link } from 'react-router-dom';
+/* eslint-disable  */
 
 function Footer() {
     const [dashboardBtn, toggleDash] = useState(true);
@@ -23,7 +24,7 @@ function Footer() {
             <Link to='/dashboard'
                 className={`Nav-btn ${dashboardBtn}`}
                 name='isClicked1'
-                onClick={toggleBtns(toggleDash, toggleSaved, toggleResources, toggleAbout)}
+                onClick={event => toggleBtns(toggleDash, toggleSaved, toggleResources, toggleAbout)}
                 role='button'
             >
                 <img className='footerIcon home-nav-btn' src={home} alt='home button'/>
@@ -31,7 +32,7 @@ function Footer() {
             <Link to='/saved-locations'
                 className={`Nav-btn ${savedBtn}`}
                 name='isClicked2'
-                onClick={toggleBtns(toggleSaved, toggleResources, toggleAbout, toggleDash)}
+                onClick={event => toggleBtns(toggleSaved, toggleResources, toggleAbout, toggleDash)}
                 role='button'
             >
                 <img className='footerIcon saved-local-nav-btn' src={locations} alt='saved locations'/>
@@ -39,7 +40,7 @@ function Footer() {
             <Link to='/resources'
                 className={`Nav-btn ${resourcesBtn}`}
                 name='isClicked3'
-                onClick={toggleBtns(toggleResources, toggleAbout, toggleDash, toggleSaved)}
+                onClick={event =>toggleBtns(toggleResources, toggleAbout, toggleDash, toggleSaved)}
                 role='button'
             >
                 <img className='footerIcon aqi-nav-btn' src={questionmark} alt='more info'/>
@@ -47,7 +48,7 @@ function Footer() {
             <Link to='/about-us'
                 className={`Nav-btn ${aboutBtn}`}
                 name='isClicked4'
-                onClick={toggleBtns(toggleAbout, toggleDash, toggleSaved, toggleResources)}
+                onClick={event => toggleBtns(toggleAbout, toggleDash, toggleSaved, toggleResources)}
                 role='button'
             >
                 <p className='more-nav-btn'>...</p>

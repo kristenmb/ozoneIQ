@@ -4,6 +4,7 @@ import Expand from 'react-expand-animated';
 import { aqiInfoText } from '../../aqiData';
 import rightArrow from '../../assets/right-arrow.png';
 import './AqiInfo.scss';
+/* eslint-disable react/prop-types */
 
 const AqiInfo = ({backToLandingPage}) => {
     const [ {isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6}, toggleIsOpen ] = useState({

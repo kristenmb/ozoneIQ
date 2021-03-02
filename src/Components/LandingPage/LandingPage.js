@@ -6,6 +6,7 @@ import logo from '../../assets/ozoneiq-color.png';
 import locations from '../../assets/locations.png';
 import questionmark from '../../assets/questionmark.png';
 import { Link } from 'react-router-dom';
+/* eslint-disable react/prop-types */
 
 function LandingPage({grabUserLocationData, grabInputLocationData, error, backToLandingPage, clearErrorOnLandingPage}) {
     const [inputLocation, setInputLocation] = useState('');

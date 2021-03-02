@@ -8,6 +8,7 @@ import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
 import filledFavIcon from '../../assets/Five_Pointed_Star_Solid.svg';
 import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph, displayCorrectWeatherIcon, airQualityMessages} from '../../utilities.js';
+/* eslint-disable react/prop-types */
 
 function Dashboard({location, backToLandingPage}) {
     const [isStarred, setIsStarred] = useState(false);

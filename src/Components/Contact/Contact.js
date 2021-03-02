@@ -4,6 +4,7 @@ import RB from '../../assets/RB.png';
 import LM from '../../assets/LM.png';
 import KB from '../../assets/KB.png';
 import './Contact.scss';
+/* eslint-disable react/prop-types */
 
 const Contact = ({backToLandingPage}) => {
     return (

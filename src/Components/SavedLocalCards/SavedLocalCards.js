@@ -2,6 +2,7 @@ import './SavedLocalCards.scss';
 import { Link } from 'react-router-dom';
 import x from '../../assets/remove.png';
 import React from 'react';
+/* eslint-disable react/prop-types */
 
 const SavedLocalCards = ({location, removeFromFavorites, id, grabInputLocationData}) => {
     return (

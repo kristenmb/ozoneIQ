@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SavedLocalCards from '../SavedLocalCards/SavedLocalCards';
 import './SavedLocations.scss';
 import {Link} from 'react-router-dom';
+/* eslint-disable react/prop-types */
 
 const SavedLocations = ({grabInputLocationData, backToLandingPage}) => {
     const [savedLocations, setSavedLocations] = useState([]);
