@@ -5,23 +5,20 @@ import x from '../../assets/remove.png';
 const SavedLocalCards = ({location, removeFromFavorites, id, grabInputLocationData}) => {
 
   return (
-    <article className='savedCard'>
-      <div className='linkIconWrapper'>
-        <div className='iconWrapper'>
+    <section className="saved-local-section">
           <img 
-            className='location-icon icon x' 
+            className='delete-icon icon' 
             onClick={removeFromFavorites} 
             src={x} 
             id={id}
             alt='favorited star'/>
-        </div>
-        <Link className='linkWrapper' 
+        <Link 
+          className='linkWrapper' 
           onClick={(event)=> grabInputLocationData(location.city, location.state, location.country, event)} 
           to='/dashboard'>
-          <h1 className='location'>{location.city}, {location.state}, {location.country}</h1>
+            <h1 className='location'>{location.city}, {location.state}, {location.country}</h1>
         </Link>
-      </div>
-    </article>
+    </section>
   )
 }
 

@@ -1,18 +1,24 @@
 .resources-section {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-color: #97E7F7;
 }
 
-h2 {
+.resources-info {
+  width: 40vw;
+  margin: 2rem;
+}
+
+.resources-qs {
   margin-bottom: 1.5rem;
+  width: 40vw;
 }
 
 .text-area {
   box-shadow: inset 1px 3px 13px #1c2c2f91, inset -1px -6px 13px #ffffff59;
-  width: 90vw;
+  width: 40vw;
   margin: 0;
   border-radius: 5px;
   padding: 1vh;
@@ -27,7 +33,7 @@ h2 {
   background-color: transparent;
   margin-bottom: 15vh;
   margin-top: 4em;
-  width: 40vw;
+  width: 25vw;
   border-radius: 2em;
   height: 2em;
   background: linear-gradient(145deg, #94e5ec, #88d0de);
@@ -36,7 +42,38 @@ h2 {
   border: none;
 
     img {
+      width: 3.5vw;
+      margin-right: .6rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+  .resources-section {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .resources-qs {
+    width: 80vw;
+  }
+
+  .resources-info {
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .text-area {
+    width: 78vw;
+  }
+
+.back-btn {
+  width: 30vw;
+
+    img {
       width: 6vw;
       margin-right: .4rem;
     }
+  }
 }

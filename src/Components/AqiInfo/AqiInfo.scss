@@ -1,22 +1,35 @@
 .aqi-section {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-color: #97E7F7;
+  height: 100vh;
+  padding-top: 1rem;
+}
+
+.aqi-iq {
+  width: 100vw;
 }
 
 .info {
   box-shadow: inset 1px 3px 13px #1c2c2f91, inset -1px -6px 13px #ffffff59;
-  width: 85vw;
+  width: 45vw;
   margin-top: 2vh;
   border-radius: 5px;
-  margin-bottom: 4vh;
   padding: 1vh;
+  font-size: smaller;
+  margin-left: 2rem;
+}
+
+.color-blocks {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
 }
 
 .aqi-color-blocks {
-  width: 75vw;
+  width: 40vw;
   border-radius: 10px;
   border: none;
   box-shadow: inset -5px -5px 10px #40444082, inset 5px 5px 10px #ffffff5e;
@@ -47,10 +60,17 @@
   background-color: #966FD6;
 }
 
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15vh;
+}
+
 .more-btn {
   background-color: transparent;
-  margin-bottom: 4vh;
-  width: 40vw;
+  margin-top: 4em;
+  width: 25vw;
   border-radius: 2em;
   height: 2em;
   background: linear-gradient(145deg, #94e5ec, #88d0de);
@@ -59,7 +79,40 @@
   border: none;
 
     img {
+      width: 3.5vw;
+      margin-left: .6rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+  
+  
+  .aqi-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info {
+    width: 85vw;
+    margin-left: 0;
+  }
+
+  .color-blocks {
+    width: 75vw;
+  } 
+
+  .aqi-color-blocks {
+    width: 75vw;
+  }
+
+  .more-btn {
+    width: 40vw;
+
+    img {
       width: 6vw;
       margin-left: .4rem;
     }
+  }
 }

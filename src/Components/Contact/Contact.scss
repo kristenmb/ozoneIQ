@@ -21,7 +21,7 @@
   margin: .4rem;
 
     .prof-pic {
-    width: 35vw;
+    width: 20vw;
     height: auto;
     border-radius: 20%;
   }
@@ -39,4 +39,12 @@
   border-radius: 5px;
   margin-bottom: 3vh;
   padding: 1vh;
+}
+
+@media screen and (max-width: 700px) {
+  .contact-info {
+    .prof-pic {
+      width: 31vw;
+    }
+  }
 }
