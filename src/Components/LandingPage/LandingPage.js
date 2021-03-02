@@ -6,6 +6,7 @@ import logo from '../../assets/ozoneiq-color.png';
 import locations from '../../assets/locations.png';
 import questionmark from '../../assets/questionmark.png';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 /* eslint-disable react/prop-types */
 
 function LandingPage({grabUserLocationData, grabInputLocationData, error, backToLandingPage, clearErrorOnLandingPage}) {
@@ -79,3 +80,11 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error, backTo
 }
 
 export default LandingPage;
+
+LandingPage.propTypes = {
+  grabUserLocationData: PropTypes.func,
+  grabInputLocationData: PropTypes.func, 
+  error: PropTypes.string,
+  backToLandingPage: PropTypes.func,
+  clearErrorOnLandingPage: PropTypes.func
+}

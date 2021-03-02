@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SavedLocalCards from '../SavedLocalCards/SavedLocalCards';
 import './SavedLocations.scss';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 /* eslint-disable react/prop-types */
 
 const SavedLocations = ({grabInputLocationData, backToLandingPage}) => {
@@ -61,3 +62,8 @@ const SavedLocations = ({grabInputLocationData, backToLandingPage}) => {
 };
 
 export default SavedLocations;
+
+SavedLocations.propTypes = {
+  grabInputLocationData: PropTypes.func,
+  backToLandingPage: PropTypes.func
+}

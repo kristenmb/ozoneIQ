@@ -8,11 +8,11 @@ import windIcon from '../../assets/wind.png';
 import emptyFavIcon from '../../assets/star-empty.png';
 import filledFavIcon from '../../assets/Five_Pointed_Star_Solid.svg';
 import {convertToFahrenheit, convertWindToCardinalDirection, convertMsToMph, displayCorrectWeatherIcon, airQualityMessages} from '../../utilities.js';
+import PropTypes from 'prop-types';
 /* eslint-disable react/prop-types */
 
 function Dashboard({location, backToLandingPage}) {
     const [isStarred, setIsStarred] = useState(false);
-
     const locationAqi = location.current.pollution.aqius;
     const tempInFahrenheit = convertToFahrenheit(location.current.weather.tp);
     const windDirection = convertWindToCardinalDirection(location.current.weather.wd);
@@ -84,3 +84,8 @@ function Dashboard({location, backToLandingPage}) {
     );
 }
 export default Dashboard;
+
+Dashboard.propTypes = {
+  location: PropTypes.object,
+  backToLandingPage: PropTypes.func
+}

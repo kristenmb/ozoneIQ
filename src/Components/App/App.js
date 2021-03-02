@@ -15,13 +15,16 @@ function App() {
     const [location, setLocation] = useState({});
     const [dashboardView, setDashboardView] = useState(false);
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const grabUserLocationData = () => {
+        setLoading(true)
         fetchUserLocation()
             .then(response => {
                 setLocation(response.data);
                 setDashboardView(true);
                 setError('');
+                setLoading(false);
             })
             .catch(error => {
                 setError(error.message);
@@ -29,12 +32,14 @@ function App() {
     };
 
     const grabInputLocationData = (city, state, country) => {
+        setLoading(true);
         fetchInputLocation(city, state, country)
             .then(response => {
                 setDashboardView(false);
                 setLocation(response.data);
                 setDashboardView(true);
                 setError('');
+                setLoading(false);
             })
             .catch(error => {
                 setError(error.message);
@@ -53,6 +58,7 @@ function App() {
         <div className="App">
             {error && < Redirect to='/' />}
             <Switch>
+              <>
                 < Route
                     exact
                     path='/'
@@ -64,6 +70,7 @@ function App() {
                             clearErrorOnLandingPage={clearErrorOnLandingPage}
                             error={error}/>}
                 />
+                {loading && <p className='loading'>Deep Breaths...</p>}
                 {dashboardView &&
           < Route
               path='/dashboard'
@@ -93,6 +100,7 @@ function App() {
                     render={() => {
                         return < Contact backToLandingPage={backToLandingPage} />}}
                 />
+              </>
             </Switch>
             {dashboardView && < Footer />}
         </div>
