@@ -23,9 +23,13 @@ const AqiInfo = ({backToLandingPage}) => {
 
   }
 
-  const aqiInfoDisplay = aqiInfoText.map(point => {
+  const aqiInfoDisplay = aqiInfoText.map((point, i) => {
     return (
-      <p className='aqi-info-text'>{point}</p>
+      <p 
+        className='aqi-info-text'
+        key={i}>
+          {point}
+      </p>
     )
   })
 

@@ -5,15 +5,15 @@ import leftArrow from '../../assets/left-arrow.png'
 import './Resources.scss'
 
 const Resources = () => {
-  const safetyHowTos = staySafeText.map(tip => {
+  const safetyHowTos = staySafeText.map((tip, i) => {
     return (
-      <li>{tip}</li>
+      <li key={i}>{tip}</li>
     )
   })
 
-  const helpHowTos = howToHelpText.map(point => {
+  const helpHowTos = howToHelpText.map((point, i) => {
     return (
-      <li>{point}</li>
+      <li key={i}>{point}</li>
     )
   })
 
