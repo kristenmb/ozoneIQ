@@ -1,4 +1,4 @@
-describe.only('OzoneIQ Landing Page', () => {
+describe('OzoneIQ Landing Page', () => {
   before(() => {
     cy.visit('http://localhost:3000')
   })
@@ -13,23 +13,23 @@ describe.only('OzoneIQ Landing Page', () => {
 
   it('Should be able to visit the users saved locations page and return back to landing page', () => {
     cy.get('a[href*="/saved-locations"]').click()
-    cy.url().should('include', '/saved-locations')
-    cy.get('.link-to-landing-page').click()
-    cy.url().should('contain', '/')
+      .url().should('include', '/saved-locations')
+      .get('.link-to-landing-page').click()
+      .url().should('contain', '/')
   })
 
   it('Should be able to visit the aqi info page and return back to landing page', () => {
     cy.get('a[href*="/resources"]').click()
-    cy.url().should('include', '/resources')
-    cy.get('.link-to-landing-page').click()
-    cy.url().should('contain', '/')
+      .url().should('include', '/resources')
+      .get('.link-to-landing-page').click()
+      .url().should('contain', '/')
   })
 
   it('Should be able to visit the about page and return back to landing page', () => {
     cy.get('a[href*="/about"]').click()
-    cy.url().should('include', '/about')
-    cy.get('.link-to-landing-page').click()
-    cy.url().should('contain', '/')
+      .url().should('include', '/about')
+      .get('.link-to-landing-page').click()
+      .url().should('contain', '/')
   })
 })
 
@@ -289,10 +289,17 @@ describe('OzoneIQ Favorites Locations Page', () => {
 })
 
   it('Should be able to click saved locations icon on footer and navigate to favorited locations page', () => {
-    cy
-      .get('.currentLocal').click()
+    cy.get('.currentLocal').click()
       .get('.main-dashboard').should('be.visible')
-    cy.get('.saved-local-nav-btn').click()
-    cy.url().should('include', 'saved-locations')
+      .get('.saved-local-nav-btn').click()
+      .url().should('include', 'saved-locations')
+  })
+
+  it('If the user has not saved a location, the page should display a message indicating to the user they have no saved locations', () => {
+    cy.get('.error-text').should('contain', 'No locations are currently saved, tap the star on your dashboard to save one.')
+  })
+
+  it('Should be able to view a location that the user has favorited', () => {
+    cy.get('.home-nav-btn').click()
   })
 })
