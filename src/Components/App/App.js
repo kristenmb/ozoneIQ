@@ -16,10 +16,11 @@ import SavedLocalCards from '../SavedLocalCards/SavedLocalCards';
 function App() {
   const [location, setLocation] = useState({});
   const [dashboardView, setDashboardView] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   const grabUserLocationData = () => {
+    setLoading(true)
     fetchUserLocation()
       .then(response => {
         setLocation(response.data);
@@ -35,9 +36,9 @@ function App() {
 
   const grabInputLocationData = (city, state, country) => {
     setLoading(true);
+    setDashboardView(false);
     fetchInputLocation(city, state, country)
       .then(response => {
-        setDashboardView(false)
         setLocation(response.data);
         setDashboardView(true);
         setError('');
@@ -50,7 +51,6 @@ function App() {
 
   const backToLandingPage = () => {
     setDashboardView(false);
-    setLoading(true);
   }
 
   const clearErrorOnLandingPage = (event) => {
@@ -61,6 +61,7 @@ function App() {
     <div className="App">
       {error && < Redirect to='/' />}
       <Switch>
+      <>
         < Route
           exact
           path='/'
@@ -103,6 +104,7 @@ function App() {
           render={() => {
             return < Contact backToLandingPage={backToLandingPage} />}}
         />
+      </>
       </Switch>
       {dashboardView && < Footer />}
     </div>
