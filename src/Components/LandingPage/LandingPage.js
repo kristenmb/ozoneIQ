@@ -82,9 +82,9 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error, backTo
 export default LandingPage;
 
 LandingPage.propTypes = {
-  grabUserLocationData: PropTypes.func,
-  grabInputLocationData: PropTypes.func, 
-  error: PropTypes.string,
-  backToLandingPage: PropTypes.func,
-  clearErrorOnLandingPage: PropTypes.func
-}
+    grabUserLocationData: PropTypes.func,
+    grabInputLocationData: PropTypes.func, 
+    error: PropTypes.string,
+    backToLandingPage: PropTypes.func,
+    clearErrorOnLandingPage: PropTypes.func
+};

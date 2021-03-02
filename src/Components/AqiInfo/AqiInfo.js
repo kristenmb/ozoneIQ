@@ -118,5 +118,5 @@ const AqiInfo = ({backToLandingPage}) => {
 export default AqiInfo;
 
 AqiInfo.propTypes = {
-  backToLandingPage: PropTypes.func
-}
+    backToLandingPage: PropTypes.func
+};

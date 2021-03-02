@@ -66,5 +66,5 @@ const Contact = ({backToLandingPage}) => {
 export default Contact;
 
 Contact.propTypes = {
-  backToLandingPage: PropTypes.func
-}
+    backToLandingPage: PropTypes.func
+};

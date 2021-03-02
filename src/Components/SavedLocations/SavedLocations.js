@@ -64,6 +64,6 @@ const SavedLocations = ({grabInputLocationData, backToLandingPage}) => {
 export default SavedLocations;
 
 SavedLocations.propTypes = {
-  grabInputLocationData: PropTypes.func,
-  backToLandingPage: PropTypes.func
-}
+    grabInputLocationData: PropTypes.func,
+    backToLandingPage: PropTypes.func
+};

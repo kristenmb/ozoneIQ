@@ -58,49 +58,49 @@ function App() {
         <div className="App">
             {error && < Redirect to='/' />}
             <Switch>
-              <>
-                < Route
-                    exact
-                    path='/'
-                    render={() =>
-                        <LandingPage
-                            grabUserLocationData={grabUserLocationData}
-                            grabInputLocationData={grabInputLocationData}
-                            backToLandingPage={backToLandingPage}
-                            clearErrorOnLandingPage={clearErrorOnLandingPage}
-                            error={error}/>}
-                />
-                {loading && <p className='loading'>Deep Breaths...</p>}
-                {dashboardView &&
-          < Route
-              path='/dashboard'
-              render={() => {
-                  return < Dashboard dashboardView={dashboardView} location={location} backToLandingPage={backToLandingPage}/>}}
-          />}
-                < Route
-                    exact
-                    path='/resources'
-                    render={() => {
-                        return < AqiInfo backToLandingPage={backToLandingPage} />}}
-                />
-                < Route
-                    exact
-                    path='/resources2'
-                    component={Resources}
-                />
-                < Route
-                    exact
-                    path='/saved-locations'
-                    render={() => {
-                        return < SavedLocations grabInputLocationData={grabInputLocationData}  backToLandingPage={backToLandingPage} />}}
-                />
-                < Route
-                    exact
-                    path='/about-us'
-                    render={() => {
-                        return < Contact backToLandingPage={backToLandingPage} />}}
-                />
-              </>
+                <>
+                    < Route
+                        exact
+                        path='/'
+                        render={() =>
+                            <LandingPage
+                                grabUserLocationData={grabUserLocationData}
+                                grabInputLocationData={grabInputLocationData}
+                                backToLandingPage={backToLandingPage}
+                                clearErrorOnLandingPage={clearErrorOnLandingPage}
+                                error={error}/>}
+                    />
+                    {loading && <p className='loading'>Deep Breaths...</p>}
+                    {dashboardView &&
+              < Route
+                  path='/dashboard'
+                  render={() => {
+                      return < Dashboard dashboardView={dashboardView} location={location} backToLandingPage={backToLandingPage}/>}}
+              />}
+                    < Route
+                        exact
+                        path='/resources'
+                        render={() => {
+                            return < AqiInfo backToLandingPage={backToLandingPage} />}}
+                    />
+                    < Route
+                        exact
+                        path='/resources2'
+                        component={Resources}
+                    />
+                    < Route
+                        exact
+                        path='/saved-locations'
+                        render={() => {
+                            return < SavedLocations grabInputLocationData={grabInputLocationData}  backToLandingPage={backToLandingPage} />}}
+                    />
+                    < Route
+                        exact
+                        path='/about-us'
+                        render={() => {
+                            return < Contact backToLandingPage={backToLandingPage} />}}
+                    />
+                </>
             </Switch>
             {dashboardView && < Footer />}
         </div>

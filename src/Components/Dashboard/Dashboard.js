@@ -86,6 +86,6 @@ function Dashboard({location, backToLandingPage}) {
 export default Dashboard;
 
 Dashboard.propTypes = {
-  location: PropTypes.object,
-  backToLandingPage: PropTypes.func
-}
+    location: PropTypes.object,
+    backToLandingPage: PropTypes.func
+};
