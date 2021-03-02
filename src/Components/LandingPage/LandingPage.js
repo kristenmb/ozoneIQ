@@ -16,6 +16,7 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error, backTo
     const state = locationQueries[1];
     const country = locationQueries[2];
     grabInputLocationData(city, state, country, event);
+    setInputLocation(city)
   }
 
   useEffect(() => {

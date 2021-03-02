@@ -26,7 +26,7 @@ function Footer() {
       onClick={event => toggleBtns(toggleDash, toggleSaved, toggleResources, toggleAbout)}
       role='button'
       >
-        <img className='footerIcon home-nav-btn' src={home} alt='home button'/>
+      <img className='footerIcon home-nav-btn' src={home} alt='home button'/>
       </Link>
       <Link to='/saved-locations'
       className={`Nav-btn ${savedBtn}`}
