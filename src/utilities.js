@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import clearSkyDayIcon from './assets/clear-sky-day.png';
 import clearSkyNightIcon from './assets/clear-sky-night.png';
 import fewCloudsDayIcon from './assets/few-clouds-day.png';
@@ -10,6 +11,7 @@ import rainNightIcon from './assets/rain-night.png';
 import snowIcon from './assets/snowy.png';
 import windyIcon from './assets/windy.png';
 import tempIcon from './assets/tempicon.png';
+
 
 
 export const fetchUserLocation = () => {

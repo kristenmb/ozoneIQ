@@ -33,6 +33,7 @@ module.exports = {
         'semi': [
             'error',
             'always'
-        ]
+        ],
+        'react/no-unescaped-entities': 0
     }
 };
