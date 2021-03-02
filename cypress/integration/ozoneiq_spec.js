@@ -301,5 +301,24 @@ describe('OzoneIQ Favorites Locations Page', () => {
 
   it('Should be able to view a location that the user has favorited', () => {
     cy.get('.home-nav-btn').click()
+      .get('.star-icon').should('have.attr', 'src')
+      .get('.star-icon').click()
+      .get('.saved-local-nav-btn').click()
+      .get('.location').should('contain', 'Centennial, Colorado, USA')
+  })
+
+  it('Should be able to click on the saved location and view it on the dashboard', () => {
+    cy.get('.location').click()
+      .url().should('include', 'dashboard')
+      .get('.location-name').should('contain', 'Centennial, Colorado')
+  })
+
+  it('Should be able to remove a saved location from the saved locations page', () => {
+    cy.get('.star-icon').should('have.attr', 'src')
+      .get('.star-icon').click()
+      .get('.saved-local-nav-btn').click()
+      .get('.location').should('contain', 'Centennial, Colorado, USA')
+      .get('.delete-icon').click()
+      .get('.location').should('not.exist')
   })
 })
