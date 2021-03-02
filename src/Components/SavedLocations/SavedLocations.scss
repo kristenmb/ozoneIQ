@@ -1,7 +1,9 @@
 .main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #97E7F7;
+  height: 100vh
 }
 
 .text {
@@ -12,21 +14,40 @@
 .cards {
   display: flex;
   flex-direction: column;
-  height: 90vh;
   background: #97E7F7;
   align-self: center;
   width: 70%;
 }
 
 .allSaved {
-  height: 90vh;
+  height: 75vh;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: center;
   background: #97E7F7;
 }
 
 .error-text {
   margin-top: 50%;
+}
+
+.link-to-landing-page {
+    background-color: transparent;
+    margin-bottom: 15vh;
+    margin-top: 4em;
+    width: 25vw;
+    border-radius: 2em;
+    height: 2em;
+    background: linear-gradient(145deg, #94e5ec, #88d0de);
+    box-shadow: 7px 7px 14px #5ea1af,
+      -7px -7px 14px #abf7f7;
+    border: none;
+    color: black
+}
+
+@media screen and (max-width: 700px) {
+  .link-to-landing-page {
+     width: 40vw;
+  }
 }

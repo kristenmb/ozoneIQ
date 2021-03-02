@@ -43,7 +43,7 @@ useEffect(() => {
         <div className='location-and-fav-container'>
           <article className="location-details">
             <img 
-                className='location-icon icon' 
+                className='star-icon icon' 
                 onClick={toggleStar} 
                 src={isStarred ? filledFavIcon : emptyFavIcon} 
                 alt='favorited star'/>

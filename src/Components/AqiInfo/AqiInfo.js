@@ -92,12 +92,18 @@ const AqiInfo = ({backToLandingPage}) => {
       <article className='info'>
         {aqiInfoDisplay}
       </article>
+      <div className="btns">
       <Link to='/resources2'>
         <button className='more-btn'>More
           <img src={rightArrow} alt='Thin arrow pointing right'/>
         </button>
       </Link>
-      <Link to='/' className='link-to-landing-page' onClick={backToLandingPage}>Choose a Location</Link>
+      <Link to='/' onClick={backToLandingPage}>
+        <button className='link-to-landing-page'>
+          Choose a Location  
+        </button>
+      </Link>
+      </div>
     </section>
   )
 }

@@ -60,11 +60,17 @@
   background-color: #966FD6;
 }
 
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15vh;
+}
+
 .more-btn {
   background-color: transparent;
-  margin-bottom: 15vh;
   margin-top: 4em;
-  width: 15vw;
+  width: 25vw;
   border-radius: 2em;
   height: 2em;
   background: linear-gradient(145deg, #94e5ec, #88d0de);

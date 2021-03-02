@@ -37,8 +37,8 @@
   transform: translate(.7rem, -.5rem);
 }
 
-.location-icon {
-  height: 5vh;
+.star-icon {
+  height: 4vh;
 }
 
 .link-to-landing-page {
@@ -150,14 +150,15 @@
 
   .location-name {
     font-size: large;
-    margin: 0
+    margin: 0;
+    padding-left: .4rem
   }
 
   .choose-diff-location {
     text-decoration: underline;
     color: black;
     font-size: 9pt;
-    transform: translate(.7rem, -.5rem);
+    transform: translate(2rem, -.5rem);
   }
 
   .location-icon {
