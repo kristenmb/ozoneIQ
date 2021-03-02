@@ -1,14 +1,35 @@
-describe('OzoneIQ Landing Page', () => {
+describe.only('OzoneIQ Landing Page', () => {
   before(() => {
     cy.visit('http://localhost:3000')
   })
 
-  it ('Should be able to visit the landing page with logo, an option to select current location or choose a location', () => {
+  it('Should be able to visit the landing page with logo, an option to select current location or choose a location', () => {
       cy
         .get('.logoWrapper').find('img').should('have.attr','src').should('include', '/static/media/logo4.1ade1652.png')
         .get('form').find('.currentLocal').should('be.visible')
         .get('form').find('.chooseLocal').should('be.visible')
       cy.url().should('include', '/')
+  })
+
+  it('Should be able to visit the users saved locations page and return back to landing page', () => {
+    cy.get('a[href*="/saved-locations"]').click()
+    cy.url().should('include', '/saved-locations')
+    cy.get('.link-to-landing-page').click()
+    cy.url().should('contain', '/')
+  })
+
+  it('Should be able to visit the aqi info page and return back to landing page', () => {
+    cy.get('a[href*="/resources"]').click()
+    cy.url().should('include', '/resources')
+    cy.get('.link-to-landing-page').click()
+    cy.url().should('contain', '/')
+  })
+
+  it('Should be able to visit the about page and return back to landing page', () => {
+    cy.get('a[href*="/about"]').click()
+    cy.url().should('include', '/about')
+    cy.get('.link-to-landing-page').click()
+    cy.url().should('contain', '/')
   })
 })
 
@@ -48,15 +69,15 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
     cy
       .get('.additional-info-container').get('.additional-info').find('.pollutant-icon').should('have.attr', 'alt', 'Outline of smoke stack')
       .get('.additional-info-container').get('.additional-info').find('.pollutant').should('contain', 'o3')
-    
+
     cy
       .get('.additional-info-container').get('.additional-info').find('.humidity-icon').should('have.attr', 'alt', 'Outline of rain drop')
       .get('.additional-info-container').get('.additional-info').find('.humidity').should('contain', 69)
-    
+
     cy
       .get('.additional-info-container').get('.additional-info').find('.pressure-icon').should('have.attr', 'alt', 'Outline of a pressure guage')
       .get('.additional-info-container').get('.additional-info').find('.pressure').should('contain', '1020')
-   
+
     cy
       .get('.additional-info-container').get('.additional-info').find('.wind-icon').should('have.attr', 'alt', 'Outline of wind blowing')
       .get('.additional-info-container').get('.additional-info').find('.wind').should('contain', '7 mph N')
@@ -68,7 +89,7 @@ describe('OzoneIQ Dashboard Page - Current Location', () => {
       .find('.Nav-btn').should('have.length', 4)
       .get('footer')
   })
-  
+
   it('Should be able to click the saved locations icon and be taken to the saved locations page', () => {
     cy
       .get('footer')
@@ -127,7 +148,7 @@ describe('OzoneIQ Dashboard Page - Chosen Location', () => {
     cy
       .get('.additional-info-container').get('.additional-info').find('.pollutant-icon').should('have.attr', 'alt', 'Outline of smoke stack')
       .get('.additional-info-container').get('.additional-info').find('.pollutant').should('contain', 'p2')
-  
+
     cy
       .get('.additional-info-container').get('.additional-info').find('.humidity-icon').should('have.attr', 'alt', 'Outline of rain drop')
       .get('.additional-info-container').get('.additional-info').find('.humidity').should('contain', 64)
@@ -173,7 +194,7 @@ describe('OzoneIQ AQI Info Page', () => {
         })
     })
 })
-  
+
   it.skip('Should be able to navigate to the AQI Info page', () => {
     // cy.get('.landing-page-nav').find('.aqi-nav-btn').click()
     //have to come back to this one
@@ -238,7 +259,7 @@ describe('OzoneIQ About Us Page', () => {
     cy.get('.more-nav-btn').click()
       .get('.about-section').children('.contact-article', '.about-app')
     cy.url().should('include', 'about-us')
-  
+
 })
 
   it('Should have all of our pictures and links to our personal github pages', () => {
@@ -275,4 +296,3 @@ describe('OzoneIQ Favorites Locations Page', () => {
     cy.url().should('include', 'saved-locations')
   })
 })
-  
