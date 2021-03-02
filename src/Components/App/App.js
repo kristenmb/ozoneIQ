@@ -16,6 +16,7 @@ import SavedLocalCards from '../SavedLocalCards/SavedLocalCards';
 function App() {
   const [location, setLocation] = useState({});
   const [dashboardView, setDashboardView] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   const grabUserLocationData = () => {
@@ -24,20 +25,23 @@ function App() {
         setLocation(response.data);
         setDashboardView(true);
         setError('');
+        setLoading(false);
       })
       .catch(error => {
-  
+
         setError(error.message);
       })
   }
 
   const grabInputLocationData = (city, state, country) => {
+    setLoading(true);
     fetchInputLocation(city, state, country)
       .then(response => {
         setDashboardView(false)
         setLocation(response.data);
         setDashboardView(true);
         setError('');
+        setLoading(false);
       })
       .catch(error => {
         setError(error.message);
@@ -46,6 +50,7 @@ function App() {
 
   const backToLandingPage = () => {
     setDashboardView(false);
+    setLoading(true);
   }
 
   const clearErrorOnLandingPage = (event) => {
@@ -67,6 +72,7 @@ function App() {
               clearErrorOnLandingPage={clearErrorOnLandingPage}
               error={error}/>}
         />
+        {loading && <p className='loading'>Deep Breaths...</p>}
         {dashboardView &&
           < Route
             path='/dashboard'
