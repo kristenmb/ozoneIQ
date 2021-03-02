@@ -5,13 +5,10 @@ import Dashboard from '../Dashboard/Dashboard.js';
 import LandingPage from '../LandingPage/LandingPage'
 import AqiInfo from '../AqiInfo/AqiInfo'
 import Contact from '../Contact/Contact'
-import Error from '../Error/Error'
 import Resources from '../Resources/Resources'
 import SavedLocations from '../SavedLocations/SavedLocations'
 import Footer from '../Footer/Footer'
 import {fetchUserLocation, fetchInputLocation} from '../../utilities'
-import SavedLocalCards from '../SavedLocalCards/SavedLocalCards';
-
 
 function App() {
   const [location, setLocation] = useState({});
@@ -26,7 +23,6 @@ function App() {
         setError('');
       })
       .catch(error => {
-  
         setError(error.message);
       })
   }
