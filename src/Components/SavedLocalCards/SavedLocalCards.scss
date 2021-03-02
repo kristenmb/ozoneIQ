@@ -1,30 +1,27 @@
-.savedCard {
+.saved-local-section { 
+  display: flex;
+
+}
+.linkWrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-self: center;
   width: 100%;
   margin: .5%;
-  height: 15%;
+  height: 7vh;
   border-radius: 15px;
-  background-color: #ce7e7c;
+  background-color: #165764;
   box-shadow: inset 1px 3px 13px #1c2c2f91,
   inset -1px -6px 13px #ffffff59;
 
     .location {
       font-size: 1em;
-      color: black;
+      color: #cfcdcd;
       justify-content: center;
       align-self: center;
       width: 100%;
-      text-align: start;
-      margin-left: 2%;
-    }
-
-    .aqi {
-      font-size: 1em;
-      margin-right: 5%;
-      align-self: center;
+      text-align: center;
     }
 }
 
@@ -33,15 +30,21 @@
   justify-content: space-evenly;
 }
 
-.x {
+.delete-icon {
   justify-self: center;
   align-self: center;
-  height: 1.5em;
-  width: 1.5em;
+  height: 1em;
+  width: 1em;
+  position: relative;
+  bottom: 10;
+  top: 10;
 }
 
-.linkIconWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+@media screen and (max-width: 500px) {
+  .savedCard {
+      .location {
+        margin-left: 3vw;
+    }
+  }
+
 }
