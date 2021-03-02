@@ -23,15 +23,19 @@ const AqiInfo = ({backToLandingPage}) => {
 
   }
 
-  const aqiInfoDisplay = aqiInfoText.map(point => {
+  const aqiInfoDisplay = aqiInfoText.map((point, i) => {
     return (
-      <p className='aqi-info-text'>{point}</p>
+      <p 
+        className='aqi-info-text'
+        key={i}>
+          {point}
+      </p>
     )
   })
 
   return (
     <section className='aqi-section'>
-      <h2>What's your AQI IQ?</h2>
+      <h2 className="aqi-iq">What's your AQI IQ?</h2>
       <article className='color-blocks'>
         <button name='isOpen1' onClick={toggle} className='aqi-color-blocks green'>
           0 - 50 <br/> GOOD
@@ -92,12 +96,18 @@ const AqiInfo = ({backToLandingPage}) => {
       <article className='info'>
         {aqiInfoDisplay}
       </article>
+      <div className="btns">
       <Link to='/resources2'>
         <button className='more-btn'>More
           <img src={rightArrow} alt='Thin arrow pointing right'/>
         </button>
       </Link>
-      <Link to='/' className='link-to-landing-page' onClick={backToLandingPage}>Choose a Location</Link>
+      <Link to='/' onClick={backToLandingPage}>
+        <button className='link-to-landing-page'>
+          Choose a Location  
+        </button>
+      </Link>
+      </div>
     </section>
   )
 }

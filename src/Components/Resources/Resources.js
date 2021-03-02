@@ -5,30 +5,32 @@ import leftArrow from '../../assets/left-arrow.png'
 import './Resources.scss'
 
 const Resources = () => {
-  const safetyHowTos = staySafeText.map(tip => {
+  const safetyHowTos = staySafeText.map((tip, i) => {
     return (
-      <li>{tip}</li>
+      <li key={i}>{tip}</li>
     )
   })
 
-  const helpHowTos = howToHelpText.map(point => {
+  const helpHowTos = howToHelpText.map((point, i) => {
     return (
-      <li>{point}</li>
+      <li key={i}>{point}</li>
     )
   })
 
   return (
     <section className="resources-section">
-      <article>
-      <h2>How can I stay safe?</h2>
-      <ul className="text-area">
-        {safetyHowTos}
-      </ul>
+      <article className="resources-info">
+        <h2 className="resources-qs">How can I stay safe?</h2>
+        <ul className="text-area">
+          {safetyHowTos}
+        </ul>
       </article>
-      <h2>How can I limit my carbon footprint?</h2>
-      <ul className="text-area">
-        {helpHowTos}
-      </ul>
+      <article className="resources-info">
+        <h2 className="resources-qs">How can I limit my carbon footprint?</h2>
+        <ul className="text-area">
+          {helpHowTos}
+        </ul>
+      </article>
       <Link to='/resources'>
         <button className='back-btn'>
           <img src={leftArrow} alt='Thin arrow pointing left'/>

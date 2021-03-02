@@ -37,63 +37,25 @@ useEffect(() => {
     } 
 }, [location])
 
-  // const airQualityMessages = (aqi) => {
-  //   if (aqi <= 50) {
-  //     return [
-  //       'GOOD',
-  //       'Air quality is satisfactory, and air pollution poses little or no risk.'
-  //     ];
-  //   }
-  //   else if (aqi > 50 && aqi <= 100) {
-  //     return [
-  //       'MODERATE',
-  //       'Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.'
-  //     ];
-  //   }
-  //   else if (aqi > 100 && aqi <= 150) {
-  //     return [
-  //       'UNHEALTHY FOR SENSITIVE GROUPS',
-  //       'Members of sensitive groups may experience health effects. The general public is less likely to be affected.'
-  //     ];
-  //   }
-  //   else if (aqi > 150 && aqi <= 200) {
-  //     return [
-  //       'UNHEALTHY',
-  //       'Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.'
-  //     ];
-  //   }
-  //   else if (aqi > 200 && aqi <= 300) {
-  //     return [
-  //       'VERY UNHEALTHY',
-  //       'Health alert: The risk of health effects is increased for everyone.'
-  //     ];
-  //   } else {
-  //     return [
-  //       'HAZARDOUS',
-  //       'Health warning of emergency conditions: everyone is more likely to be affected.'
-  //     ]
-  //   }
-  // }
-
   return (
-      <section className='main-dashboard'>
-        <div className='location-name-temp-container'>
-          <div className='location-and-fav-container'>
-            <div className='location-container'>
-              <img 
-                className='location-icon icon' 
+    <section className='main-dashboard'>
+      <article className='location-name-temp-container'>
+        <div className='location-and-fav-container'>
+          <article className="location-details">
+            <img 
+                className='star-icon icon' 
                 onClick={toggleStar} 
                 src={isStarred ? filledFavIcon : emptyFavIcon} 
                 alt='favorited star'/>
-              <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
-              <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
-            </div>
-          </div>
+            <h2 className='location-name'>{`${location.city}, ${location.state}`}</h2>
+          </article>
+          <Link to='/' className='choose-diff-location' onClick={backToLandingPage}>Choose a different location</Link>
         </div>
         <div className='temp-container'>
           <img className='weather-icon icon' src={weatherIconWithAltText[0]} alt={weatherIconWithAltText[1]}/>
           <p className='temperature'>{`${tempInFahrenheit} F`}</p>
         </div>
+      </article>
       <article className='aqi-container'>
         <h1 className='aqi-level'>{airQualityMessages(locationAqi)[0]}</h1>
         <div className={`aqi-number ${airQualityMessages(locationAqi)[0]}`}>{locationAqi}</div>

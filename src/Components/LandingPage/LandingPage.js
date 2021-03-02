@@ -60,12 +60,12 @@ function LandingPage({grabUserLocationData, grabInputLocationData, error, backTo
         <Link to='/saved-locations'
         className='landing-page-link'
         role='button'>
-          <img className='footerIcon' src={locations} alt='saved locations'/>
+          <img className='footer-icon location-icon' src={locations} alt='saved locations'/>
         </Link>
         <Link to='/resources'
         className='landing-page-link'
         role='button'>
-          <img className='footerIcon' src={questionmark} alt='more info'/>
+          <img className='footer-icon' src={questionmark} alt='more info'/>
         </Link>
         <Link to='/about-us'
         className='landing-page-link'
