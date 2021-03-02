@@ -1,9 +1,9 @@
 import './SavedLocalCards.scss'
 import { Link } from 'react-router-dom'
 import x from '../../assets/remove.png';
+import PropTypes from 'prop-types'
 
 const SavedLocalCards = ({location, removeFromFavorites, id, grabInputLocationData}) => {
-
   return (
     <section className="saved-local-section">
           <img 
@@ -23,3 +23,10 @@ const SavedLocalCards = ({location, removeFromFavorites, id, grabInputLocationDa
 }
 
 export default SavedLocalCards
+
+SavedLocalCards.propTypes = {
+  location: PropTypes.object,
+  removeFromFavorites: PropTypes.func,
+  id: PropTypes.string,
+  grabInputLocationData: PropTypes.func
+}

@@ -4,6 +4,8 @@ import Expand from 'react-expand-animated'
 import { aqiInfoText } from '../../aqiData'
 import rightArrow from '../../assets/right-arrow.png'
 import './AqiInfo.scss'
+import PropTypes from 'prop-types'
+
 
 const AqiInfo = ({backToLandingPage}) => {
   const [ {isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6}, toggleIsOpen ] = useState({
@@ -113,3 +115,7 @@ const AqiInfo = ({backToLandingPage}) => {
 }
 
 export default AqiInfo
+
+AqiInfo.propTypes = {
+  backToLandingPage: PropTypes.func
+}

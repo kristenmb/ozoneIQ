@@ -4,6 +4,8 @@ import RB from '../../assets/RB.png'
 import LM from '../../assets/LM.png'
 import KB from '../../assets/KB.png'
 import './Contact.scss'
+import PropTypes from 'prop-types'
+
 
 const Contact = ({backToLandingPage}) => {
   return (
@@ -63,3 +65,7 @@ const Contact = ({backToLandingPage}) => {
 }
 
 export default Contact
+
+Contact.propTypes = {
+  backToLandingPage: PropTypes.func
+}

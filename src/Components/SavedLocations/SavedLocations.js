@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import SavedLocalCards from '../SavedLocalCards/SavedLocalCards'
 import './SavedLocations.scss'
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types'
+
 
 const SavedLocations = ({grabInputLocationData, backToLandingPage}) => {
 const [savedLocations, setSavedLocations] = useState([])
@@ -60,3 +62,8 @@ return (
 }
 
 export default SavedLocations
+
+SavedLocations.propTypes = {
+  grabInputLocationData: PropTypes.func,
+  backToLandingPage: PropTypes.func
+}
