@@ -33,11 +33,11 @@ const Resources = () => {
             </article>
             <Link to='/resources'>
                 <button className='back-btn'>
-                <img src={leftArrow} alt='Thin arrow pointing left'/>
+                    <img src={leftArrow} alt='Thin arrow pointing left'/>
                  Back</button>
             </Link>
         </section>
     );
-}
+};
 
 export default Resources;
