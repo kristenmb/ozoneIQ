@@ -13,7 +13,7 @@ From here, the user is provided with two ways to view a location’s AQI informa
 
 ![gif of clicking current location](https://media.giphy.com/media/5MuzfuAb2RRQbrac4t/giphy.gif)
 
-Otherwise, the user can input a City, State, and Country (e.g. Denver, Colorado, USA) of their choosing, and be shown the air quality and weather conditions for that location. Should the user enter an invalid location, they will see an error message for potential troubleshooting solutions. 
+Otherwise, the user can input a City, State, and Country (e.g. Denver, Colorado, USA) of their choosing, and be shown the air quality and weather conditions for that location. Should the user enter an invalid location, they will see an error message for potential troubleshooting solutions. PLEASE NOTE: Currently Users MUST press the search button to the right of the input for the search to function correctly.
 
 ![gif of inputting custom location](https://media.giphy.com/media/oztH0062HyVbTfwb09/giphy.gif)
 
