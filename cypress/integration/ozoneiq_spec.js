@@ -178,8 +178,9 @@ describe('OzoneIQ Dashboard Page - Chosen Location - Error Handling 404 status',
       cy.visit('http://localhost:3000')
   })
 
-  it('Should display user friend error handling about how to find a location included in api data', () => {
-
+  it ('Should display user friend error handling about how to find a location included in api data', () => {
+      cy.get('form').find('.currentLocal').click()
+      cy.get('p').should('contain', 'We can\'t grab')
   })
 })
 
