@@ -33,6 +33,7 @@ function App() {
 
     const grabInputLocationData = (city, state, country) => {
         setLoading(true);
+        setDashboardView(false);
         fetchInputLocation(city, state, country)
             .then(response => {
                 setDashboardView(false);
@@ -70,7 +71,7 @@ function App() {
                                 clearErrorOnLandingPage={clearErrorOnLandingPage}
                                 error={error}/>}
                     />
-                    {loading && <p className='loading'>Deep Breaths...</p>}
+                    {loading && !error && <p className='loading'>Deep Breaths...</p>}
                     {dashboardView &&
               < Route
                   path='/dashboard'
