@@ -35,19 +35,19 @@ describe('OzoneIQ Landing Page', () => {
 
 describe('OzoneIQ Dashboard Page - Current Location', () => {
   before(() => {
-    cy.visit('http://localhost:3000')
-      cy.fixture('aqiData.json')
-        .then((data) => {
-        cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
-          statusCode: 201,
-          body: data.currentLocation
-        })
+    cy.fixture('aqiData.json')
+    .then((data) => {
+      cy.intercept('GET','https://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
+        statusCode: 201,
+        body: data.currentLocation
+      })
     })
+    cy.visit('http://localhost:3000')
+      .get('.currentLocal').click()
 })
 
   it('Should be able to click Current Location and navigate to dashboard with air quality information pertaining to that location', () => {
     cy
-      .get('.currentLocal').click()
       .get('.main-dashboard').should('be.visible')
     cy.url().should('include', 'dashboard')
   })
@@ -117,7 +117,7 @@ describe('OzoneIQ Dashboard Page - Chosen Location', () => {
     cy.visit('http://localhost:3000')
       cy.fixture('aqiData.json')
         .then((data) => {
-          cy.intercept('GET','http://api.airvisual.com/v2/city?city=lafayette&state=louisiana&country=usa&key=26e9573a-6960-4337-b548-ec068499ad9f', {
+          cy.intercept('GET','https://api.airvisual.com/v2/city?city=lafayette&state=louisiana&country=usa&key=26e9573a-6960-4337-b548-ec068499ad9f', {
             statusCode: 201,
             body: data.chosenLocation
           })
@@ -172,7 +172,7 @@ describe('OzoneIQ Dashboard Page - Chosen Location', () => {
 
 describe('OzoneIQ Dashboard Page - Chosen Location - Error Handling 404 status', () => {
   before(() => {
-      cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
+      cy.intercept('GET','https://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
         statusCode: 404
       })
       cy.visit('http://localhost:3000')
@@ -189,7 +189,7 @@ describe('OzoneIQ AQI Info Page', () => {
     cy.visit('http://localhost:3000')
       cy.fixture('aqiData.json')
         .then((data) => {
-          cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
+          cy.intercept('GET','https://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
           statusCode: 201,
           body: data.currentLocation
         })
@@ -236,7 +236,7 @@ describe('OzoneIQ About Us Page', () => {
     cy.visit('http://localhost:3000')
       cy.fixture('aqiData.json')
         .then((data) => {
-          cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
+          cy.intercept('GET','https://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
            statusCode: 201,
            body: data.currentLocation
         })
@@ -272,7 +272,7 @@ describe('OzoneIQ Favorites Locations Page', () => {
     cy.visit('http://localhost:3000')
       cy.fixture('aqiData.json')
         .then((data) => {
-          cy.intercept('GET','http://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
+          cy.intercept('GET','https://api.airvisual.com/v2/nearest_city?key=26e9573a-6960-4337-b548-ec068499ad9f', {
            statusCode: 201,
            body: data.currentLocation
         })

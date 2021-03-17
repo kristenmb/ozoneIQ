@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -20,6 +21,24 @@ if (navigator.serviceWorker) {
         });
 }
 
-serviceWorkerRegistration.register();
+if (window.Cypress) {
+    serviceWorkerRegistration.unregister();
+} else {
+    serviceWorkerRegistration.register();
+}
+
+self.addEventListener('activate', (e) => {
+  let cacheCleaned = caches.keys()
+    .then(keys => {
+      keys.forEach(key => {
+        if (key !== pwaCache) {
+          return caches.delete(key)
+        }
+      })
+    })
+  e.waitUntil(cacheCleaned)
+});
+
+// serviceWorkerRegistration.register();
 
 reportWebVitals();
